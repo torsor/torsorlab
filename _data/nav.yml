@@ -1,0 +1,5 @@
+# Top navigation. Add or reorder freely — the header renders whatever is here.
+- title: Tools
+  url: /tools/
+- title: About
+  url: /about/

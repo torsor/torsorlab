@@ -1,0 +1,19 @@
+{%- comment -%}
+  One tool card. Pass a _tools document as `tool`.
+  Released tools link to their page; coming ones do not.
+{%- endcomment -%}
+{%- assign tag = 'div' -%}
+{%- if include.tool.status == 'released' -%}{%- assign tag = 'a' -%}{%- endif -%}
+<{{ tag }} class="card"{% if tag == 'a' %} href="{{ include.tool.url | relative_url }}"{% endif %}>
+  <div class="card__top">
+    {% include card-glyph.html %}
+    <span class="chip{% if include.tool.status != 'released' %} chip--coming{% endif %}">
+      {{ include.tool.status }}
+    </span>
+  </div>
+  <h3 class="card__title">{{ include.tool.title }}</h3>
+  <p class="card__text">{{ include.tool.tagline }}</p>
+  {%- if tag == 'a' -%}
+    <div class="card__foot">READ THE DOCS →</div>
+  {%- endif -%}
+</{{ tag }}>

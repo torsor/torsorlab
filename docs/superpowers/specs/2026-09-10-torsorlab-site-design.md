@@ -211,11 +211,12 @@ chip, the public one-paragraph description, and no outbound link.
 **Tool page (`/tools/torsor-writing/`)** — what it is, why it exists, install, build
 prerequisites, then the eleven skills as a linked table into the docs.
 
-**Doc pages (`/tools/torsor-writing/<skill>/`)** — one per skill, spinal layout. Each
-covers, in this order: what it writes; who it is for; what it needs on the box; what it
-produces; a worked invocation; and marginalia notes for the caveats. Drafted from the
-repo's `SKILL.md` front matter and README, rewritten for a reader who has not seen the
-repo.
+**Doc pages (`/tools/torsor-writing/<skill>/`)** — one per skill, spinal layout.
+**Deliberately minimal at build time** (decided 2026-09-10): each page carries the
+skill's name, a one-line summary, its invocation, and its outputs — enough that the page
+exists and the structure is proven. Danny writes the real prose later. The layout
+supports the fuller shape (what it writes / who for / prerequisites / worked invocation /
+marginalia) whenever content arrives; nothing needs restructuring to grow.
 
 **About (`/about/`)** — what torsorlab names, how the work is done, and how to credit it:
 a suggested acknowledgement line and a note on what the name covers. **This page is a
@@ -239,6 +240,16 @@ stub for Danny to rewrite** — it is the page most needing his own words.
   site is a curated telling, and a stale sentence is a smaller cost than sync machinery.
   Mitigation is a note in `README.md` saying which upstream files a doc page was drawn
   from.
-- **Eleven doc pages is real writing.** If the drafts thin out, the fallback is the
-  grouped-pages structure (four family pages) — but the collection schema supports either,
-  so this is a content decision, not a rebuild.
+- **Eleven doc pages is real writing.** Resolved by shipping them as minimal stubs; the
+  fallback grouped-pages structure remains available since the schema supports either.
+
+## Editability
+
+A stated requirement, not a nicety: Danny edits this site by hand. Therefore —
+
+- Every color and font lives in `_sass/_tokens.scss` as a CSS custom property. No hex
+  value appears anywhere else in the codebase.
+- Every page's content is Markdown with front matter. No HTML in content files.
+- Navigation is `_data/nav.yml`. Adding a nav item is editing one YAML line.
+- Layouts do one job each and stay short; anything appearing twice becomes an include.
+- Each non-obvious file opens with a comment saying what it is and what to change in it.

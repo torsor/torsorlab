@@ -1,0 +1,45 @@
+# Deploy to GitHub Pages.
+#
+# INERT ON PURPOSE: manual dispatch only, so nothing publishes by accident.
+# To go live at lab.torsor.org: add `push: {branches: [main]}` to `on:`, enable
+# Pages (source: GitHub Actions) in the repo settings, and point a CNAME record
+# for lab at <owner>.github.io.
+
+name: pages
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - uses: actions/configure-pages@v5
+      - run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - run: python3 tools/check.py
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

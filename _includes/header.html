@@ -1,0 +1,16 @@
+{%- comment -%} Site header. Nav items come from _data/nav.yml. {%- endcomment -%}
+<header class="site-header">
+  <div class="frame site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      {% include mark.html %}
+      {{ site.title }}
+      <span class="site-header__tag">{{ site.tagline }}</span>
+    </a>
+    <nav class="site-header__nav">
+      {%- for item in site.data.nav -%}
+        <a href="{{ item.url | relative_url }}"
+           {% if page.url contains item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>

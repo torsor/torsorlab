@@ -1,0 +1,12 @@
+---
+layout: base
+---
+{%- comment -%} Plain content page: about, and anything else you add. {%- endcomment -%}
+<main class="frame page">
+  <div class="measure">
+    {%- if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif -%}
+    <h1>{{ page.title }}</h1>
+    {%- if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif -%}
+    {{ content }}
+  </div>
+</main>

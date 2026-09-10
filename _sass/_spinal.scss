@@ -1,0 +1,182 @@
+@use "tokens" as *;
+
+// Direction B — spinal. Used by doc pages only.
+// Lavender ground, vertebral rail on the left, marginalia column on the right.
+
+.layout-doc {
+  background: var(--lav);
+  min-height: 100vh;
+
+  a { text-decoration-color: var(--violet); }
+  pre { background: var(--lav-panel); border-color: var(--rule-lav); }
+  table th, table td { border-bottom-color: var(--rule-lav); }
+}
+
+.doc-bar {
+  background: var(--lav-bar);
+  border-bottom: 1px solid var(--rule-lav);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 54px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  &__crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+
+    a { color: var(--muted); text-decoration: none; }
+    a:hover { color: var(--violet); }
+    strong { color: var(--ink); font-weight: 700; }
+  }
+
+  &__meta { color: var(--faint); white-space: nowrap;
+
+    @media (max-width: $narrow) { display: none; }
+  }
+}
+
+// --- three-column frame -----------------------------------------------------
+
+.doc {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 308px;
+  max-width: var(--wide);
+  margin: 0 auto;
+  align-items: stretch;
+
+  // Pages with no marginalia give the space back to the prose.
+  &--nonotes { grid-template-columns: 96px minmax(0, 1fr); }
+
+  // Two rows: everything on row 1, the prev/next nav below the prose on row 2.
+  // The rail and the notes span both. On narrow this all becomes source order,
+  // which puts the nav last — after the notes it belongs below.
+  > .doc__rail  { grid-row: 1 / -1; }
+  > .doc__notes { grid-row: 1 / -1; grid-column: 3; }
+  > .doc__body  { grid-column: 2; grid-row: 1; }
+  > .doc-seq    { grid-column: 2; grid-row: 2; }
+
+  @media (max-width: $narrow) {
+    display: block;
+    padding-inline: var(--gutter);
+  }
+}
+
+.doc__rail {
+  border-right: 1px solid var(--rule-lav);
+  background: var(--lav-panel);
+  display: flex;
+  justify-content: center;
+  padding-block: 18px;
+
+  img { width: 60px; height: auto; position: sticky; top: 18px; }
+
+  @media (max-width: $narrow) { display: none; }
+}
+
+.doc__body {
+  padding: 38px 44px 60px;
+  font-family: var(--font-doc);
+  font-size: 15.5px;
+
+  // Keep the line length readable when there is no marginalia column.
+  > * { max-width: var(--measure); }
+
+  h1 { font-family: var(--font-doc); font-size: 30px; letter-spacing: -0.5px; }
+  h2 { font-family: var(--font-doc); font-size: 21px; }
+  h3 { font-family: var(--font-doc); font-size: 17px; }
+
+  @media (max-width: $narrow) { padding: 30px 0 40px; }
+}
+
+.doc__sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin: -6px 0 28px;
+}
+
+// --- marginalia -------------------------------------------------------------
+// On wide screens a right column; below 900px it drops inline after the prose.
+
+.doc__notes {
+  border-left: 1px dashed var(--violet-light);
+  background: var(--lav-panel);
+  padding: 38px 26px;
+
+  @media (max-width: $narrow) {
+    border-left: 0;
+    border-top: 1px dashed var(--violet-light);
+    background: none;
+    padding: 24px 0 40px;
+  }
+}
+
+.note {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 22px;
+
+  &__n {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--violet);
+    color: var(--violet);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-family: var(--font-doc);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  &__text {
+    font-family: var(--font-doc);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 2px 0 0;
+  }
+
+  // Cycle the accents so a run of notes reads as a sequence.
+  &:nth-child(3n+2) .note__n { border-color: var(--teal); color: var(--teal); }
+  &:nth-child(3n) .note__n { border-color: var(--coral); color: var(--coral); }
+}
+
+// --- prev / next ------------------------------------------------------------
+
+.doc-seq {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 44px 60px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-lav);
+
+  @media (max-width: $narrow) { margin: 0 0 40px; }
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  a { color: var(--violet); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}

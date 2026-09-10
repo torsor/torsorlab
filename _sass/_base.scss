@@ -1,0 +1,197 @@
+@use "tokens" as *;
+
+// Base: resets, typography, and the elements shared by every page.
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--prose);
+  background: var(--cream);
+}
+
+img, svg { max-width: 100%; }
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--violet);
+  text-underline-offset: 3px;
+
+  &:hover { color: var(--violet); }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 2.2em 0 0.6em;
+}
+
+h1 { font-size: 40px; letter-spacing: -1px; margin-top: 0; }
+h2 { font-size: 26px; letter-spacing: -0.4px; }
+h3 { font-size: 19px; letter-spacing: -0.2px; }
+
+p, ul, ol { margin: 0 0 1.1em; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(139, 134, 214, 0.10);
+  padding: 0.12em 0.38em;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  background: var(--cream-panel);
+  border: 1px solid var(--rule-cream);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  overflow-x: auto;
+
+  code { background: none; padding: 0; }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 0 0 1.4em;
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule-cream);
+  }
+
+  th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+}
+
+// Tables and pre are the only things allowed to be wider than the page.
+.scroll-x { overflow-x: auto; }
+
+// --- shared utilities -------------------------------------------------------
+
+// The uppercase letterspaced mono label used above every section.
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 10px;
+}
+
+.eyebrow--violet { color: var(--violet); }
+
+.frame {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.measure { max-width: var(--measure); }
+
+.lede {
+  font-size: 18px;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+// --- header / footer --------------------------------------------------------
+
+.site-header {
+  border-bottom: 1px solid var(--rule-cream);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 64px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  &__tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--faint);
+    padding-left: 12px;
+    border-left: 1px solid var(--rule-cream);
+
+    @media (max-width: $narrow) { display: none; }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 22px;
+    font-family: var(--font-head);
+    font-size: 14px;
+
+    a {
+      color: var(--faint);
+      text-decoration: none;
+
+      &[aria-current="page"] { color: var(--ink); font-weight: 500; }
+      &:hover { color: var(--violet); }
+    }
+  }
+}
+
+.mark {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  animation: mark-spin 18s linear infinite;
+}
+
+@keyframes mark-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mark { animation: none; }
+}
+
+.site-footer {
+  margin-top: 90px;
+  border-top: 1px solid var(--rule-cream);
+  padding-block: 26px 40px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--faint);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}

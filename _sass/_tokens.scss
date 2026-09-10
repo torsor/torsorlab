@@ -1,0 +1,48 @@
+// Design tokens — the single source of truth for color, type, and spacing.
+//
+// This is the ONE file with hex values in it. If you want to restyle the site,
+// change numbers here and nowhere else. (The four colors baked into the SVGs in
+// assets/img/ are the sole exception; regenerate them with `make art`.)
+//
+// From torsor-style/style-b.
+
+:root {
+  // --- ground -------------------------------------------------------------
+  --cream:        #faf6ec;   // topographic ground (site pages)
+  --cream-panel:  #fbf8ef;   // raised card on cream
+  --lav:          #eceaf7;   // spinal ground (doc pages)
+  --lav-panel:    #efedf8;   // marginalia column
+  --lav-bar:      #e6e3f4;   // spinal top bar
+
+  // --- text ---------------------------------------------------------------
+  --ink:          #2c2b4d;   // headings, strong text
+  --prose:        #4a4868;   // body text
+  --muted:        #6c6a92;   // secondary text
+  --faint:        #8d8aa8;   // tertiary — never carries meaning alone
+
+  // --- accent -------------------------------------------------------------
+  --violet:       #8b86d6;   // primary accent, micro-labels
+  --violet-light: #c5c2ec;
+  --teal:         #3fa39d;   // section eyebrows
+  --coral:        #df8567;   // basepoint dot, COMING chips
+
+  // --- rules and shadow ---------------------------------------------------
+  --rule-cream:   #e6e0cf;
+  --rule-lav:     #ddd9ef;
+  --shadow:       0 18px 50px -24px rgba(44, 43, 77, 0.45);
+
+  // --- type ---------------------------------------------------------------
+  --font-head:  "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body:  "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-doc:   "Sora", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:  "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  // --- measure and rhythm -------------------------------------------------
+  --measure:  760px;   // prose column
+  --wide:     1180px;  // full content frame
+  --gutter:   24px;    // page side padding (never below 16px)
+  --radius:   5px;
+}
+
+// Single breakpoint. Everything below 900px is the narrow layout.
+$narrow: 900px;

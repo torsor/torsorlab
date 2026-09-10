@@ -1,0 +1,60 @@
+---
+layout: base
+---
+{%- comment -%}
+  A documentation page — the spinal treatment.
+  Optional front matter: `notes:` a list of {title, text} rendered as marginalia.
+{%- endcomment -%}
+{%- assign tool = site.tools | where: 'slug', page.tool | first -%}
+{%- assign siblings = site.docs | where: 'tool', page.tool | sort: 'order' -%}
+{%- comment -%} Position of this page among its siblings, for the counter. {%- endcomment -%}
+{%- assign pos = 0 -%}
+{%- for d in siblings -%}{%- if d.url == page.url -%}{%- assign pos = forloop.index -%}{%- endif -%}{%- endfor -%}
+
+<div class="doc-bar">
+  <div class="frame doc-bar__inner">
+    <div class="doc-bar__crumbs">
+      <a href="{{ '/tools/' | relative_url }}"><strong>{{ site.title }}</strong></a>
+      <span>/</span>
+      <a href="{{ tool.url | relative_url }}">{{ tool.title }}</a>
+      <span>/</span>
+      <span>{{ page.slug }}</span>
+    </div>
+    <span class="doc-bar__meta">{{ pos }} of {{ siblings.size }}</span>
+  </div>
+</div>
+
+<div class="doc{% unless page.notes %} doc--nonotes{% endunless %}">
+  <aside class="doc__rail">
+    <img src="{{ '/assets/img/spine.svg' | relative_url }}" alt="">
+  </aside>
+
+  <main class="doc__body">
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary %}<p class="doc__sub">{{ page.summary }}</p>{% endif -%}
+    {{ content }}
+  </main>
+
+  {%- if page.notes -%}
+  <aside class="doc__notes">
+    <p class="eyebrow eyebrow--violet">Marginalia</p>
+    {%- for note in page.notes -%}
+      <div class="note">
+        <span class="note__n">{{ forloop.index }}</span>
+        <div>
+          <div class="note__title">{{ note.title }}</div>
+          <p class="note__text">{{ note.text }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </aside>
+  {%- endif -%}
+
+  {%- assign i = page.order | plus: 0 -%}
+  <nav class="doc-seq">
+    {%- assign prev = siblings | where_exp: 'd', 'd.order < i' | last -%}
+    {%- assign next = siblings | where_exp: 'd', 'd.order > i' | first -%}
+    <span>{% if prev %}<a href="{{ prev.url | relative_url }}">← {{ prev.title }}</a>{% endif %}</span>
+    <span>{% if next %}<a href="{{ next.url | relative_url }}">{{ next.title }} →</a>{% endif %}</span>
+  </nav>
+</div>

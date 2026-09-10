@@ -1,0 +1,167 @@
+@use "tokens" as *;
+
+// Direction A — topographic. Used by home, tools index, tool pages, about.
+// Cream ground, horizontal panels, contour-field artwork.
+
+.page { padding-block: 56px; }
+
+// --- hero -------------------------------------------------------------------
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-panel);
+  border: 1px solid var(--rule-cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 54px 48px 58px;
+  margin-bottom: 64px;
+
+  &__art {
+    position: absolute;
+    inset: 0 -10% 0 auto;
+    width: 62%;
+    pointer-events: none;
+
+    @media (max-width: $narrow) { opacity: 0.35; width: 100%; inset: 0; }
+  }
+
+  &__body { position: relative; max-width: 560px; }
+
+  h1 { margin-bottom: 18px; }
+
+  @media (max-width: $narrow) { padding: 36px 24px 40px; }
+}
+
+.hero__rule {
+  display: block;
+  margin: 26px 0 10px;
+}
+
+.pull {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0;
+}
+
+// --- sections ---------------------------------------------------------------
+
+.band {
+  margin-bottom: 64px;
+
+  &__head { margin-bottom: 24px; }
+  h2 { margin: 0; }
+}
+
+// --- tool cards -------------------------------------------------------------
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream-panel);
+  border: 1px solid var(--rule-cream);
+  border-radius: 4px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  &__glyph { width: 44px; height: 44px; flex: none; }
+
+  &__title {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  &__foot {
+    margin-top: auto;
+    padding-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--violet);
+  }
+}
+
+a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+  color: var(--teal);
+
+  &--coming { color: var(--coral); }
+}
+
+// --- doc index on a tool page ----------------------------------------------
+
+.doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--rule-cream);
+
+  li { border-bottom: 1px solid var(--rule-cream); }
+
+  a {
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+    padding: 13px 4px;
+    text-decoration: none;
+
+    &:hover { background: var(--cream-panel); }
+  }
+
+  &__name {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink);
+    flex: none;
+    min-width: 250px;
+
+    @media (max-width: $narrow) { min-width: 0; }
+  }
+
+  &__summary { font-size: 14px; color: var(--muted); }
+
+  @media (max-width: $narrow) {
+    a { flex-direction: column; gap: 4px; }
+  }
+}

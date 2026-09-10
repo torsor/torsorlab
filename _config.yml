@@ -1,0 +1,46 @@
+# torsorlab — site configuration
+#
+# Editing notes:
+#   - Nav links live in _data/nav.yml, not here.
+#   - Colors and fonts live in _sass/_tokens.scss, not here.
+#   - `url` is only used to build absolute URLs in the sitemap. Nothing is
+#     deployed until you enable .github/workflows/pages.yml.
+
+title: torsorlab
+tagline: an AI lab for mathematical work
+description: >-
+  torsorlab builds and documents agentic AI tools for mathematical writing,
+  research workshops, and agent fleet operations.
+url: "https://lab.torsor.org"
+baseurl: ""
+
+plugins:
+  - jekyll-sitemap
+
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+  docs:
+    output: true
+    permalink: /tools/:path/
+
+defaults:
+  - scope: { path: "", type: "tools" }
+    values: { layout: tool }
+  - scope: { path: "", type: "docs" }
+    values: { layout: doc }
+  - scope: { path: "" }
+    values: { layout: page }
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - docs/
+  - tools/
+  - vendor/
