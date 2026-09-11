@@ -23,9 +23,12 @@ notes:
       you pre-answer.
 ---
 
-eleven skills. the useful distinction between them is not what they are about but
-**what they are pointed at** — one paper, several sources, a corpus, a person, a
-room, or nothing yet written.
+eleven Claude Code skills. each one takes source material of some kind and writes
+companion material for it — documentation, guides, manuals, summaries, reports.
+
+what usefully distinguishes them is not what they are about, but **what they are
+pointed at**: one paper, several sources, a corpus, a person, a room, or nothing
+yet written.
 
 ## about one paper
 
