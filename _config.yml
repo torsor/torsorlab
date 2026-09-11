@@ -41,6 +41,7 @@ exclude:
   - Gemfile.lock
   - Makefile
   - README.md
+  - AGENTS.md
   - docs/
   - bin/
   - vendor/

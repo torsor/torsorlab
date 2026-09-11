@@ -9,6 +9,11 @@ import pathlib
 import re
 import sys
 
+try:
+    import yaml
+except ImportError:  # pragma: no cover - yaml ships with the Jekyll toolchain box
+    yaml = None
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FM = re.compile(r"\A---\n(.*?)\n---\n", re.S)
 
@@ -26,8 +31,45 @@ def front_matter(path):
     return out
 
 
+def check_front_matter(errors):
+    """Every page must have front matter that actually parses.
+
+    Jekyll does not fail the build on malformed front matter — it silently
+    treats the file as having none, falls back to the default layout, and
+    publishes a page with the content missing. That shipped once; this is the
+    guard so it cannot ship again.
+
+    Layouts are not required here: they come from the `defaults` in _config.yml.
+    """
+    pages = (
+        [ROOT / n for n in ("index.md", "about.md", "tools.md", "404.md")]
+        + sorted((ROOT / "_tools").glob("*.md"))
+        + sorted((ROOT / "_docs").rglob("*.md"))
+    )
+    for p in pages:
+        if not p.exists():
+            errors.append(f"{p.relative_to(ROOT)}: expected page is missing")
+            continue
+        rel = p.relative_to(ROOT)
+        m = FM.match(p.read_text())
+        if not m:
+            errors.append(f"{rel}: no front matter — Jekyll will not render it as a page")
+            continue
+        if yaml is None:
+            continue
+        try:
+            data = yaml.safe_load(m.group(1))
+        except yaml.YAMLError as e:
+            first = str(e).strip().splitlines()[0]
+            errors.append(f"{rel}: front matter is not valid YAML — {first}")
+            continue
+        if not isinstance(data, dict):
+            errors.append(f"{rel}: front matter is not a mapping (check block-scalar indentation)")
+
+
 def main():
     errors = []
+    check_front_matter(errors)
 
     tools = {}
     for p in sorted((ROOT / "_tools").glob("*.md")):
