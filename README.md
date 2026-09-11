@@ -77,6 +77,17 @@ manuals in `guides/`, and — for the eight skills without a manual — from the
 
 ## Deploying
 
-Nothing deploys yet. `CNAME` names `lab.torsor.org` and
-`.github/workflows/pages.yml` is present but manual-dispatch only. Enable both
-when you're ready.
+Live at **https://lab.torsor.org**, served by GitHub Pages from
+`torsor/torsorlab`. Every push to `main` runs `.github/workflows/pages.yml`,
+which builds the site, runs `bin/check.py`, and deploys. A failing check fails
+the deploy.
+
+The custom domain comes from the `CNAME` file in this repo; DNS for `lab` is a
+CNAME record to `torsor.github.io`, managed at DreamHost.
+
+To check a deploy:
+
+```sh
+gh run list --repo torsor/torsorlab --limit 3
+gh api repos/torsor/torsorlab/pages --jq '.cname, .status'
+```
