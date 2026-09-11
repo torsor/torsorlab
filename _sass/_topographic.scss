@@ -166,3 +166,14 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
     a { flex-direction: column; gap: 4px; }
   }
 }
+
+// the source-repository link under a tool's tagline
+.hero__repo {
+  margin: 18px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+
+  a { color: var(--violet); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}

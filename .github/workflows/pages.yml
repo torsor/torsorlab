@@ -1,12 +1,12 @@
 # Deploy to GitHub Pages.
 #
-# INERT ON PURPOSE: manual dispatch only, so nothing publishes by accident.
-# To go live at lab.torsor.org: add `push: {branches: [main]}` to `on:`, enable
-# Pages (source: GitHub Actions) in the repo settings, and point a CNAME record
-# for lab at <owner>.github.io.
+# Publishes lab.torsor.org on every push to main. The CNAME file in the repo
+# root sets the custom domain; DNS for `lab` must CNAME to torsor.github.io.
 
 name: pages
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

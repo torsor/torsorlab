@@ -14,6 +14,7 @@ pass BUILD=1) and run again.
 """
 
 import argparse
+import os
 import pathlib
 import shutil
 import subprocess
@@ -24,9 +25,9 @@ MANUALS = ["write-paper-guide", "write-critical-guide", "write-review-and-repair
 
 SITE = pathlib.Path(__file__).resolve().parent.parent
 DEST_ROOT = SITE / "tools" / "torsor-writing"
-DEFAULT_SRC = pathlib.Path(
-    "/Users/dkrashen/Library/CloudStorage/Dropbox/lab/software/torsor-writing/guides"
-)
+# Where the manuals are authored. This is a local path that differs per machine,
+# so it is not hard-coded here: set TORSOR_GUIDES, or pass --from / GUIDES=.
+ENV_VAR = "TORSOR_GUIDES"
 
 
 def newest_source(guide: pathlib.Path) -> float:
@@ -36,12 +37,18 @@ def newest_source(guide: pathlib.Path) -> float:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--from", dest="src", type=pathlib.Path, default=DEFAULT_SRC,
-                    help="the guides directory holding the built manuals")
+    ap.add_argument("--from", dest="src", type=pathlib.Path,
+                    default=pathlib.Path(os.environ[ENV_VAR]) if os.environ.get(ENV_VAR) else None,
+                    help="the guides directory holding the built manuals "
+                         f"(default: ${ENV_VAR})")
     ap.add_argument("--build", action="store_true",
                     help="run each guide's own `make html pdf` before copying")
     args = ap.parse_args()
 
+    if args.src is None:
+        print(f"set {ENV_VAR} to the guides directory, or pass --from / "
+              f"`make manuals GUIDES=...`", file=sys.stderr)
+        return 1
     if not args.src.is_dir():
         print(f"guides directory not found: {args.src}", file=sys.stderr)
         return 1

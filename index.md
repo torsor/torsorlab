@@ -1,7 +1,7 @@
 ---
 layout: home
 eyebrow: an AI lab for mathematical work
-headline: a lab with no clear point
+headline: a lab (without a point?)
 lede: >-
   torsorlab is a place where we are exploring some of the uses of AI to increase human
   understanding, while we simultaneously explore what we might mean by this. as a first
