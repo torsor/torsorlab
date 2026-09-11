@@ -11,7 +11,7 @@ layout: base
     <img class="hero__art" src="{{ '/assets/img/contour-hero.svg' | relative_url }}" alt="">
     <div class="hero__body">
       <p class="eyebrow">
-        Tool
+        tool
         {%- if page.status != 'released' %} · <span style="color:var(--coral)">{{ page.status }}</span>{% endif -%}
       </p>
       <h1>{{ page.title }}</h1>
@@ -24,7 +24,7 @@ layout: base
   {%- if docs.size > 0 -%}
   <section class="band">
     <div class="band__head">
-      <p class="eyebrow">Documentation</p>
+      <p class="eyebrow">documentation</p>
       <h2>{{ docs.size }} pages</h2>
     </div>
     <ul class="doc-list">

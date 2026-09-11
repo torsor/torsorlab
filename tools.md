@@ -1,9 +1,9 @@
 ---
 layout: page
 permalink: /tools/
-title: Tools
-eyebrow: The lab
-lede: Three tools. One is public; two are on the way.
+title: tools
+eyebrow: the lab
+lede: three tools. one is public; two are on the way.
 ---
 
 <div class="cards">

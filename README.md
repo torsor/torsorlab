@@ -9,6 +9,8 @@ make check    # build, then assert the collections are wired correctly
 make art      # regenerate assets/img/*.svg
 ```
 
+Voice and tone rules live in `AGENTS.md` — read that before writing site prose.
+
 ## Where to edit what
 
 | You want to change | Edit |
