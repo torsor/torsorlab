@@ -28,8 +28,8 @@ a Claude Code skill. point it at one mathematical paper and it runs the two skil
 above end to end: first it examines the paper and grades the potential issues in it,
 then it works out the repairs and marks them into a copy of the source.
 
-finding what is wrong with a paper is the part everybody talks about. working out
-what would fix it is the part that takes the afternoon.
+finding the potential issues in a paper is the part everybody talks about. working
+out what would resolve them is the part that takes the afternoon.
 
 you have found the gap in section 4. now: is it fillable? with what hypothesis?
 does adding that hypothesis break example 3.7? does it change what theorem 1.1 is

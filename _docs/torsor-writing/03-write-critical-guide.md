@@ -5,7 +5,7 @@ slug: write-critical-guide
 permalink: /tools/torsor-writing/write-critical-guide/
 order: 3
 manual: true
-summary: a skill to take one mathematical paper, and write up everything questionable in it, indexed and analyzed.
+summary: a skill to take one mathematical paper, and catalog the potential issues in it, indexed and analyzed.
 notes:
   - title: findings, never a disposition
     text: >-
@@ -25,9 +25,9 @@ notes:
 ---
 
 a Claude Code skill. point it at one mathematical paper and it reads the paper and
-writes up everything questionable in it — each finding located in the source,
-graded by consequence, and tested against attempts to refute it before it is
-written down. it reaches no verdict; that part stays yours.
+catalogs the potential issues in it — each one located in the source, graded by
+consequence, and tested against attempts to refute it before it is written down.
+it reaches no verdict; that part stays yours.
 
 here is the work it is doing for you. you said yes to refereeing a paper, and the
 paper is fifty pages long, and three
@@ -37,7 +37,7 @@ to build on a result and would like to know, before spending a year on it,
 whether the result is actually there.
 
 the labor is the same in all three cases and it is mostly invisible. read the
-paper closely enough to find what is wrong with it. check that the cited lemma
+paper closely enough to find the potential issues in it. check that the cited lemma
 says what the paper uses it for. work out whether the gap in section 4 is a gap
 or a compression. and then — the part that costs the most and shows the least —
 convince yourself that each thing you are about to call an error really is one,

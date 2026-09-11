@@ -20,6 +20,20 @@ frames the work as a ledger. the one use lives on the about page. everywhere
 else, say what we are doing and who is doing it, and let attribution follow from
 that. "collaboration", "together", "with" do most of the work.
 
+**never advertise judgements about anyone's work.** the review skills find
+*potential issues*; they do not find what is wrong with a paper. write "catalog
+the potential issues", not "write up everything questionable"; "suggested
+changes", not "the repairs"; "potential issues", not "problems" or "defects" or
+"errors". the skills themselves are careful about this — the critical guide
+reaches no verdict and the repair stage proposes rather than applies — and the
+site must not claim more than they do.
+
+the exception is prose that argues *for* restraint: "a defect reported that is
+not there costs the authors weeks" and "a preference is never reported as an
+error" both describe what the skill refuses to do, and softening them would
+weaken the point. the test is whether the sentence asserts something about a
+paper, or describes the care taken before asserting anything.
+
 **say what a thing is, not what it is not.** prefer the concrete. a tool
 description should tell a reader what they can do with it.
 
