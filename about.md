@@ -10,7 +10,7 @@ lede: >-
 ## what
 
 torsorlab is our name for the collaborative process involving agentic AI running on
-various machines maintained by Danny Krashen.
+various machines maintained by <a href="https://dkrashen.org">Danny Krashen</a>.
 
 ## why
 our goal is to understand how agentic AI can help human understanding in mathematics, to
