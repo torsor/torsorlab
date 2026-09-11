@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-paper-repairs
 permalink: /tools/torsor-writing/write-paper-repairs/
 order: 4
-summary: a skill to take the problems a critical guide found, and write the repairs into a copy of the paper's own source.
+summary: a skill to take the problems a critical guide found, and write the suggested changes into a copy of the paper's own source.
 notes:
   - title: it needs a critical guide first
     text: >-

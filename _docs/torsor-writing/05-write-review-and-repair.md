@@ -5,7 +5,7 @@ slug: write-review-and-repair
 permalink: /tools/torsor-writing/write-review-and-repair/
 order: 5
 manual: true
-summary: a skill to take one mathematical paper, find what is wrong with it, and mark up the repairs.
+summary: a skill to take one mathematical paper, find potential issues, and mark up the repairs.
 notes:
   - title: written is not accepted
     text: >-
@@ -25,7 +25,7 @@ notes:
 ---
 
 a Claude Code skill. point it at one mathematical paper and it runs the two skills
-above end to end: first it examines the paper and grades what is wrong with it,
+above end to end: first it examines the paper and grades the potential issues in it,
 then it works out the repairs and marks them into a copy of the source.
 
 finding what is wrong with a paper is the part everybody talks about. working out
