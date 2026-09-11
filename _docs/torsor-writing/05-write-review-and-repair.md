@@ -5,7 +5,7 @@ slug: write-review-and-repair
 permalink: /tools/torsor-writing/write-review-and-repair/
 order: 5
 manual: true
-summary: examine a paper, then work out and mark up the repairs — the two stages run end to end.
+summary: a skill to take one mathematical paper, find what is wrong with it, and mark up the repairs.
 notes:
   - title: written is not accepted
     text: >-
@@ -24,6 +24,10 @@ notes:
       corrected version skips the step the whole pipeline is built around.
 ---
 
+a Claude Code skill. point it at one mathematical paper and it runs the two skills
+above end to end: first it examines the paper and grades what is wrong with it,
+then it works out the repairs and marks them into a copy of the source.
+
 finding what is wrong with a paper is the part everybody talks about. working out
 what would fix it is the part that takes the afternoon.
 
@@ -31,8 +35,6 @@ you have found the gap in section 4. now: is it fillable? with what hypothesis?
 does adding that hypothesis break example 3.7? does it change what theorem 1.1 is
 claiming? and once you have decided all that, where exactly in fifty pages of
 someone else's LaTeX do the sentences go?
-
-`write-review-and-repair` runs both halves.
 
 ## two stages, one handoff
 

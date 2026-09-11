@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-paper-repairs
 permalink: /tools/torsor-writing/write-paper-repairs/
 order: 4
-summary: repairs for the issues a critical guide found, written into the paper's own source as tracked changes.
+summary: a skill to take the problems a critical guide found, and write the repairs into a copy of the paper's own source.
 notes:
   - title: it needs a critical guide first
     text: >-
@@ -16,9 +16,10 @@ notes:
       between the two is the subject of most of the skill.
 ---
 
-works out the mathematics that closes each issue a critical guide found, audits
-every repair adversarially, and writes the ones the paper itself *forces* into a
-copy of the authors' own source as tracked changes.
+a Claude Code skill. point it at a paper that already has a critical guide and it
+works out the mathematics that closes each issue that guide found, audits every
+repair adversarially, and writes the ones the paper itself *forces* into a copy of
+the authors' own source as tracked changes.
 
 what comes back is a corrected source that compiles two ways — changes marked up
 for review, or silently in place — plus the repairs that were worked out but not

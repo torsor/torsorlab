@@ -7,16 +7,13 @@ repo: https://github.com/torsor/claude-plugins
 order: 1
 ---
 
+## getting it
+
 a Claude Code plugin. each skill writes a document in the torsor house format —
 LaTeX source, with PDF, HTML, EPUB, and Markdown output — in the torsor design
 and prose style.
 
-the skills used to read the prose library, reference templates, a style preamble,
-and `tex2torsor` by absolute path on one machine. here those are vendored into the
-plugin and referenced through `${CLAUDE_PLUGIN_ROOT}`, so nothing is tied to a
-particular box.
-
-## install
+### install
 
 ```sh
 claude plugin marketplace add https://github.com/torsor/claude-plugins
@@ -26,7 +23,12 @@ claude plugin list
 
 all eleven `/write-…` skills are then available on that machine.
 
-## build prerequisites
+the skills used to read the prose library, reference templates, a style preamble,
+and `tex2torsor` by absolute path on one machine. here those are vendored into the
+plugin and referenced through `${CLAUDE_PLUGIN_ROOT}`, so nothing is tied to a
+particular box.
+
+### build prerequisites
 
 the skills author and reference everything themselves, but *building* a document
 needs these on the box that runs `make`:

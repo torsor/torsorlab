@@ -6,6 +6,9 @@ layout: base
   `tool == page.slug`, so adding a doc page is dropping a file in _docs/<slug>/.
 {%- endcomment -%}
 {%- assign docs = site.docs | where: 'tool', page.slug | sort: 'order' -%}
+{%- comment -%} order 0 is the overview: a map, not a skill, so it is listed apart {%- endcomment -%}
+{%- assign overview = docs | where: 'order', 0 | first -%}
+{%- assign skills = docs | where_exp: 'd', 'd.order > 0' -%}
 <main class="frame page">
   <section class="hero">
     <img class="hero__art" src="{{ '/assets/img/contour-hero.svg' | relative_url }}" alt="">
@@ -22,16 +25,18 @@ layout: base
     </div>
   </section>
 
-  <section class="band measure">{{ content }}</section>
-
-  {%- if docs.size > 0 -%}
+  {%- comment -%} the skills are the point, so they come first {%- endcomment -%}
+  {%- if skills.size > 0 -%}
   <section class="band">
     <div class="band__head">
-      <p class="eyebrow">documentation</p>
-      <h2>{{ docs.size }} pages</h2>
+      <p class="eyebrow">the skills</p>
+      <h2>what each one does</h2>
+      {%- if overview -%}
+        <p class="band__note">new here? <a href="{{ overview.url | relative_url }}">{{ overview.summary }}</a></p>
+      {%- endif -%}
     </div>
     <ul class="doc-list">
-      {%- for doc in docs -%}
+      {%- for doc in skills -%}
       <li>
         <a href="{{ doc.url | relative_url }}">
           <span class="doc-list__name">{{ doc.title }}</span>
@@ -42,4 +47,6 @@ layout: base
     </ul>
   </section>
   {%- endif -%}
+
+  <section class="band measure">{{ content }}</section>
 </main>

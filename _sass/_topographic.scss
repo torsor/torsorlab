@@ -89,7 +89,7 @@
 
   &__title {
     font-family: var(--font-head);
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 600;
     line-height: 1.15;
     color: var(--ink);
@@ -97,7 +97,7 @@
   }
 
   &__text {
-    font-size: 14px;
+    font-size: 15.5px;
     line-height: 1.6;
     color: var(--muted);
     margin: 0;
@@ -130,7 +130,9 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
   &--coming { color: var(--coral); }
 }
 
-// --- doc index on a tool page ----------------------------------------------
+// --- the skills list on a tool page -----------------------------------------
+// This is the point of the page, so it is set larger than body text and given
+// room: the name on its own line, the sentence under it.
 
 .doc-list {
   list-style: none;
@@ -141,39 +143,49 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
   li { border-bottom: 1px solid var(--rule-cream); }
 
   a {
-    display: flex;
-    gap: 18px;
-    align-items: baseline;
-    padding: 13px 4px;
+    display: block;
+    padding: 22px 8px;
     text-decoration: none;
+    transition: background 0.12s;
 
-    &:hover { background: var(--cream-panel); }
+    &:hover {
+      background: var(--cream-panel);
+
+      .doc-list__name { color: var(--violet); }
+    }
   }
 
   &__name {
+    display: block;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
     color: var(--ink);
-    flex: none;
-    min-width: 250px;
-
-    @media (max-width: $narrow) { min-width: 0; }
+    margin-bottom: 7px;
   }
 
-  &__summary { font-size: 14px; color: var(--muted); }
+  &__summary {
+    display: block;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 720px;
+  }
 
   @media (max-width: $narrow) {
-    a { flex-direction: column; gap: 4px; }
+    a { padding: 18px 4px; }
+
+    &__name { font-size: 16px; }
+    &__summary { font-size: 15.5px; }
   }
 }
 
-// the source-repository link under a tool's tagline
-.hero__repo {
-  margin: 18px 0 0;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.5px;
+// the "start here" line under a band heading
+.band__note {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: var(--muted);
 
-  a { color: var(--violet); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a { color: var(--violet); }
 }

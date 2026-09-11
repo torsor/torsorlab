@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-topic-guide
 permalink: /tools/torsor-writing/write-topic-guide/
 order: 6
-summary: one explanatory guide to one idea, synthesized across several sources.
+summary: a skill to take several papers or books on one topic, and write a single guide explaining it.
 notes:
   - title: scanned sources are read, not OCR'd
     text: >-
@@ -16,10 +16,14 @@ notes:
       background or by reading more — before any writing starts.
 ---
 
+a Claude Code skill. give it several sources on one topic — papers, books, theses,
+including scanned ones with no text layer — and it reads them and writes a single
+guide explaining the idea across all of them.
+
 where [write-paper-guide](../write-paper-guide/) companions **one** paper
-organized by that paper's sections, this produces a guide to **one idea across
-many sources**, organized by a conceptual spine you decide. it is for when no
-single source carries the exposition and something has to.
+organized by that paper's sections, this organizes by a conceptual spine you
+decide. it is for when no single source carries the exposition and something has
+to.
 
 four things are particular to it. **sources are pre-summarized** — each one
 distilled by a dedicated subagent, in its own context, into a structured digest

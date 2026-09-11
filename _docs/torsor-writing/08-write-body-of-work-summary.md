@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-body-of-work-summary
 permalink: /tools/torsor-writing/write-body-of-work-summary/
 order: 8
-summary: an overview of one mathematician's whole program — an essay, then a paragraph per paper.
+summary: a skill to take one mathematician's papers, and write an overview of their research program.
 notes:
   - title: purpose sets the person
     text: >-
@@ -17,11 +17,13 @@ notes:
       them and never sets them as headings.
 ---
 
+a Claude Code skill. give it one mathematician's papers and it reads them all and
+writes an overview of their research program: a two-to-three page essay on the
+program, then a short paragraph on each paper.
+
 where [write-paper-guide](../write-paper-guide/) companions one paper and
 [write-topic-guide](../write-topic-guide/) explains one idea across sources, this
-covers **one person's program across their papers**, organized by the themes
-running through the work. a two-to-three page essay on the program, then a short
-paragraph per paper.
+covers one person's work, organized by the themes running through it.
 
 it borrows the pre-summarization phase intact: each paper is distilled by a
 dedicated subagent, in its own context, into a digest under `source-notes/`, and

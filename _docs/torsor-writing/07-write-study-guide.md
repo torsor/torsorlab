@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-study-guide
 permalink: /tools/torsor-writing/write-study-guide/
 order: 7
-summary: a personalized route through a large tag-addressable corpus toward a target result.
+summary: a skill to take a target result in the Stacks project or Kerodon, and write a reading route to it.
 notes:
   - title: citation is not pedagogical dependence
     text: >-
@@ -17,11 +17,14 @@ notes:
       against a wasted book.
 ---
 
+a Claude Code skill. name a result you want to reach in a large tag-addressable
+corpus — the Stacks project, Kerodon — and a reader, and it computes a reading
+route through the corpus to that result and writes it up as a guide.
+
 where [write-topic-guide](../write-topic-guide/) must *carry* an exposition
-because no source does, a study guide's corpus — the Stacks project, Kerodon —
-already contains excellent exposition with explicit dependencies. so the guide's
-value is elsewhere: **selection, ordering, motivation, and triage**. it routes one
-named reader toward a target result.
+because no source does, this corpus already contains excellent exposition with
+explicit dependencies. so the guide's value is elsewhere: **selection, ordering,
+motivation, and triage**.
 
 four things are particular to it. **the reader profile persists** — background and
 a per-corpus *frontier*, recorded in the corpus's own coordinates, in a file that

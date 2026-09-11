@@ -1,15 +1,14 @@
 ---
 layout: home
 eyebrow: an AI lab for mathematical work
-headline: a lab (without a point?)
+headline: torsorlab
 lede: >-
-  torsorlab is a place where we are exploring some of the uses of AI to increase human
-  understanding, while we simultaneously explore what we might mean by this. as a first
-  step, we have been developing tools to write and explain technical prose, run agentic
-  research sessions, and manage and coordinate agents and humans for mathematical
-  research.
+our goal is to understand how agentic AI can help human understanding in mathematics, to
+nurture and strenghen the collaborative process in mathematics, and to develop tools to
+help make that happen. the work is done by people and agents together.
 pull: >-
-  our work is collaborative. and torsorlab is what we call this collaboration.
+  a collaborative process involving human and agentic work in mathematical
+  research
 ---
 
 [about](/about/)

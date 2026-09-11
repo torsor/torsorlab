@@ -4,15 +4,10 @@ permalink: /about/
 title: about torsorlab
 eyebrow: the lab
 lede: >-
-  a collaborative process involving human and agentic work
+  a collaborative process involving human and agentic work in mathematical
+  research
 ---
-
-## what
 
 torsorlab is our name for the collaborative process involving agentic AI running on
 various machines maintained by <a href="https://dkrashen.org">Danny Krashen</a>.
 
-## why
-our goal is to understand how agentic AI can help human understanding in mathematics, to
-nurture and strenghen the collaborative process in mathematics, and to develop tools to
-help make that happen. the work is done by people and agents together.

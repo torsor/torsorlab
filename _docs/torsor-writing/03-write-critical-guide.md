@@ -5,7 +5,7 @@ slug: write-critical-guide
 permalink: /tools/torsor-writing/write-critical-guide/
 order: 3
 manual: true
-summary: the working material a judgment gets written from — findings, located and graded, never a verdict.
+summary: a skill to take one mathematical paper, and write up everything questionable in it, located and graded.
 notes:
   - title: findings, never a disposition
     text: >-
@@ -24,7 +24,13 @@ notes:
       starts.
 ---
 
-you said yes to refereeing a paper, and the paper is fifty pages long, and three
+a Claude Code skill. point it at one mathematical paper and it reads the paper and
+writes up everything questionable in it — each finding located in the source,
+graded by consequence, and tested against attempts to refute it before it is
+written down. it reaches no verdict; that part stays yours.
+
+here is the work it is doing for you. you said yes to refereeing a paper, and the
+paper is fifty pages long, and three
 of those pages are a computation you would have to redo yourself to believe. or a
 committee has asked what you think of work outside your area. or a student wants
 to build on a result and would like to know, before spending a year on it,

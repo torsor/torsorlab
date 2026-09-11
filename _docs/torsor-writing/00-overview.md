@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: overview
 permalink: /tools/torsor-writing/overview/
 order: 0
-summary: what the eleven skills are, how they differ, and which one to reach for.
+summary: a map of the eleven skills — what each one takes in, and what it writes.
 notes:
   - title: one format
     text: >-

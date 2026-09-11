@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-workshop-state-guide
 permalink: /tools/torsor-writing/write-workshop-state-guide/
 order: 9
-summary: where live workshop work stands, on a confidence-ledger spine, dated and commit-stamped.
+summary: a skill to take a live workshop's working record, and write up where the work stands.
 notes:
   - title: labels are carried verbatim
     text: >-
@@ -15,8 +15,11 @@ notes:
       never overwrite last week's state guide. the progression has to stay visible.
 ---
 
-a docent's account of where live work stands, for a collaborator who has to steer
-it. same shape as its siblings, with five deliberate differences.
+a Claude Code skill. point it at a live workshop and it reads the room's own
+working record and writes up where the work currently stands, for a collaborator
+who has to steer it.
+
+same shape as its siblings, with five deliberate differences.
 
 the corpus is **the room's own live record** rather than external sources,
 distilled into `state-notes/`. the spine is **the confidence ledger** — solid,

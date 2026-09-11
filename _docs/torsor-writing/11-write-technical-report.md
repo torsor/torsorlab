@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-technical-report
 permalink: /tools/torsor-writing/write-technical-report/
 order: 11
-summary: a reproducible account of an experiment, written for a skeptical reader.
+summary: a skill to take an experiment's logs, outputs and artifacts, and write them into a technical report.
 notes:
   - title: the evidence ledger is a gate
     text: >-
@@ -16,10 +16,10 @@ notes:
       reproduction, capability-evaluation — the report shape is the same.
 ---
 
-turns protocols, run logs, outputs, tests, evaluator notes, interventions, and
-repository state into a reproducible account of an experiment: the question, the
-methods, the results, the validation, the failures, the limitations, and the next
-experiment.
+a Claude Code skill. give it an experiment's protocols, run logs, outputs, tests,
+evaluator notes, interventions, and repository state, and it writes them into a
+reproducible technical report: the question, the methods, the results, the
+validation, the failures, the limitations, and the next experiment.
 
 it is written for a reader who does not believe you yet. provenance is frozen
 first, then every run and artifact is audited into an evidence ledger, and the

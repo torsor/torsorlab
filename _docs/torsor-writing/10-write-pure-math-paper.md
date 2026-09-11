@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-pure-math-paper
 permalink: /tools/torsor-writing/write-pure-math-paper/
 order: 10
-summary: an original mathematics paper, built around the main result and its proof architecture.
+summary: a skill to take theorem statements, proofs and notes, and write them into a finished mathematics paper.
 notes:
   - title: the audit is a truth gate
     text: >-
@@ -16,9 +16,9 @@ notes:
       paper does not invent a repair to make a section read better.
 ---
 
-authors, organizes, or substantially rewrites an original paper or short note in
-pure mathematics, from theorem statements, proofs, research notes, computations,
-references, or an existing manuscript.
+a Claude Code skill. give it theorem statements, proofs, research notes,
+computations, references, or an existing manuscript, and it writes them into a
+finished paper or short note in pure mathematics.
 
 it audits the mathematics before writing any prose. that audit produces a theorem
 inventory, a dependency map, a record of hypotheses and notation, an attribution

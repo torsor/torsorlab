@@ -9,8 +9,8 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 17.5px;
+  line-height: 1.7;
   color: var(--prose);
   background: var(--cream);
 }
@@ -33,9 +33,9 @@ h1, h2, h3, h4 {
   margin: 2.2em 0 0.6em;
 }
 
-h1 { font-size: 40px; letter-spacing: -1px; margin-top: 0; }
-h2 { font-size: 26px; letter-spacing: -0.4px; }
-h3 { font-size: 19px; letter-spacing: -0.2px; }
+h1 { font-size: 44px; letter-spacing: -1px; margin-top: 0; }
+h2 { font-size: 28px; letter-spacing: -0.4px; }
+h3 { font-size: 21px; letter-spacing: -0.2px; }
 
 p, ul, ol { margin: 0 0 1.1em; }
 
@@ -49,7 +49,7 @@ code {
 
 pre {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14.5px;
   line-height: 1.6;
   background: var(--cream-panel);
   border: 1px solid var(--rule-cream);
@@ -63,7 +63,7 @@ pre {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 16.5px;
   margin: 0 0 1.4em;
 
   th, td {
@@ -108,8 +108,8 @@ table {
 .measure { max-width: var(--measure); }
 
 .lede {
-  font-size: 18px;
-  line-height: 1.62;
+  font-size: 20px;
+  line-height: 1.6;
   color: var(--muted);
 }
 

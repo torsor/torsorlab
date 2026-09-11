@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: write-manual
 permalink: /tools/torsor-writing/write-manual/
 order: 1
-summary: a user's manual for a project, in direct conversational prose.
+summary: a skill to take a folder containing a project, and write a user manual for it.
 notes:
   - title: the preface comes first
     text: >-
@@ -17,15 +17,18 @@ notes:
       examples.
 ---
 
-a manual for a project: what it is, how to use it, and what to do when it
+a Claude Code skill. point it at a folder containing a project and it reads what
+is there — the code, the README, whatever design notes exist — and writes a
+user's manual for it.
+
+the manual covers what the project is, how to use it, and what to do when it
 misbehaves. direct, conversational prose rather than reference documentation —
 the register of someone explaining their tool to a colleague who has just sat
 down at it.
 
 ## how it goes
 
-it reads the project first — the code, the README, whatever design notes exist —
-and proposes a chapter outline for you to approve. then it scaffolds a directory
+it proposes a chapter outline for you to approve first. then it scaffolds a directory
 from the shared commons, writes the preface, writes the chapters one at a time,
 and writes the quick-reference appendix last, once there is something to collect.
 

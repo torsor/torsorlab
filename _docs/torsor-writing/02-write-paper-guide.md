@@ -5,7 +5,7 @@ slug: write-paper-guide
 permalink: /tools/torsor-writing/write-paper-guide/
 order: 2
 manual: true
-summary: a reading companion to one paper, calibrated to one reader.
+summary: a skill to take one mathematical paper, and write a reading guide to it for a particular reader.
 notes:
   - title: calibration is the whole trick
     text: >-
@@ -24,16 +24,17 @@ notes:
       paper.
 ---
 
-there is a paper you need to understand, and reading it again is not working.
+a Claude Code skill. point it at one mathematical paper and it reads the paper and
+writes a book-length reading guide to it, calibrated to one particular reader.
+
+here is why the calibration matters. there is a paper you need to understand, and
+reading it again is not working.
 maybe the part you need is section 6, which rests on section 4, which assumes a
 construction the authors call standard. maybe you are refereeing it in three
 weeks. the paper is not the problem — the problem is the distance between what it
 assumes and what you have, and that distance is specific to you. this is why "go
 read the survey first" so often fails: a survey is written for nobody in
 particular, and you are somebody in particular.
-
-`write-paper-guide` produces a reading companion to one paper, calibrated to one
-reader.
 
 ## two parts, one reader
 
