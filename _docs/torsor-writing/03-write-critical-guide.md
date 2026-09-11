@@ -5,7 +5,7 @@ slug: write-critical-guide
 permalink: /tools/torsor-writing/write-critical-guide/
 order: 3
 manual: true
-summary: a skill to take one mathematical paper, and write up everything questionable in it, located and graded.
+summary: a skill to take one mathematical paper, and write up everything questionable in it, indexed and analyzed.
 notes:
   - title: findings, never a disposition
     text: >-

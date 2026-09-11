@@ -1,7 +1,7 @@
 ---
 title: torsor-writing
 slug: torsor-writing
-tagline: eleven writing skills for Claude Code — reading guides, critical reviews, repairs, papers and reports, each built as a self-contained book.
+tagline: eleven writing skills for Claude Code to create reading guides, critical reviews, repairs, papers and reports, from your source material, each built as a self-contained manuscript.
 status: released
 repo: https://github.com/torsor/claude-plugins
 order: 1
