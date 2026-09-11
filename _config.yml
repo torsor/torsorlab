@@ -42,5 +42,5 @@ exclude:
   - Makefile
   - README.md
   - docs/
-  - tools/
+  - bin/
   - vendor/

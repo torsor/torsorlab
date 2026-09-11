@@ -1,7 +1,7 @@
 ---
 title: torsor-writing
 slug: torsor-writing
-tagline: eleven LaTeX writing skills for Claude Code, packaged to run on any machine.
+tagline: eleven writing skills for Claude Code — reading guides, critical reviews, repairs, papers and reports, each built as a self-contained book.
 status: released
 repo: https://github.com/torsor/claude-plugins
 order: 1

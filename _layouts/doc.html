@@ -32,6 +32,19 @@ layout: base
   <main class="doc__body">
     <h1>{{ page.title }}</h1>
     {%- if page.summary %}<p class="doc__sub">{{ page.summary }}</p>{% endif -%}
+    {%- comment -%} set `manual: true` when a built manual has been synced in {%- endcomment -%}
+    {%- if page.manual -%}
+    <div class="doc-manual">
+      <p class="doc-manual__label">the full manual</p>
+      <p class="doc-manual__text">
+        this page is an orientation. the complete user's manual goes much further.
+      </p>
+      <p class="doc-manual__links">
+        <a href="{{ page.url | append: 'manual/' | relative_url }}">read it</a>
+        <a href="{{ page.url | append: 'manual/manual.pdf' | relative_url }}">pdf</a>
+      </p>
+    </div>
+    {%- endif -%}
     {{ content }}
   </main>
 

@@ -4,7 +4,7 @@
 Ported from torsor-style/style-b/Torsor-Design-B.dc.html so the site ships no
 runtime JS for artwork. Run it only when you want to retune the curves:
 
-    python3 tools/gen-art.py
+    python3 bin/gen-art.py
 
 The site build never runs this; the output is committed.
 """

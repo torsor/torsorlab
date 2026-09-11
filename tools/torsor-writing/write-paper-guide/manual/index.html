@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="manual.css" />
+
+
+</head>
+<body class="paper-texture">
+<div class="page-layout">
+
+<nav class="doc-toc" id="toc" aria-label="Table of contents">
+  <p class="kicker">Contents</p>
+  <ul>
+  <li><a href="#preface-the-paper-and-you"
+  id="toc-preface-the-paper-and-you"><span
+  class="toc-section-number">1</span> Preface: The Paper and
+  You</a></li>
+  <li><a href="#two-parts-one-reader"
+  id="toc-two-parts-one-reader"><span
+  class="toc-section-number">2</span> Two Parts, One Reader</a>
+  <ul>
+  <li><a href="#the-reader-comes-first"
+  id="toc-the-reader-comes-first"><span
+  class="toc-section-number">2.1</span> The reader comes first</a></li>
+  <li><a href="#part-i-the-overview" id="toc-part-i-the-overview"><span
+  class="toc-section-number">2.2</span> Part I — the overview</a></li>
+  <li><a href="#part-ii-the-walk-through"
+  id="toc-part-ii-the-walk-through"><span
+  class="toc-section-number">2.3</span> Part II — the
+  walk-through</a></li>
+  <li><a href="#the-appendix" id="toc-the-appendix"><span
+  class="toc-section-number">2.4</span> The appendix</a></li>
+  <li><a href="#what-it-is-not" id="toc-what-it-is-not"><span
+  class="toc-section-number">2.5</span> What it is not</a></li>
+  </ul></li>
+  <li><a href="#running-it" id="toc-running-it"><span
+  class="toc-section-number">3</span> Running It</a>
+  <ul>
+  <li><a href="#starting" id="toc-starting"><span
+  class="toc-section-number">3.1</span> Starting</a></li>
+  <li><a href="#the-reader-interview"
+  id="toc-the-reader-interview"><span
+  class="toc-section-number">3.2</span> The reader interview</a></li>
+  <li><a href="#where-it-lands" id="toc-where-it-lands"><span
+  class="toc-section-number">3.3</span> Where it lands</a></li>
+  <li><a href="#the-outline" id="toc-the-outline"><span
+  class="toc-section-number">3.4</span> The outline</a></li>
+  <li><a href="#writing-with-checkpoints"
+  id="toc-writing-with-checkpoints"><span
+  class="toc-section-number">3.5</span> Writing, with
+  checkpoints</a></li>
+  <li><a href="#running-it-without-checkpoints"
+  id="toc-running-it-without-checkpoints"><span
+  class="toc-section-number">3.6</span> Running it without
+  checkpoints</a></li>
+  </ul></li>
+  <li><a href="#what-comes-back" id="toc-what-comes-back"><span
+  class="toc-section-number">4</span> What Comes Back</a>
+  <ul>
+  <li><a href="#the-directory" id="toc-the-directory"><span
+  class="toc-section-number">4.1</span> The directory</a></li>
+  <li><a href="#building" id="toc-building"><span
+  class="toc-section-number">4.2</span> Building</a></li>
+  <li><a href="#verification" id="toc-verification"><span
+  class="toc-section-number">4.3</span> Verification</a></li>
+  <li><a href="#when-the-math-doesnt-survive"
+  id="toc-when-the-math-doesnt-survive"><span
+  class="toc-section-number">4.4</span> When the math doesn’t
+  survive</a></li>
+  <li><a href="#editing-it-afterwards"
+  id="toc-editing-it-afterwards"><span
+  class="toc-section-number">4.5</span> Editing it afterwards</a></li>
+  </ul></li>
+  <li><a href="#quick-reference" id="toc-quick-reference"><span
+  class="toc-section-number">5</span> Quick Reference</a>
+  <ul>
+  <li><a href="#invocation" id="toc-invocation"><span
+  class="toc-section-number">5.1</span> Invocation</a></li>
+  <li><a href="#make-targets" id="toc-make-targets"><span
+  class="toc-section-number">5.2</span> Make targets</a></li>
+  <li><a href="#files-in-a-guide-directory"
+  id="toc-files-in-a-guide-directory"><span
+  class="toc-section-number">5.3</span> Files in a guide
+  directory</a></li>
+  <li><a href="#structure" id="toc-structure"><span
+  class="toc-section-number">5.4</span> Structure</a></li>
+  <li><a href="#latex-conventions" id="toc-latex-conventions"><span
+  class="toc-section-number">5.5</span> LaTeX conventions</a></li>
+  <li><a href="#voices" id="toc-voices"><span
+  class="toc-section-number">5.6</span> Voices</a></li>
+  <li><a href="#words-the-house-does-not-use"
+  id="toc-words-the-house-does-not-use"><span
+  class="toc-section-number">5.7</span> Words the house does not
+  use</a></li>
+  <li><a href="#when-the-math-doesnt-render"
+  id="toc-when-the-math-doesnt-render"><span
+  class="toc-section-number">5.8</span> When the math doesn’t
+  render</a></li>
+  <li><a href="#what-has-to-be-installed"
+  id="toc-what-has-to-be-installed"><span
+  class="toc-section-number">5.9</span> What has to be
+  installed</a></li>
+  </ul></li>
+  </ul>
+</nav>
+
+<main class="doc-body prose" id="main">
+
+<div class="titlepage">
+<p>write-paper-guide</p>
+<p>A User’s Manual</p>
+<p><em>A reading companion to one mathematical paper.</em></p>
+<p>One paper, one reader, one guide.</p>
+<p><span> Last revised: 2026-09-11</span></p>
+</div>
+<div class="center">
+<p>torsor lab</p>
+<p><span><a href="https://torsor.org"> torsor.org</a></span></p>
+</div>
+<h1 data-number="1" id="preface-the-paper-and-you"><span
+class="header-section-number">1</span> Preface: The Paper and You</h1>
+<p>Let’s be honest with each other. There is a paper you need to
+understand, and reading it again is not working.</p>
+<p>Maybe it’s forty pages and the part you actually need is Section 6,
+which rests on Section 4, which assumes a construction the authors
+describe as standard. Maybe you’re refereeing it in three weeks. Maybe a
+student is presenting it in your seminar and you would rather not meet
+the hard parts at the same moment they do. Whatever brought you here,
+the paper is not the problem. The paper is fine. The problem is the
+distance between what it assumes and what you have.</p>
+<p>That distance is specific to you. A colleague two doors down would
+need a different paragraph explained, and would skim the one you need
+most. This is why ``go read the survey first” so often fails — a survey
+is written for nobody in particular, and you are somebody in
+particular.</p>
+<p><code>write-paper-guide</code> produces a reading companion to one
+paper, calibrated to one reader. The output is a book in the same design
+as this one: PDF, HTML, EPUB, and Markdown, built from LaTeX source you
+can edit. It comes in two parts. Part I orients you — what the paper is
+about, why anyone wanted it, why it is hard, what is new in it. Part II
+walks the paper itself, following its own sections and its own
+numbering, saying what carries each argument and where the difficulty
+actually lives.</p>
+<p>It writes about the paper in the third person, always. The authors
+prove; Section 3 establishes; Theorem 4.2 states. A guide is not a
+contribution and must never read like one. It explains a paper that
+already exists, and every sentence in it should be checkable against
+that paper.</p>
+<p>Three chapters follow. Chapter 1 is the shape of the thing: two
+parts, one reader, and why the calibration step is the one that decides
+whether the guide is any good. Chapter 2 is how to run it — what it asks
+you, how to answer, and how to pre-answer everything when you would
+rather it not stop. Chapter 3 is what lands on disk, how to rebuild it,
+and what to do when the math does not survive the trip to HTML. The
+appendix collects the commands and conventions worth looking up rather
+than memorizing.</p>
+<p>If there is a paper open on your desk right now, Chapter 2 is the
+one.</p>
+<h1 data-number="2" id="two-parts-one-reader"><span
+class="header-section-number">2</span> Two Parts, One Reader</h1>
+<p>A reading guide has two parts and one reader.</p>
+<p>That’s the whole model. Everything else in this manual is detail.</p>
+<h2 data-number="2.1" id="the-reader-comes-first"><span
+class="header-section-number">2.1</span> The reader comes first</h2>
+<p>Before any outline exists, the skill asks who the guide is for. Field
+and subfield, and how close that is to the paper’s area. What they
+already know against what needs developing. Why they’re reading —
+refereeing, building on it, teaching from it, a seminar, curiosity. How
+much depth they want, and how much length they’ll tolerate.</p>
+<p>Those answers are written to <code>latex/reader-profile.md</code>
+inside the guide directory, and they are the tie-breaker for every later
+decision about how much to explain. The file is not compiled into the
+book. It sits beside the source as the record of what the guide was
+calibrated to, which matters when you come back in six months and wonder
+why Chapter 1 spends four pages on a construction you find obvious.</p>
+<p>The calibration is the step that decides whether the guide is worth
+anything. A guide written for a generic reader develops the
+prerequisites that reader happens not to need and skips the one that
+actually blocks them. Answering the interview carefully costs you five
+minutes and is repaid on the first page.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The reader profile describes what someone is familiar with, never how
+good they are. ``Comfortable with derived categories, hasn’t had reason
+to use perverse sheaves” is a calibration. ``Expert” and ``beginner” are
+grades, and grades tell the guide nothing it can act on.</p>
+</div>
+<h2 data-number="2.2" id="part-i-the-overview"><span
+class="header-section-number">2.2</span> Part I — the overview</h2>
+<p>Part I answers six questions about the paper. The default is two
+chapters, but the grouping bends to fit the paper; what doesn’t bend is
+that all six get answered.</p>
+<ul>
+<li><p><strong>What it is about.</strong> Usually the longest. The
+problem, the objects, the definitions a reader needs in hand, the lay of
+the land. This is where the prerequisites the profile says are missing
+get developed.</p></li>
+<li><p><strong>Why it is interesting.</strong> Context, history, stakes.
+Who has wanted this, and what its existence changes.</p></li>
+<li><p><strong>Why it is plausible.</strong> The intuition that it
+should be true — special cases, analogies, earlier partial
+results.</p></li>
+<li><p><strong>Why it is hard.</strong> Where the difficulty actually
+lives, and why the approach you’d try first fails.</p></li>
+<li><p><strong>Why it is new.</strong> What was missing from the prior
+literature, in specific terms rather than as praise.</p></li>
+<li><p><strong>Why the authors pulled it off.</strong> The perspective,
+technique, or sustained effort that made the difference.</p></li>
+</ul>
+<p>The failure mode of Part I is generic admiration, and it is worth
+naming because it writes itself. ``The paper makes a significant
+contribution to a central problem” answers none of the six questions.
+``Previous results needed the base field to be algebraically closed, and
+the obstruction was the descent step in Section 4” answers two of
+them.</p>
+<h2 data-number="2.3" id="part-ii-the-walk-through"><span
+class="header-section-number">2.3</span> Part II — the walk-through</h2>
+<p>Part II follows the paper’s spine. A short roadmap chapter first: the
+paper’s structure at a glance, what depends on what, a reading order,
+and what to skim on a first pass. Then one chapter per major section or
+cluster of results, taking the paper in its own order.</p>
+<p>Each of those chapters does four things. It says what that part of
+the paper accomplishes. It restates the results that matter, carrying
+the paper’s own numbering. It explains how the argument is built — which
+lemma is the engine and which are bookkeeping. And it says where the
+difficulty is, so you know what to read line by line and what to take on
+faith the first time through.</p>
+<p>Restated results are set in theorem environments that print the
+paper’s own number:</p>
+<pre class="shell"><code>\begin{paperthm}[Theorem 4.2, slightly informally]
+  ...
+\end{paperthm}</code></pre>
+<p>Carrying the number is not decoration. It is what lets you check the
+guide against the paper in ten seconds, which you should do the first
+time a restatement surprises you. A paraphrase is always marked as
+one.</p>
+<h2 data-number="2.4" id="the-appendix"><span
+class="header-section-number">2.4</span> The appendix</h2>
+<p>Last comes a notation and reference card: the paper’s notation
+collected in one place, and a table mapping the guide’s chapters to the
+paper’s sections. This is the part you search rather than read, and it
+is deliberately dense so the prose chapters don’t have to be.</p>
+<h2 data-number="2.5" id="what-it-is-not"><span
+class="header-section-number">2.5</span> What it is not</h2>
+<p>A guide is not a survey. Context appears in service of this paper,
+not as a tour of the field.</p>
+<p>A guide is not original work. If a sentence reads as a new result, it
+is in the wrong document — and if the guide fills a gap the paper left,
+it says that plainly rather than quietly closing it.</p>
+<p>A guide is not a summary either. A summary gets shorter; a guide gets
+longer, because the compressed passages are exactly the ones worth
+expanding.</p>
+<h1 data-number="3" id="running-it"><span
+class="header-section-number">3</span> Running It</h1>
+<p>Point the skill at a paper and answer a few questions. The rest is a
+conversation with checkpoints.</p>
+<h2 data-number="3.1" id="starting"><span
+class="header-section-number">3.1</span> Starting</h2>
+<p>Invoke it with whatever identifies the paper — a path to a PDF, an
+arXiv identifier or URL, or enough of a citation to find it:</p>
+<pre class="shell"><code>/write-paper-guide ~/papers/descent.pdf
+/write-paper-guide arXiv:0000.00000
+/write-paper-guide the paper on heights of
+  special points that everyone cites</code></pre>
+<p>Given only a citation, it finds the paper and confirms with you that
+it has the right one before investing in a full read. Confirm carefully.
+A guide to the wrong paper is expensive in a way that is not obvious
+until page thirty.</p>
+<p>Then it reads the paper — properly, not the abstract — and does not
+start writing until it can state in one paragraph what the paper proves
+and how. If that paragraph looks wrong to you when it appears, say so
+immediately rather than waiting to see whether the guide recovers. It
+won’t.</p>
+<h2 data-number="3.2" id="the-reader-interview"><span
+class="header-section-number">3.2</span> The reader interview</h2>
+<p>Next it asks about the reader, as a short batch of questions rather
+than one at a time. Answer them for whoever will actually read the
+guide. If that’s you, say so and answer from your own position.</p>
+<p>You can skip the interview by pointing at a document instead: notes
+you already have, or a profile file for this reader if you keep them. It
+reads that, tells you how it read it, and proceeds.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Two answers do more work than the rest. <strong>Why they’re
+reading</strong> sets what counts as the point — a guide for a referee
+and a guide for a seminar speaker diverge almost immediately.
+<strong>What they already know</strong> decides how much of Part I is
+setup. Spend your effort on those two.</p>
+</div>
+<h2 data-number="3.3" id="where-it-lands"><span
+class="header-section-number">3.3</span> Where it lands</h2>
+<p>Then it proposes a location and waits. A paper sitting in its own
+folder usually gets a <code>guide/</code> subdirectory beside the PDF; a
+loose paper gets a new directory named for it, somewhere you choose.</p>
+<p>If a guide directory is already there, it looks at what’s in it and
+asks whether to extend it or start fresh. It doesn’t overwrite anything
+without asking.</p>
+<h2 data-number="3.4" id="the-outline"><span
+class="header-section-number">3.4</span> The outline</h2>
+<p>Next comes the proposed outline: the two parts, the chapters within
+them, and the appendix. This is the cheapest moment in the whole process
+to change your mind about scope, so read it properly. Merging two
+chapters here costs a sentence. Merging them after they’re written costs
+a rewrite.</p>
+<p>The voice is settled at the same time. The default is
+<code>01-direct</code>, which is the register this manual is written in
+and the one the family is tuned for. There is a more digressive
+<code>02-wandering</code> if you want it; ask for it by name at this
+point.</p>
+<h2 data-number="3.5" id="writing-with-checkpoints"><span
+class="header-section-number">3.5</span> Writing, with checkpoints</h2>
+<p>Part I is written first, in full, and shown to you before Part II
+begins. That order is deliberate: Part II inherits Part I’s framing and
+depth, so a correction made at the end of Part I is a correction to
+everything, and the same correction made later is not.</p>
+<p>Part II then arrives a chapter at a time, each one shown to you
+before the next is started. The thing worth watching across those
+checkpoints is proof depth — how much of each argument gets
+reconstructed. It’s the dial most likely to be set wrong at first, and
+the one that’s cheapest to adjust early. Say ``more detail on the
+proofs” or ``less” and it carries forward.</p>
+<p>The roadmap chapter is written early, since it frames the rest. The
+notation appendix is written last, once there’s something to
+collect.</p>
+<h2 data-number="3.6" id="running-it-without-checkpoints"><span
+class="header-section-number">3.6</span> Running it without
+checkpoints</h2>
+<p>Sometimes you don’t want a conversation. You want to come back to a
+finished guide. Pre-answer everything it would stop to ask, in one
+argument string:</p>
+<pre class="shell"><code>/write-paper-guide The paper is at
+~/papers/descent.pdf. Do not ask me anything --
+take every default and proceed. The reader is an
+active researcher in an adjacent field:
+comfortable with the general area and its
+standard machinery, familiar with the objects by
+name, but not a specialist in this corner and
+without the local folklore. They are reading in
+order to referee it, so go to proof depth and
+skip nothing -- where the paper compresses,
+reconstruct. Length: exhaustive, no budget.
+Location: ~/papers/descent/guide/.</code></pre>
+<p>That covers the paper, the reader, the purpose, the depth, the
+length, and the location, which is everything the skill would otherwise
+pause on. This is exactly how <code>write-critical-guide</code> drives
+it as a subroutine, and it is the pattern to copy when you want an
+unattended run.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>An unattended run gives up the checkpoints, and the checkpoints are
+where the depth gets corrected. If the depth comes out wrong, the fix is
+another full run, not an edit. Pre-answer when you’re confident about
+the reader and the depth; keep the checkpoints when you’re not.</p>
+</div>
+<h1 data-number="4" id="what-comes-back"><span
+class="header-section-number">4</span> What Comes Back</h1>
+<p>A guide directory is a self-contained book. You can move it, hand it
+to someone, or rebuild it on a machine that has never had the plugin
+installed.</p>
+<h2 data-number="4.1" id="the-directory"><span
+class="header-section-number">4.1</span> The directory</h2>
+<pre class="shell"><code>guide/
+  Makefile
+  check-build.py       verification, copied in
+  tex2torsor/          converter, copied in
+  latex/
+    main.tex           preamble, title, inputs
+    STYLE.md           the style guide in force
+    reader-profile.md  the calibration
+    chapters/
+      00-preface.tex
+      01-what-its-about.tex
+      ...
+      99-notation-and-reference.tex
+  html/
+  epub/
+  markdown/            build output</code></pre>
+<p>The tools are copied in rather than linked, which is why the
+directory survives a plugin update or an uninstall. It also means each
+guide carries its own copy, so a fix to the converter reaches old guides
+only if you copy it over.</p>
+<p><code>STYLE.md</code> is assembled when the guide is scaffolded: the
+format mechanics for this genre, followed by the voice file, with a
+header recording which voice was used. It is the answer to ``why is it
+written like this” and the thing to read before editing prose by
+hand.</p>
+<h2 data-number="4.2" id="building"><span
+class="header-section-number">4.2</span> Building</h2>
+<p>Four formats, four targets:</p>
+<pre class="shell"><code>make pdf    latex/main.pdf, via latexd
+make html   html/manual.html, via tex2torsor
+make epub   epub/manual.epub, via pandoc
+make md     markdown/manual.md, GFM
+make check  verify the build
+make view   build html, open it in lab-view
+make clean  remove the build output</code></pre>
+<p>The PDF is the format the design is tuned for and the one to trust.
+The others are conveniences: HTML to read on a screen or send a link to,
+EPUB for a tablet, Markdown for grep and for pasting into a message.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p><code>latexd</code> exits 0 even when LaTeX has failed, so
+<code>make pdf &amp;&amp; echo ok</code> can lie to you.
+<code>make check</code> is what catches it — it verifies the PDF exists,
+is newer than every source file, has a sane page count, and that the log
+carries no errors or undefined references. Run it. A one-page PDF where
+you expected forty is the usual shape of the failure.</p>
+</div>
+<h2 data-number="4.3" id="verification"><span
+class="header-section-number">4.3</span> Verification</h2>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p><code>latexd</code> compiles in a temporary directory and does not
+keep the LaTeX log, so after a <code>latexd</code> build
+<code>make check</code> has no log to read and fails on that alone.
+Build once with <code>latexmk</code> and the log lands in
+<code>latex/</code>, where the checker looks:</p>
+<pre class="shell"><code>latexmk -pdf -cd latex/main.tex</code></pre>
+<p>Or point the checker at a log elsewhere with its <code>--log</code>
+option.</p>
+</div>
+<p><code>make check</code> is the mechanical tier. It reports LaTeX
+errors, undefined references and citations, overfull boxes with their
+overrun in points, non-ASCII characters inside listings, and missing
+EPUB or Markdown output. Exit 0 with warnings is possible, so read the
+report rather than the exit code.</p>
+<p>Above that sits the publication pass, which is the gate the whole
+family shares. It runs the mechanical checks, then inspects a targeted
+sample of pages by eye — title page, colophon, one page per chapter,
+every page a mechanical check flagged, and the display math — and
+returns an evidence report. Not ``everything looks good”: page counts,
+specific findings with page numbers, and an explicit list of what was
+accepted as an exception. The guide is not finished until that report is
+clean.</p>
+<h2 data-number="4.4" id="when-the-math-doesnt-survive"><span
+class="header-section-number">4.4</span> When the math doesn’t
+survive</h2>
+<p>The PDF renders everything. The HTML and EPUB paths are weaker, and
+they fail quietly, which is worse than failing loudly.</p>
+<p>The converter cannot handle over-accents such as
+<code>\ widetilde</code> and <code>\overline</code>, <code>\frac</code>,
+extensible arrows, or <code>array</code> and <code>aligned</code> —
+which means commutative diagrams. What you get instead is raw TeX
+sitting in the page where an equation should be.</p>
+<p>Three fixes, applied to the guide and not to the shared
+converter:</p>
+<ul>
+<li><p><strong>EPUB:</strong> add <code>--mathml</code> to the
+<code>epub</code> target’s pandoc call. Native MathML, and it renders
+properly.</p></li>
+<li><p><strong>HTML:</strong> drop <code>inject-mathjax.py</code> at the
+guide root and add it as a post-step to the <code>html</code> target.
+MathJax renders exactly the fallback spans the converter leaves behind.
+The script is idempotent and has no build-time dependencies; the full
+text of it is in the family lessons file.</p></li>
+<li><p><strong>Notation:</strong> where even that would be awkward,
+write a renderable equivalent in the source, and note the paper’s own
+glyph once in prose and once in the appendix — a plain colimit operator
+in place of an extensible one, an isomorphism sign in place of an arrow
+with a tilde over it. All three formats then agree, at the cost of
+restating the paper’s exact glyphs once.</p></li>
+</ul>
+<p>The other thing that needs telling: if the guide uses
+<code>pitfallbox</code> — the callout for the subtlety that actually
+trips people — the converter drops it in HTML unless you pass it a
+mappings file that says how to render it. The mapping is four lines of
+YAML and lives in the family lessons.</p>
+<h2 data-number="4.5" id="editing-it-afterwards"><span
+class="header-section-number">4.5</span> Editing it afterwards</h2>
+<p>It’s LaTeX. Edit the chapter files and rebuild. Two habits worth
+keeping: don’t touch the palette, fonts, or box definitions in the
+preamble, since those are what make the family look like a family; and
+re-run <code>make check</code> after editing, because the failure you
+just introduced is the quiet kind.</p>
+<p>If you want more than an edit — a chapter added, the depth changed
+throughout — hand the guide back to the skill and say what should be
+different. It reads what’s there and works alongside it rather than
+starting over.</p>
+<h1 data-number="5" id="quick-reference"><span
+class="header-section-number">5</span> Quick Reference</h1>
+<p>Everything worth looking up rather than remembering.</p>
+<h2 data-number="5.1" id="invocation"><span
+class="header-section-number">5.1</span> Invocation</h2>
+<pre class="shell"><code>/write-paper-guide &lt;pdf path&gt;
+/write-paper-guide arXiv:&lt;id&gt;
+/write-paper-guide &lt;citation or description&gt;</code></pre>
+<p>Unattended template — pre-answers every question the skill would stop
+on:</p>
+<pre class="shell"><code>The paper is at &lt;path&gt;. Do not ask me anything --
+take every default and proceed. The reader is
+&lt;field, and how close to the paper&#39;s area&gt;: &lt;what
+they know&gt;, but &lt;what they lack&gt;. They are
+reading in order to &lt;purpose&gt;, so &lt;depth
+instruction&gt;. Length: &lt;budget or &quot;exhaustive&quot;&gt;.
+Location: &lt;path&gt;/guide/.</code></pre>
+<h2 data-number="5.2" id="make-targets"><span
+class="header-section-number">5.2</span> Make targets</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Target</strong></th>
+<th style="text-align: left;"><strong>What it does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>pdf</code></td>
+<td style="text-align: left;"><code>latex/main.pdf</code> via
+<code>latexd</code>, falling back to <code>latexmk</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>html</code></td>
+<td style="text-align: left;"><code>html/manual.html</code> via
+tex2torsor</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>epub</code></td>
+<td style="text-align: left;"><code>epub/manual.epub</code> via
+pandoc</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>md</code></td>
+<td style="text-align: left;"><code>markdown/manual.md</code>,
+GitHub-Flavored Markdown</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>check</code></td>
+<td style="text-align: left;">run <code>check-build.py</code>: log scan,
+freshness, format checks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>view</code></td>
+<td style="text-align: left;">build HTML and open it in
+<code>lab-view</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clean</code></td>
+<td style="text-align: left;">remove <code>html/</code>,
+<code>epub/</code>, <code>markdown/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.3" id="files-in-a-guide-directory"><span
+class="header-section-number">5.3</span> Files in a guide directory</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Path</strong></th>
+<th style="text-align: left;"><strong>What it is</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>latex/main.tex</code></td>
+<td style="text-align: left;">preamble, title page, chapter inputs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>latex/STYLE.md</code></td>
+<td style="text-align: left;">base mechanics + voice; records the
+voice</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>latex/reader-profile.md</code></td>
+<td style="text-align: left;">the calibration; not compiled</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>latex/chapters/</code></td>
+<td style="text-align: left;">one <code>.tex</code> per chapter</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>check-build.py</code></td>
+<td style="text-align: left;">verification, copied in</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tex2torsor/</code></td>
+<td style="text-align: left;">HTML converter, copied in</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>html/</code>,
+<code>epub/</code></td>
+<td style="text-align: left;">build output; gitignored</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>markdown/</code></td>
+<td style="text-align: left;">build output; gitignored</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.4" id="structure"><span
+class="header-section-number">5.4</span> Structure</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Part</strong></th>
+<th style="text-align: left;"><strong>Contents</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Preface</td>
+<td style="text-align: left;">what the paper is, how to use the
+guide</td>
+</tr>
+<tr>
+<td style="text-align: left;">Part I</td>
+<td style="text-align: left;">the six questions, usually in two
+chapters</td>
+</tr>
+<tr>
+<td style="text-align: left;">Part II</td>
+<td style="text-align: left;">roadmap, then one chapter per major
+section of the paper</td>
+</tr>
+<tr>
+<td style="text-align: left;">Appendix</td>
+<td style="text-align: left;">notation card, plus chapter-to-section
+map</td>
+</tr>
+</tbody>
+</table>
+<p>The six questions of Part I: what it is about; why it is interesting;
+why it is plausible; why it is hard; why it is new; why the authors were
+able to pull it off.</p>
+<h2 data-number="5.5" id="latex-conventions"><span
+class="header-section-number">5.5</span> LaTeX conventions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Macro or environment</strong></th>
+<th style="text-align: left;"><strong>Use</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>\code{}</code></td>
+<td style="text-align: left;">inline command, file, field, or flag
+name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lstlisting</code></td>
+<td style="text-align: left;">multi-line code; ASCII only</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>notebox</code></td>
+<td style="text-align: left;">something a reader might genuinely
+miss</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>warnbox</code></td>
+<td style="text-align: left;">real harm: data loss, a build that
+lies</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pitfallbox</code></td>
+<td style="text-align: left;">the subtlety that actually trips
+readers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paperthm</code></td>
+<td style="text-align: left;">restate a theorem, carrying the paper’s
+number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paperdefn</code></td>
+<td style="text-align: left;">likewise, a definition</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paperlem</code></td>
+<td style="text-align: left;">likewise, a lemma</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paperprop</code></td>
+<td style="text-align: left;">likewise, a proposition</td>
+</tr>
+</tbody>
+</table>
+<p>Restatements always carry the paper’s own number in the optional
+argument:</p>
+<pre class="shell"><code>\begin{paperthm}[Theorem 4.2, slightly informally]</code></pre>
+<h2 data-number="5.6" id="voices"><span
+class="header-section-number">5.6</span> Voices</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Voice</strong></th>
+<th style="text-align: left;"><strong>Register</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>01-direct</code></td>
+<td style="text-align: left;">the default and the proven one: direct,
+dry, leads with the point</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>02-wandering</code></td>
+<td style="text-align: left;">experimental; digressive, several lines of
+thought braided</td>
+</tr>
+</tbody>
+</table>
+<p>Ask for a non-default voice when the outline is confirmed. The choice
+is recorded in <code>reader-profile.md</code> and in the
+<code>STYLE.md</code> header.</p>
+<h2 data-number="5.7" id="words-the-house-does-not-use"><span
+class="header-section-number">5.7</span> Words the house does not
+use</h2>
+<p><em>Utilize</em> (use ``use”), <em>leverage</em>, <em>seamless</em>,
+<em>robust</em>, <em>powerful</em>, <em>simple</em>, <em>easy</em>,
+<em>straightforward</em>, <em>clean</em>, <em>load-bearing</em>. Also
+<em>we prove</em> and <em>our result</em>, which belong to the paper and
+not to a guide; <em>elegant</em> and <em>beautiful</em> as filler; and
+any throat-clearing that opens a section without saying anything.</p>
+<p>Numbers: spell out one through nine, numerals for 10 and above, and
+always numerals for theorem, section, equation, page, and reference
+numbers.</p>
+<h2 data-number="5.8" id="when-the-math-doesnt-render"><span
+class="header-section-number">5.8</span> When the math doesn’t
+render</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Symptom</strong></th>
+<th style="text-align: left;"><strong>Fix</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">EPUB shows raw TeX</td>
+<td style="text-align: left;">add <code>--mathml</code> to the
+<code>epub</code> pandoc call</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTML shows raw TeX</td>
+<td style="text-align: left;">add <code>inject-mathjax.py</code> as a
+post-step to <code>html</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Diagrams and over-accents lost</td>
+<td style="text-align: left;">write renderable notation; note the
+paper’s glyph in prose</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pitfallbox</code> gone in HTML</td>
+<td style="text-align: left;">pass a mappings YAML to the converter with
+<code>-c</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">PDF is one page, build ``succeeded”</td>
+<td style="text-align: left;"><code>latexd</code> lied; read
+<code>latex/main.log</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make check</code> finds no log</td>
+<td style="text-align: left;"><code>latexd</code> discards it; build
+once with <code>latexmk</code></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.9" id="what-has-to-be-installed"><span
+class="header-section-number">5.9</span> What has to be installed</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Tool</strong></th>
+<th style="text-align: left;"><strong>Needed for</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>pdflatex</code></td>
+<td style="text-align: left;">the PDF; with ebgaramond, cabin,
+microtype, mdframed, titlesec, fancyhdr, listings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>latexmk</code></td>
+<td style="text-align: left;">driving the PDF build (<code>latexd</code>
+wraps it)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pandoc</code></td>
+<td style="text-align: left;">HTML, EPUB, and Markdown</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>python3</code></td>
+<td style="text-align: left;">the converter and
+<code>check-build.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lab-view</code></td>
+<td style="text-align: left;">optional; only <code>make view</code> uses
+it</td>
+</tr>
+</tbody>
+</table>
+</main>
+
+</div>
+</body>
+</html>

@@ -36,7 +36,15 @@ two things worth knowing before you write:
 
 - run `make check` before committing. it asserts the collections are wired
   correctly.
-- the doc pages are deliberately minimal right now. the fuller shape (what it
+- three doc pages are manual-backed and verbose; the other eight are drawn from
+  the plugin's `SKILL.md` files and are shorter on purpose. when a fourth manual
+  is written, add it to `MANUALS` in `bin/sync-manuals.py` and set
+  `manual: true` on its doc page.
+- the manuals are books written in the house voice, which is *not* this site's
+  voice. do not lowercase them or edit them here — they are copied in from
+  `guides/`, and an edit made here is lost on the next `make manuals`.
+- the older note still holds for anything not yet covered: doc pages are
+  deliberately minimal right now. the fuller shape (what it
   writes / who for / prerequisites / a worked invocation / marginalia) is
   supported by the layout whenever the prose arrives — you do not need to
   restructure anything to grow one.

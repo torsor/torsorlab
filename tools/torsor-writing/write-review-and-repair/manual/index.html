@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="manual.css" />
+
+
+</head>
+<body class="paper-texture">
+<div class="page-layout">
+
+<nav class="doc-toc" id="toc" aria-label="Table of contents">
+  <p class="kicker">Contents</p>
+  <ul>
+  <li><a href="#preface-fixing-is-the-other-half"
+  id="toc-preface-fixing-is-the-other-half"><span
+  class="toc-section-number">1</span> Preface: Fixing Is the Other
+  Half</a></li>
+  <li><a href="#two-stages-one-handoff"
+  id="toc-two-stages-one-handoff"><span
+  class="toc-section-number">2</span> Two Stages, One Handoff</a>
+  <ul>
+  <li><a href="#the-shape" id="toc-the-shape"><span
+  class="toc-section-number">2.1</span> The shape</a></li>
+  <li><a href="#the-handoff-is-on-disk"
+  id="toc-the-handoff-is-on-disk"><span
+  class="toc-section-number">2.2</span> The handoff is on disk</a></li>
+  <li><a href="#written-is-not-accepted"
+  id="toc-written-is-not-accepted"><span
+  class="toc-section-number">2.3</span> Written is not accepted</a></li>
+  <li><a href="#reuse-dont-rebuild" id="toc-reuse-dont-rebuild"><span
+  class="toc-section-number">2.4</span> Reuse, don’t rebuild</a></li>
+  </ul></li>
+  <li><a href="#running-it" id="toc-running-it"><span
+  class="toc-section-number">3</span> Running It</a>
+  <ul>
+  <li><a href="#stage-one-in-brief" id="toc-stage-one-in-brief"><span
+  class="toc-section-number">3.1</span> Stage one, in brief</a></li>
+  <li><a href="#what-stage-two-checks-before-starting"
+  id="toc-what-stage-two-checks-before-starting"><span
+  class="toc-section-number">3.2</span> What stage two checks before
+  starting</a></li>
+  <li><a href="#triage-before-any-mathematics"
+  id="toc-triage-before-any-mathematics"><span
+  class="toc-section-number">3.3</span> Triage, before any
+  mathematics</a></li>
+  <li><a href="#working-out-the-repairs"
+  id="toc-working-out-the-repairs"><span
+  class="toc-section-number">3.4</span> Working out the repairs</a></li>
+  <li><a href="#the-audit" id="toc-the-audit"><span
+  class="toc-section-number">3.5</span> The audit</a></li>
+  <li><a href="#apply-propose-or-escalate"
+  id="toc-apply-propose-or-escalate"><span
+  class="toc-section-number">3.6</span> Apply, propose, or
+  escalate</a></li>
+  <li><a href="#two-builds" id="toc-two-builds"><span
+  class="toc-section-number">3.7</span> Two builds</a></li>
+  <li><a href="#corrections-flow-back"
+  id="toc-corrections-flow-back"><span
+  class="toc-section-number">3.8</span> Corrections flow back</a></li>
+  </ul></li>
+  <li><a href="#reading-what-comes-back"
+  id="toc-reading-what-comes-back"><span
+  class="toc-section-number">4</span> Reading What Comes Back</a>
+  <ul>
+  <li><a href="#what-is-on-disk" id="toc-what-is-on-disk"><span
+  class="toc-section-number">4.1</span> What is on disk</a></li>
+  <li><a href="#the-three-states" id="toc-the-three-states"><span
+  class="toc-section-number">4.2</span> The three states</a></li>
+  <li><a href="#answering-by-tag" id="toc-answering-by-tag"><span
+  class="toc-section-number">4.3</span> Answering by tag</a></li>
+  <li><a href="#what-the-markup-cannot-do"
+  id="toc-what-the-markup-cannot-do"><span
+  class="toc-section-number">4.4</span> What the markup cannot
+  do</a></li>
+  <li><a href="#what-cannot-be-repaired-at-all"
+  id="toc-what-cannot-be-repaired-at-all"><span
+  class="toc-section-number">4.5</span> What cannot be repaired at
+  all</a></li>
+  <li><a href="#if-a-stage-stops-short"
+  id="toc-if-a-stage-stops-short"><span
+  class="toc-section-number">4.6</span> If a stage stops short</a></li>
+  </ul></li>
+  <li><a href="#quick-reference" id="toc-quick-reference"><span
+  class="toc-section-number">5</span> Quick Reference</a>
+  <ul>
+  <li><a href="#invocation" id="toc-invocation"><span
+  class="toc-section-number">5.1</span> Invocation</a></li>
+  <li><a href="#the-pipeline" id="toc-the-pipeline"><span
+  class="toc-section-number">5.2</span> The pipeline</a></li>
+  <li><a href="#stage-twos-preconditions"
+  id="toc-stage-twos-preconditions"><span
+  class="toc-section-number">5.3</span> Stage two’s
+  preconditions</a></li>
+  <li><a href="#dispositions" id="toc-dispositions"><span
+  class="toc-section-number">5.4</span> Dispositions</a></li>
+  <li><a href="#markup-states" id="toc-markup-states"><span
+  class="toc-section-number">5.5</span> Markup states</a></li>
+  <li><a href="#markup-commands" id="toc-markup-commands"><span
+  class="toc-section-number">5.6</span> Markup commands</a></li>
+  <li><a href="#markup-rules-that-came-out-of-real-use"
+  id="toc-markup-rules-that-came-out-of-real-use"><span
+  class="toc-section-number">5.7</span> Markup rules that came out of
+  real use</a></li>
+  <li><a href="#builds" id="toc-builds"><span
+  class="toc-section-number">5.8</span> Builds</a></li>
+  <li><a href="#outputs" id="toc-outputs"><span
+  class="toc-section-number">5.9</span> Outputs</a></li>
+  <li><a href="#adopting-a-proposal-later"
+  id="toc-adopting-a-proposal-later"><span
+  class="toc-section-number">5.10</span> Adopting a proposal
+  later</a></li>
+  <li><a href="#known-limits" id="toc-known-limits"><span
+  class="toc-section-number">5.11</span> Known limits</a></li>
+  </ul></li>
+  </ul>
+</nav>
+
+<main class="doc-body prose" id="main">
+
+<div class="titlepage">
+<p>write-review-and-repair</p>
+<p>A User’s Manual</p>
+<p><em>The examine-then-repair pipeline, end to end.</em></p>
+<p>Examine it, then repair it.</p>
+<p><span> Last revised: 2026-09-11</span></p>
+</div>
+<div class="center">
+<p>torsor lab</p>
+<p><span><a href="https://torsor.org"> torsor.org</a></span></p>
+</div>
+<h1 data-number="1" id="preface-fixing-is-the-other-half"><span
+class="header-section-number">1</span> Preface: Fixing Is the Other
+Half</h1>
+<p>Let’s be honest with each other. Finding what’s wrong with a paper is
+the part everybody talks about. Working out what would fix it is the
+part that takes the afternoon.</p>
+<p>You’ve found the gap in Section 4. Now: is it fillable? With what
+hypothesis? Does adding that hypothesis break Example 3.7? Does it
+change what Theorem 1.1 is claiming? And once you’ve decided all that,
+where exactly in fifty pages of someone else’s LaTeX do the sentences
+go?</p>
+<p><code>write-review-and-repair</code> runs both halves.</p>
+<p>First, <code>write-critical-guide</code> examines the paper and
+produces a graded, located ledger of issues. Then
+<code>write-paper-repairs</code> takes that ledger, works out the
+mathematics that closes each gap, audits every repair adversarially, and
+writes the ones the paper itself forces into a copy of the authors’ own
+source as tracked changes.</p>
+<p>What comes back is a corrected source that compiles two ways —
+changes marked up for review, or silently in place — plus the repairs
+that were worked out but not adopted, shown in position so you can
+browse them, plus a report of what no repair reaches.</p>
+<p>Nothing is applied silently, and nothing is decided for you. A repair
+goes in only when it is <em>forced</em>: when there is exactly one way
+to make the text consistent with what the paper already demonstrably
+contains. Everything else is proposed, tagged, and left for you to
+accept or reject one at a time.</p>
+<p>The pipeline itself is thin. It sequences two skills that already run
+unattended and already share a handoff on disk, and it carries no
+examination or repair judgment of its own. That’s deliberate — the
+interesting parts belong to the stages, and the orchestrator’s whole job
+is to run them in order and check that the handoff between them is
+real.</p>
+<p>Three chapters. Chapter 1 is the two-stage shape and why the handoff
+lives on disk. Chapter 2 is running it, with the repair stage covered at
+working depth — how it triages, what it will and won’t write into your
+paper, and why it applies so few. Chapter 3 is how to read what comes
+back and how to adopt more of it. The appendix has the markup commands
+and the build lines.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The examination stage has its own manual, and this one doesn’t repeat
+it. If you want the sweeps, the refutation pass, and the ledger schema,
+read <em>write-critical-guide: A User’s Manual</em> alongside this.</p>
+</div>
+<h1 data-number="2" id="two-stages-one-handoff"><span
+class="header-section-number">2</span> Two Stages, One Handoff</h1>
+<p>Examine, then repair. Two skills, run in order, talking to each other
+through a file.</p>
+<h2 data-number="2.1" id="the-shape"><span
+class="header-section-number">2.1</span> The shape</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Stage</strong></th>
+<th style="text-align: left;"><strong>What it does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>write-critical-guide</code></td>
+<td style="text-align: left;">reads the paper and produces a
+<code>critical-guide/</code> package in the paper’s folder: a graded,
+located issue ledger, annotated sources, and a typeset guide. It
+surfaces and grades issues; it reaches no verdict.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>write-paper-repairs</code></td>
+<td style="text-align: left;">consumes that package, works out the
+mathematics, and writes the forced repairs into a copy of the paper’s
+own source as tracked changes. It shows the repairs it did not adopt in
+position, and reports what cannot be repaired. It repairs; it does not
+decide what the paper should claim.</td>
+</tr>
+</tbody>
+</table>
+<p>Each stage runs unattended and each is useful on its own. The
+pipeline exists because running them back to back is what you usually
+want, and because the handoff between them has a failure mode worth
+checking every time.</p>
+<h2 data-number="2.2" id="the-handoff-is-on-disk"><span
+class="header-section-number">2.2</span> The handoff is on disk</h2>
+<p>Stage one writes <code>critical-guide/issues.yaml</code>. Stage two
+reads it. That’s the entire interface.</p>
+<p>Which means the orchestrator holds almost no state. Once stage one
+returns, the only thing carried into stage two is <em>where the package
+landed</em>. Everything else can be discarded, and that is what keeps
+the pipeline light enough to run over a long paper without the context
+of the examination crowding out the repairs.</p>
+<p>It also means the stages compose in other ways. You can examine a
+paper today and repair it next month. You can examine it, read the
+guide, decide the findings are wrong, and never repair it at all. You
+can point stage two at a package that stage one produced in a different
+session on a different machine.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Because the handoff is a file, it can be stale. If the authors post a
+new version, or the source is edited between the two stages, the
+ledger’s anchors stop matching and the repairs get aimed at passages
+that no longer exist. Stage two checks this before doing anything and
+stops if it fails — but the check belongs to stage two, and running the
+pipeline end to end is what makes the ledger as fresh as it will ever
+be.</p>
+</div>
+<p>Between the stages, the pipeline confirms two things: that stage
+one’s package directory is there, and that it holds
+<code>issues.yaml</code>. If either is missing or partial it stops and
+reports rather than running repairs against a half-written ledger.
+Repairs aimed at issues that were never recorded are worse than no
+repairs.</p>
+<h2 data-number="2.3" id="written-is-not-accepted"><span
+class="header-section-number">2.3</span> Written is not accepted</h2>
+<p>The one framing that matters, and the one most likely to be lost when
+the pipeline is run unattended and you read the result three days
+later.</p>
+<p>Stage two’s output is a <em>marked-up</em> build. Proposed changes
+are shown in position. Nothing has been applied to the paper. Running
+both stages back to back does not adopt anything — the person reading
+the result decides, tag by tag.</p>
+<p>Even the repairs that <em>are</em> applied to the working copy are
+applied to a copy. The original source is never modified.</p>
+<h2 data-number="2.4" id="reuse-dont-rebuild"><span
+class="header-section-number">2.4</span> Reuse, don’t rebuild</h2>
+<p>If a <code>critical-guide/</code> package already exists for the
+paper, the pipeline uses it and goes straight to repairs. Examination is
+the expensive half and there is no reason to pay for it twice.</p>
+<p>Say explicitly that you want it regenerated if the paper has changed
+since the package was made — otherwise the old ledger is what gets
+repaired against, and its anchors are exactly what will fail the
+staleness check.</p>
+<h1 data-number="3" id="running-it"><span
+class="header-section-number">3</span> Running It</h1>
+<pre class="shell"><code>/write-review-and-repair ~/refereeing/descent.pdf
+/write-review-and-repair arXiv:0000.00000
+/write-review-and-repair ~/refereeing/descent/</code></pre>
+<p>It runs unattended, end to end. Both stages are invoked with their
+questions pre-answered, so neither stops to confirm the reader, the
+location, the outline, or the findings.</p>
+<h2 data-number="3.1" id="stage-one-in-brief"><span
+class="header-section-number">3.1</span> Stage one, in brief</h2>
+<p>The examination produces the <code>critical-guide/</code> package in
+the paper’s own folder: the ledger, the annotated copies of the source,
+the typeset guide, the summary, and the audit trail of what was dropped
+and why.</p>
+<p>That is a manual’s worth of material on its own, and it has one. What
+matters here is what stage two consumes: <code>issues.yaml</code>, where
+every finding carries a tag, a grade, an anchor into the source, a note
+saying what is wrong, and — ideally — a request saying what would repair
+it.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Stage two is treated as a black box by the orchestrator, and so is
+stage one. Neither assumes the other’s directory layout or filenames,
+because installed versions differ. When a stage returns, what’s actually
+on disk is what gets worked from.</p>
+</div>
+<h2 data-number="3.2" id="what-stage-two-checks-before-starting"><span
+class="header-section-number">3.2</span> What stage two checks before
+starting</h2>
+<p>Four preconditions, in order. It refuses rather than improvising.</p>
+<ol>
+<li><p>A <code>critical-guide/</code> directory exists, with
+<code>issues.yaml</code> in it. There is no repair stage without an
+examination stage.</p></li>
+<li><p>The source named in the ledger resolves.</p></li>
+<li><p><strong>Every anchor still matches that source.</strong> This is
+the one that matters. If anchors have stopped resolving, the source has
+moved on since the guide was written, and repairing against a stale
+ledger produces changes aimed at passages that no longer exist.</p></li>
+<li><p>The issues it intends to repair carry enough to work
+from.</p></li>
+</ol>
+<p>Then it copies the source — the original is never touched — and works
+only on the copy.</p>
+<h2 data-number="3.3" id="triage-before-any-mathematics"><span
+class="header-section-number">3.3</span> Triage, before any
+mathematics</h2>
+<p>The first thing stage two does with the ledger is classify it,
+because that determines the shape of everything after.</p>
+<h3 data-number="3.3.1" id="absence-or-positive-error"><span
+class="header-section-number">3.3.1</span> Absence or positive
+error</h3>
+<p>An issue saying a proof is missing, a definition is never given, a
+claim is asserted and never established, is an
+<strong>absence</strong>.</p>
+<p>An issue saying a sign is wrong, a base ring is not commutative, a
+statement is false as printed, is a <strong>positive error</strong>.</p>
+<p>Positive errors are often repairable. Absences almost never are.
+Supplying the missing proof of someone’s main theorem is doing the
+authors’ work, and — the operative point — it is not recoverable from
+the paper. So absences route to proposals or to the report of what
+cannot be repaired, and no workload gets planned around them.</p>
+<p>Related absences get consolidated rather than enumerated. Five claims
+missing the same calculation is one omission affecting five passages,
+not five findings.</p>
+<h3 data-number="3.3.2" id="groups-not-items"><span
+class="header-section-number">3.3.2</span> Groups, not items</h3>
+<p>Two repairs interact if they touch the same object, or if one’s proof
+cites the other’s statement. The ledger’s dependency field names some of
+these; it will not name all of them, and the ones it misses are the
+dangerous kind.</p>
+<p>This matters because dispositions are assigned to <em>groups</em>.
+Two repairs can each be defensible alone and inconsistent together —
+restrict a definition to make one proof work, and every example that
+relied on the old generality now needs checking. Linked changes get
+decided together, and the disposition stays consistent across both
+builds.</p>
+<p>Dependency roots are preferred, since repairing a root can retire its
+dependants for free, and a branch can disappear entirely once a proposed
+route is checked and found invalid.</p>
+<h2 data-number="3.4" id="working-out-the-repairs"><span
+class="header-section-number">3.4</span> Working out the repairs</h2>
+<p>For each issue it takes on: what the paper claims, what its argument
+establishes, what is missing between them, and the mathematics that
+closes the gap, <strong>written out in full</strong>.</p>
+<p>``One would need to show that the adjunction extends” is not a
+repair. Where the gap cannot be closed, that is said precisely — and
+that is a result, not a failure. It’s what the report of unrepairable
+issues is made of.</p>
+<p>It does not attempt everything. The set it takes on is one it can
+audit properly, weighted toward dependency roots and positive errors,
+and it says what it scoped and why. A silently truncated workload reads
+as a completed one.</p>
+<h2 data-number="3.5" id="the-audit"><span
+class="header-section-number">3.5</span> The audit</h2>
+<p>Every repair goes to an independent skeptic asking four questions,
+not one:</p>
+<ol>
+<li><p>Does it actually fix the stated problem?</p></li>
+<li><p>Does it break anything else in the paper?</p></li>
+<li><p>Is it minimal, or does it change more than it needs to?</p></li>
+<li><p>Does it change what the paper claims?</p></li>
+</ol>
+<p>One skeptic for a local repair; three for anything touching a
+hypothesis or a statement — scaled to what being wrong would cost. Each
+has to examine the proposed mathematics and its consequences in the
+paper; agreement based only on reading the ledger is not
+verification.</p>
+<p>A repair that fails audit is recorded with its refutation rather than
+silently dropped.</p>
+<h2 data-number="3.6" id="apply-propose-or-escalate"><span
+class="header-section-number">3.6</span> Apply, propose, or
+escalate</h2>
+<p>The question is never how big the change is. Every repair changes
+what the paper says — fixing a misprinted subscript changes what a
+display asserts. The question is whether the repair is
+<strong>forced</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Disposition</strong></th>
+<th style="text-align: left;"><strong>When</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Apply</strong></td>
+<td style="text-align: left;">the correction is recoverable from the
+paper itself: exactly one way to make the text consistent with what is
+demonstrably already there — the paper’s own diagram, its own proof, how
+a later section uses the result, the actual content of a work it cites.
+Nothing is being decided; what the paper already commits to is being
+read off.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Propose</strong></td>
+<td style="text-align: left;">the repair requires a decision the paper
+does not determine. Several defensible corrections exist, and choosing
+between them needs information the paper doesn’t supply. Choosing would
+put words in the authors’ mouths.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Escalate</strong></td>
+<td style="text-align: left;">no repair is available, or the choice sits
+upstream of most of the remaining repairs. If resolving it one way
+changes what a large part of the paper says, the repair is not
+determined, and a source that silently embodies one resolution
+misleads.</td>
+</tr>
+</tbody>
+</table>
+<p>The test, in one sentence: <em>could this correction be reconstructed
+from the paper alone, or did something have to be decided?</em></p>
+<h3 data-number="3.6.1" id="why-so-few-get-applied"><span
+class="header-section-number">3.6.1</span> Why so few get applied</h3>
+<p>Even among forced repairs, two or three at most — unless you ask for
+more.</p>
+<p>The first reason is obvious: writing into someone’s paper is a strong
+act and you should be the one choosing.</p>
+<p>The second is the one that actually sets the number.
+<strong>Interactions scale quadratically.</strong> Three applied repairs
+give three pairs to check for coherence. Twenty give a hundred and
+ninety. The coherence check is only tractable at small numbers, and a
+pipeline that applied twenty repairs would be claiming a check it had
+not performed.</p>
+<p>Everything else is proposed — rendered in position with its tag, so
+the marked-up build is a menu you browse and answer.</p>
+<h2 data-number="3.7" id="two-builds"><span
+class="header-section-number">3.7</span> Two builds</h2>
+<p>The working copy compiles two ways, and which one you get is a
+command-line switch rather than a line anybody edits:</p>
+<pre class="shell"><code>pdflatex -jobname paper-repaired-notes \
+    paper-repaired.tex
+
+pdflatex -jobname paper-repaired-clean \
+    &quot;\def\agenticclean{}\input{paper-repaired}&quot;</code></pre>
+<p>Notes-on is the default deliberately. A file of unmarked edits that
+reads as the authors’ own text is the dangerous artifact, so the clean
+build has to be asked for.</p>
+<p>Then both are checked: the clean build contains every applied repair
+and no trace of any proposal; numbered statements carry the same numbers
+in both builds and the same as the original; no unresolved references,
+and no new overfull boxes beyond the original’s.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Numbering is compared through the <code>.aux</code> files’ label
+entries, never by scraping text out of the two PDFs. A repair that
+changes a sentence’s length reflows the paragraph, so which statements
+begin a line differs between builds even when every number is identical.
+Comparing extracted text produces divergences that aren’t there.</p>
+</div>
+<h2 data-number="3.8" id="corrections-flow-back"><span
+class="header-section-number">3.8</span> Corrections flow back</h2>
+<p>Finding errors in the guide is an expected output, not a surprise.
+Writing the mathematics out is a stronger check on a finding than the
+finding’s own verification was, because it forces a direct comparison
+with the source and with every hypothesis the repair uses.</p>
+<p>Those corrections are written to a <em>revised</em> ledger beside the
+original. The original is never overwritten — the difference between
+them is the audit trail.</p>
+<h1 data-number="4" id="reading-what-comes-back"><span
+class="header-section-number">4</span> Reading What Comes Back</h1>
+<p>Two packages, and a marked-up PDF that is meant to be read rather
+than filed.</p>
+<h2 data-number="4.1" id="what-is-on-disk"><span
+class="header-section-number">4.1</span> What is on disk</h2>
+<pre class="shell"><code>&lt;paper folder&gt;/
+  paper.tex                 the original
+  paper.pdf
+  critical-guide/           stage one&#39;s package
+    00-guide.pdf            summary + issue list
+    issues.yaml             the ledger
+    issues-revised.yaml     corrections found
+    annotated-*.pdf         the paper, annotated
+  paper-repaired.tex        the working copy
+  agentic-edits.tex         the markup, copied in
+  paper-repaired-notes.pdf  marked up
+  paper-repaired-clean.pdf  applied changes only
+  04-proposed.md            why each proposal</code></pre>
+<p>Start with <code>paper-repaired-notes.pdf</code>. It is the document
+the whole pipeline exists to produce, and everything in it is tagged, so
+you can move between it and the issue list without translating.</p>
+<h2 data-number="4.2" id="the-three-states"><span
+class="header-section-number">4.2</span> The three states</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>State</strong></th>
+<th style="text-align: left;"><strong>In the notes build</strong></th>
+<th style="text-align: left;"><strong>In the clean build</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>applied</strong></td>
+<td style="text-align: left;">struck-out red original, blue
+replacement</td>
+<td style="text-align: left;">replacement silently in place</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>proposed</strong></td>
+<td style="text-align: left;">purple, labelled, with the replacement
+text shown in position</td>
+<td style="text-align: left;">absent — it was not adopted</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>removed</strong></td>
+<td style="text-align: left;">framed and greyed, labelled</td>
+<td style="text-align: left;">gone</td>
+</tr>
+</tbody>
+</table>
+<p>Every change carries its issue tag, and every change carries a
+footnoted note saying why. An unexplained diff is not a repair.</p>
+<p>Proposals show their full replacement text where the replacement
+would go, so you never have to open another file to learn what a
+proposal actually says. The reasoning behind it is in the proposals
+document; the text itself is in the PDF.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>A proposal never consumes a statement number. Counters are frozen
+inside a proposal block, so a proposed replacement for Theorem 4.2
+prints as Theorem 4.2 rather than pushing everything after it down by
+one. The numbering in both builds matches the original, which is what
+makes the two builds comparable at all.</p>
+</div>
+<h2 data-number="4.3" id="answering-by-tag"><span
+class="header-section-number">4.3</span> Answering by tag</h2>
+<p>The hand-back names the tags, and the tags are how you reply:</p>
+<blockquote>
+<p><em>Apply M-5 and M-31.</em></p>
+</blockquote>
+<p>That is not a text edit, and it isn’t treated as one. Each named
+proposal moves to applied, and then the coherence check runs again
+against everything already applied, and both builds are rebuilt and
+re-verified.</p>
+<p>A proposal adopted in isolation is exactly the split the grouping
+rule exists to prevent — the repair that was defensible on its own page
+and inconsistent with the one three sections later.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>The clean build is not a revised paper. It is what the paper would
+say if these specific changes were adopted, produced so you can read the
+result in context rather than reading a diff. Sending it to anyone as
+the corrected version skips the step where a person decides, which is
+the step the whole pipeline is built around.</p>
+</div>
+<h2 data-number="4.4" id="what-the-markup-cannot-do"><span
+class="header-section-number">4.4</span> What the markup cannot do</h2>
+<p>Three limits, worth knowing before you go looking for a bug.</p>
+<p><strong>A proposal cannot add a bibliography entry.</strong> A
+bibliography item inside a proposal block is discarded in the clean
+build; outside it, it leaks into a build that never proposed it. Such a
+source is cited as plain text in the proposal and flagged.</p>
+<p><strong>A tag inside mathematics is boxed</strong>, so it cannot
+break across lines. A tag on a long display can push the line.</p>
+<p><strong>Classes vary.</strong> The markup has been verified against
+two document classes, <code>amsart</code> and <code>elsarticle</code>,
+covering framed theorem environments inside and outside lists,
+class-defined theorem environments sharing a counter, and cancellation
+in displays. A third class may behave differently — and the place to
+find that out is a trivial change, not a deep one.</p>
+<h2 data-number="4.5" id="what-cannot-be-repaired-at-all"><span
+class="header-section-number">4.5</span> What cannot be repaired at
+all</h2>
+<p>The third output, and the one most likely to be skipped.</p>
+<p>It lists the issues no repair reaches: absences that would require
+doing the authors’ work, and choices that sit upstream of everything
+else — where resolving the question one way or the other changes what a
+large part of the paper says.</p>
+<p>That last category is the most useful thing in the package for a
+reader who has to form a judgment, because it says something no issue
+count can. An underdetermined repair is a different situation from a
+long list of fixable errors, and it is the situation the authors most
+need to hear about.</p>
+<h2 data-number="4.6" id="if-a-stage-stops-short"><span
+class="header-section-number">4.6</span> If a stage stops short</h2>
+<p>The pipeline reports exactly how far it got rather than papering over
+it.</p>
+<p>If the handoff check failed — no <code>critical-guide/</code>
+directory, no ledger — nothing was repaired, and the report says so and
+says what is needed to finish.</p>
+<p>If stage two’s anchor check failed, the source has moved since the
+guide was written. Re-run the examination against the current version;
+the ledger is what is stale, not the paper.</p>
+<p>And every quantity in the hand-back was measured. Counts come from
+the files. Durations come from timestamps recorded as the run passed
+each phase boundary, not from a figure quoted in an earlier report.</p>
+<h1 data-number="5" id="quick-reference"><span
+class="header-section-number">5</span> Quick Reference</h1>
+<h2 data-number="5.1" id="invocation"><span
+class="header-section-number">5.1</span> Invocation</h2>
+<pre class="shell"><code>/write-review-and-repair &lt;pdf path&gt;
+/write-review-and-repair arXiv:&lt;id&gt;
+/write-review-and-repair &lt;folder with the paper&gt;</code></pre>
+<p>Runs unattended, end to end. Each stage can also be run alone:</p>
+<pre class="shell"><code># stage one only
+/write-critical-guide &lt;paper&gt;
+
+# stage two, against an existing package
+/write-paper-repairs &lt;paper folder&gt;</code></pre>
+<h2 data-number="5.2" id="the-pipeline"><span
+class="header-section-number">5.2</span> The pipeline</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Step</strong></th>
+<th style="text-align: left;"><strong>What happens</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Examine: <code>write-critical-guide</code>
+writes <code>critical-guide/</code> beside the paper</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Confirm the handoff: the directory exists
+and holds <code>issues.yaml</code>; stop and report if not</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Repair: <code>write-paper-repairs</code>
+consumes the ledger and writes the working copy</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Report: where everything is, and that this
+is material to review rather than an accepted revision</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.3" id="stage-twos-preconditions"><span
+class="header-section-number">5.3</span> Stage two’s preconditions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>#</strong></th>
+<th style="text-align: left;"><strong>Check</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>critical-guide/</code> exists with
+<code>issues.yaml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">the source named in the ledger
+resolves</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">every anchor still matches that source —
+stale ledgers are refused, not worked around</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">the issues to be repaired carry a note,
+ideally a repair request</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.4" id="dispositions"><span
+class="header-section-number">5.4</span> Dispositions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Disposition</strong></th>
+<th style="text-align: left;"><strong>Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Apply</td>
+<td style="text-align: left;">recoverable from the paper itself: exactly
+one way to make the text consistent with what is already there</td>
+</tr>
+<tr>
+<td style="text-align: left;">Propose</td>
+<td style="text-align: left;">requires a decision the paper does not
+determine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Escalate</td>
+<td style="text-align: left;">no repair available, or the choice sits
+upstream of most of the rest</td>
+</tr>
+</tbody>
+</table>
+<p>Two or three applied at most by default. Interactions scale
+quadratically, and the coherence check is only tractable at small
+numbers.</p>
+<h2 data-number="5.5" id="markup-states"><span
+class="header-section-number">5.5</span> Markup states</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>State</strong></th>
+<th style="text-align: left;"><strong>Notes build</strong></th>
+<th style="text-align: left;"><strong>Clean build</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">applied</td>
+<td style="text-align: left;">struck-out red, blue replacement</td>
+<td style="text-align: left;">replacement in place</td>
+</tr>
+<tr>
+<td style="text-align: left;">proposed</td>
+<td style="text-align: left;">purple, labelled, text in position</td>
+<td style="text-align: left;">absent</td>
+</tr>
+<tr>
+<td style="text-align: left;">removed</td>
+<td style="text-align: left;">framed and greyed, labelled</td>
+<td style="text-align: left;">gone</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.6" id="markup-commands"><span
+class="header-section-number">5.6</span> Markup commands</h2>
+<pre class="shell"><code>\agenticaddition[M-5]{text}
+\agenticremoval[M-5]{text}
+
+% fragile tokens: \cite, \ref, \label
+\agenticremovalbox[M-5]{text}
+
+% worked out, not adopted
+\agenticproposal[M-5]{replacement}
+
+% inside an existing display
+\agenticmathadd[M-5]{t}
+\agenticmathdel[M-5]{t}
+
+% a whole new list item
+\agenticitem[M-5]{text}
+
+% one line, footnoted
+\agenticnote{why this change}
+
+\begin{agenticadded}[M-5]    ...
+\end{agenticadded}
+
+\begin{agenticremoved}[M-5]  ...
+\end{agenticremoved}
+
+\begin{agenticproposed}[M-5] ...
+\end{agenticproposed}</code></pre>
+<p>Inline commands cannot carry display math, theorem environments, or
+anything crossing a paragraph — use the environments for those. Always
+carry the tag; every change gets a note saying why.</p>
+<h2 data-number="5.7" id="markup-rules-that-came-out-of-real-use"><span
+class="header-section-number">5.7</span> Markup rules that came out of
+real use</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Rule</strong></th>
+<th style="text-align: left;"><strong>Why</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Never duplicate a display to show a change
+inside it</td>
+<td style="text-align: left;">the math add/delete commands work within
+the existing display; two whole displays for a one-glyph fix is the
+failure this replaced</td>
+</tr>
+<tr>
+<td style="text-align: left;">Box the fragile token and nothing
+else</td>
+<td style="text-align: left;">strike-out cannot process every citation
+macro, and a protective box prevents line breaks inside it; keep
+surrounding prose outside</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hang the tag off the last piece</td>
+<td style="text-align: left;">so it does not force a break in the middle
+of a removed phrase</td>
+</tr>
+<tr>
+<td style="text-align: left;">A proposal must not consume a number</td>
+<td style="text-align: left;">counters are frozen; step the counter
+inside the block if the proposal restates a numbered result, relatively
+rather than absolutely</td>
+</tr>
+<tr>
+<td style="text-align: left;">Labels are disabled inside a proposal</td>
+<td style="text-align: left;">a label defined there resolves in the
+notes build and prints <code>??</code> in the clean one, making the
+clean build wrong</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.8" id="builds"><span
+class="header-section-number">5.8</span> Builds</h2>
+<pre class="shell"><code>pdflatex -jobname paper-repaired-notes \
+    paper-repaired.tex
+
+pdflatex -jobname paper-repaired-clean \
+    &quot;\def\agenticclean{}\input{paper-repaired}&quot;</code></pre>
+<p>Two passes each, with <code>bibtex</code> between them if the paper
+has a bibliography. Notes-on is the default; the clean build has to be
+asked for.</p>
+<p>Then verify: the clean build carries every applied repair and no
+proposal; statement numbers match across both builds and the original,
+compared through the <code>.aux</code> label entries rather than
+extracted text; no unresolved references; no new overfull boxes.</p>
+<h2 data-number="5.9" id="outputs"><span
+class="header-section-number">5.9</span> Outputs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>File</strong></th>
+<th style="text-align: left;"><strong>What it is</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>critical-guide/</code></td>
+<td style="text-align: left;">stage one’s package</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paper-repaired.tex</code></td>
+<td style="text-align: left;">the working copy; the original is
+untouched</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paper-repaired-notes.pdf</code></td>
+<td style="text-align: left;">changes and proposals marked up — read
+this one</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>paper-repaired-clean.pdf</code></td>
+<td style="text-align: left;">applied changes silently in place</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>04-proposed.md</code></td>
+<td style="text-align: left;">the reasoning behind each proposal</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>issues-revised.yaml</code></td>
+<td style="text-align: left;">corrections to the ledger; never
+overwrites it</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>agentic-edits.tex</code></td>
+<td style="text-align: left;">the markup definitions, copied in</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="5.10" id="adopting-a-proposal-later"><span
+class="header-section-number">5.10</span> Adopting a proposal later</h2>
+<p>Name the tags — <em>apply M-5 and M-31</em>. Each moves to applied,
+the coherence check re-runs against everything already applied, and both
+builds are rebuilt and re-verified. Never a text edit in isolation.</p>
+<h2 data-number="5.11" id="known-limits"><span
+class="header-section-number">5.11</span> Known limits</h2>
+<p>A proposal cannot add a bibliography entry — such a source is cited
+as plain text and flagged. A tag inside mathematics is boxed and cannot
+break across lines. The markup is verified against <code>amsart</code>
+and <code>elsarticle</code>; another class may differ, and a trivial
+change is where to find that out.</p>
+</main>
+
+</div>
+</body>
+</html>

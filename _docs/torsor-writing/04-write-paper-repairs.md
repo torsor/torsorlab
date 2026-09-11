@@ -4,18 +4,44 @@ tool: torsor-writing
 slug: write-paper-repairs
 permalink: /tools/torsor-writing/write-paper-repairs/
 order: 4
-summary: repairs for the issues a critical guide found, as tracked changes.
+summary: repairs for the issues a critical guide found, written into the paper's own source as tracked changes.
+notes:
+  - title: it needs a critical guide first
+    text: >-
+      the input is a critical-guide package and its issues.yaml. without one it
+      refuses rather than improvising a ledger of its own.
+  - title: it repairs, it does not rewrite
+    text: >-
+      deciding what the paper should claim is a different act. the boundary
+      between the two is the subject of most of the skill.
 ---
 
-writes the forced repairs into the paper's own LaTeX with tracked-change markup, shows the optional ones in position, and reports what cannot be repaired. requires an existing critical-guide package.
+works out the mathematics that closes each issue a critical guide found, audits
+every repair adversarially, and writes the ones the paper itself *forces* into a
+copy of the authors' own source as tracked changes.
+
+what comes back is a corrected source that compiles two ways — changes marked up
+for review, or silently in place — plus the repairs that were worked out but not
+adopted, shown in position so you can browse and choose, plus a report of what no
+repair reaches.
+
+nothing is applied silently and nothing is decided for you. a repair goes in only
+when there is exactly one way to make the text consistent with what the paper
+already demonstrably contains. everything else is proposed, tagged, and left for
+you to accept or reject.
+
+it does not skip the mathematics. "one would need to show that the adjunction
+extends" is not a repair; the argument gets written.
 
 ## invoke
 
 ```
-/write-paper-repairs
+/write-paper-repairs ~/papers/descent/
+/write-paper-repairs ~/papers/descent/critical-guide/
 ```
 
-## produces
-
-a document in the torsor house format: LaTeX source, plus PDF, HTML, EPUB, and
-Markdown built from it.
+it is usually easier to run it as the second half of
+[write-review-and-repair](../write-review-and-repair/), which sequences the
+examination and the repairs and checks the handoff between them. that page covers
+the repair stage at working depth — the triage, the dispositions, the markup
+states, and what the markup cannot do.

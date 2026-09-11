@@ -76,9 +76,17 @@
   background: var(--lav-panel);
   display: flex;
   justify-content: center;
+  // flex-start, not stretch: a stretched svg is scaled to fit its box and ends
+  // up centred halfway down a long page. keep it its own size so it can stick.
+  align-items: flex-start;
   padding-block: 18px;
 
-  img { width: 60px; height: auto; position: sticky; top: 18px; }
+  img {
+    width: auto;
+    height: min(560px, calc(100vh - 120px));
+    position: sticky;
+    top: 18px;
+  }
 
   @media (max-width: $narrow) { display: none; }
 }
@@ -179,4 +187,45 @@
 
   a { color: var(--violet); text-decoration: none; }
   a:hover { text-decoration: underline; }
+}
+
+// --- link out to a built manual ---------------------------------------------
+
+.doc-manual {
+  border: 1px solid var(--violet-light);
+  border-radius: var(--radius);
+  background: var(--lav-panel);
+  padding: 16px 18px;
+  margin: 0 0 28px;
+
+  p { margin: 0; }
+
+  &__label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--violet);
+  }
+
+  &__text {
+    font-family: var(--font-doc);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 4px !important;
+  }
+
+  &__links {
+    margin-top: 10px !important;
+    display: flex;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    a { color: var(--violet); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
 }

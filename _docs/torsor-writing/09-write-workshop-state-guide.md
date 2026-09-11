@@ -4,18 +4,39 @@ tool: torsor-writing
 slug: write-workshop-state-guide
 permalink: /tools/torsor-writing/write-workshop-state-guide/
 order: 9
-summary: a state-of-the-work guide for a live workshop.
+summary: where live workshop work stands, on a confidence-ledger spine, dated and commit-stamped.
+notes:
+  - title: labels are carried verbatim
+    text: >-
+      the docent translates; it never re-grades. silently upgrading a conjecture to
+      a theorem while expositing is the failure this skill is shaped against.
+  - title: write a new dated artifact
+    text: >-
+      never overwrite last week's state guide. the progression has to stay visible.
 ---
 
-where the work stands, on a confidence-ledger spine, written present-tense and commit-stamped as a dated snapshot.
+a docent's account of where live work stands, for a collaborator who has to steer
+it. same shape as its siblings, with five deliberate differences.
+
+the corpus is **the room's own live record** rather than external sources,
+distilled into `state-notes/`. the spine is **the confidence ledger** — solid,
+provisional, open, skeptical — harvested from the room's own labels rather than
+decided by the writer. the reader is a collaborator steering live work, not a
+student learning an idea. the voice is **present-tense, dated, and
+commit-stamped**: as of this commit, the room has this. and time is structural —
+a mandatory chapter on what changed and what might change, with corrections and
+dead ends as first-class content rather than footnotes.
+
+it leads with the ledger, not with the best result.
 
 ## invoke
 
 ```
-/write-workshop-state-guide
+/write-workshop-state-guide the specialization room, for a collaborator
+/write-workshop-state-guide where does the workshop stand
 ```
 
 ## produces
 
-a document in the torsor house format: LaTeX source, plus PDF, HTML, EPUB, and
-Markdown built from it.
+a dated snapshot — `guide/<YYYY-MM-DD>-<slug>-state/` — in the house format, listed
+in the docent's guide stream, with `state-notes/` kept alongside.

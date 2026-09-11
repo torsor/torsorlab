@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="manual.css" />
+
+
+</head>
+<body class="paper-texture">
+<div class="page-layout">
+
+<nav class="doc-toc" id="toc" aria-label="Table of contents">
+  <p class="kicker">Contents</p>
+  <ul>
+  <li><a href="#preface-someone-has-to-judge-it"
+  id="toc-preface-someone-has-to-judge-it"><span
+  class="toc-section-number">1</span> Preface: Someone Has to Judge
+  It</a></li>
+  <li><a href="#findings-never-a-verdict"
+  id="toc-findings-never-a-verdict"><span
+  class="toc-section-number">2</span> Findings, Never a Verdict</a>
+  <ul>
+  <li><a href="#the-sibling-genre" id="toc-the-sibling-genre"><span
+  class="toc-section-number">2.1</span> The sibling genre</a></li>
+  <li><a href="#three-rules" id="toc-three-rules"><span
+  class="toc-section-number">2.2</span> Three rules</a></li>
+  <li><a href="#grades-and-what-they-measure"
+  id="toc-grades-and-what-they-measure"><span
+  class="toc-section-number">2.3</span> Grades, and what they
+  measure</a></li>
+  <li><a href="#what-it-is-not" id="toc-what-it-is-not"><span
+  class="toc-section-number">2.4</span> What it is not</a></li>
+  </ul></li>
+  <li><a href="#how-it-reads-a-paper"
+  id="toc-how-it-reads-a-paper"><span
+  class="toc-section-number">3</span> How It Reads a Paper</a>
+  <ul>
+  <li><a href="#starting-it" id="toc-starting-it"><span
+  class="toc-section-number">3.1</span> Starting it</a></li>
+  <li><a href="#which-text-is-under-examination"
+  id="toc-which-text-is-under-examination"><span
+  class="toc-section-number">3.2</span> Which text is under
+  examination</a></li>
+  <li><a href="#three-source-situations"
+  id="toc-three-source-situations"><span
+  class="toc-section-number">3.3</span> Three source situations</a></li>
+  <li><a href="#the-reading-pass" id="toc-the-reading-pass"><span
+  class="toc-section-number">3.4</span> The reading pass</a></li>
+  <li><a href="#four-sweeps-in-parallel"
+  id="toc-four-sweeps-in-parallel"><span
+  class="toc-section-number">3.5</span> Four sweeps, in
+  parallel</a></li>
+  <li><a href="#refutation-then-promotion"
+  id="toc-refutation-then-promotion"><span
+  class="toc-section-number">3.6</span> Refutation, then
+  promotion</a></li>
+  <li><a href="#when-repair-has-more-than-one-route"
+  id="toc-when-repair-has-more-than-one-route"><span
+  class="toc-section-number">3.7</span> When repair has more than one
+  route</a></li>
+  </ul></li>
+  <li><a href="#the-ledger-and-the-package"
+  id="toc-the-ledger-and-the-package"><span
+  class="toc-section-number">4</span> The Ledger and the Package</a>
+  <ul>
+  <li><a href="#categories" id="toc-categories"><span
+  class="toc-section-number">4.1</span> Categories</a></li>
+  <li><a href="#four-attributes-kept-independent"
+  id="toc-four-attributes-kept-independent"><span
+  class="toc-section-number">4.2</span> Four attributes, kept
+  independent</a></li>
+  <li><a href="#anchors" id="toc-anchors"><span
+  class="toc-section-number">4.3</span> Anchors</a></li>
+  <li><a href="#the-generator" id="toc-the-generator"><span
+  class="toc-section-number">4.4</span> The generator</a></li>
+  <li><a href="#writing-notes" id="toc-writing-notes"><span
+  class="toc-section-number">4.5</span> Writing notes</a></li>
+  <li><a href="#what-is-written-by-hand"
+  id="toc-what-is-written-by-hand"><span
+  class="toc-section-number">4.6</span> What is written by hand</a></li>
+  <li><a href="#the-finished-package"
+  id="toc-the-finished-package"><span
+  class="toc-section-number">4.7</span> The finished package</a></li>
+  <li><a href="#the-gates" id="toc-the-gates"><span
+  class="toc-section-number">4.8</span> The gates</a></li>
+  </ul></li>
+  <li><a href="#long-work-and-corrections"
+  id="toc-long-work-and-corrections"><span
+  class="toc-section-number">5</span> Long Work, and Corrections</a>
+  <ul>
+  <li><a href="#when-one-pass-isnt-enough"
+  id="toc-when-one-pass-isnt-enough"><span
+  class="toc-section-number">5.1</span> When one pass isn’t
+  enough</a></li>
+  <li><a href="#correcting-a-finished-guide"
+  id="toc-correcting-a-finished-guide"><span
+  class="toc-section-number">5.2</span> Correcting a finished
+  guide</a></li>
+  </ul></li>
+  <li><a href="#quick-reference" id="toc-quick-reference"><span
+  class="toc-section-number">6</span> Quick Reference</a>
+  <ul>
+  <li><a href="#invocation" id="toc-invocation"><span
+  class="toc-section-number">6.1</span> Invocation</a></li>
+  <li><a href="#the-generator-1" id="toc-the-generator-1"><span
+  class="toc-section-number">6.2</span> The generator</a></li>
+  <li><a href="#package-layout" id="toc-package-layout"><span
+  class="toc-section-number">6.3</span> Package layout</a></li>
+  <li><a href="#ledger-fields" id="toc-ledger-fields"><span
+  class="toc-section-number">6.4</span> Ledger fields</a></li>
+  <li><a href="#where-fields-appear" id="toc-where-fields-appear"><span
+  class="toc-section-number">6.5</span> Where fields appear</a></li>
+  <li><a href="#source-cases" id="toc-source-cases"><span
+  class="toc-section-number">6.6</span> Source cases</a></li>
+  <li><a href="#latex-hazards-already-handled"
+  id="toc-latex-hazards-already-handled"><span
+  class="toc-section-number">6.7</span> LaTeX hazards, already
+  handled</a></li>
+  <li><a href="#building-the-guide-pdf"
+  id="toc-building-the-guide-pdf"><span
+  class="toc-section-number">6.8</span> Building the guide PDF</a></li>
+  <li><a href="#chunked-examinations"
+  id="toc-chunked-examinations"><span
+  class="toc-section-number">6.9</span> Chunked examinations</a></li>
+  <li><a href="#words-the-house-does-not-use"
+  id="toc-words-the-house-does-not-use"><span
+  class="toc-section-number">6.10</span> Words the house does not
+  use</a></li>
+  </ul></li>
+  </ul>
+</nav>
+
+<main class="doc-body prose" id="main">
+
+<div class="titlepage">
+<p>write-critical-guide</p>
+<p>A User’s Manual</p>
+<p><em>Working material for someone who has to judge a paper.</em></p>
+<p>Everything a critical reader needs, and no verdict.</p>
+<p><span> Last revised: 2026-09-11</span></p>
+</div>
+<div class="center">
+<p>torsor lab</p>
+<p><span><a href="https://torsor.org"> torsor.org</a></span></p>
+</div>
+<h1 data-number="1" id="preface-someone-has-to-judge-it"><span
+class="header-section-number">1</span> Preface: Someone Has to Judge
+It</h1>
+<p>Let’s be honest with each other. You said yes to refereeing a paper,
+and the paper is fifty pages long, and three of those pages are a
+computation you would have to redo yourself to believe.</p>
+<p>Or a committee has asked what you think of work outside your area. Or
+a student wants to build on a result and you’d like to know, before they
+spend a year on it, whether the result is actually there.</p>
+<p>The labor is the same in all three cases and it is mostly invisible.
+Read the paper closely enough to find what’s wrong with it. Check that
+the cited lemma says what the paper uses it for. Work out whether the
+gap in Section 4 is a gap or just a compression. Establish what was
+already known, so you can tell what is new here. And then — the part
+that costs the most and shows the least — convince yourself that each
+thing you are about to call an error really is one, because you are
+going to put your name on it.</p>
+<p><code>write-critical-guide</code> does that labor and hands you the
+result. It is working material for a person who has to assess a paper:
+the paper read closely, its context established, everything questionable
+found and located and verified, with repairs where repairs exist.</p>
+<p>What it does not do is decide. The words <em>accept</em>,
+<em>reject</em>, <em>major revision</em> appear nowhere in what it
+produces, as judgments about the paper. That restraint is the point
+rather than a limitation. The decision carries your name, and material
+that arrives at a verdict invites you to ratify a judgment you did not
+make. Findings, ordered by consequence, and nothing that presumes the
+decision.</p>
+<p>Two properties are worth knowing before you run it. It records what
+checked out, not only what failed — if it verified thirty citations and
+nine were wrong, it says thirty, and it says what it did not check,
+because that is exactly where your own work begins. And it tries to
+refute every serious finding before writing it down, by sending it to
+independent skeptics whose job is to show the paper is right. A defect
+reported that isn’t there costs the authors weeks and costs you your
+credibility; a missed comma costs a reader three seconds. The errors are
+not symmetric and the process doesn’t treat them as though they
+were.</p>
+<p>It runs unattended. Point it at a paper and it goes to completion
+without asking you anything.</p>
+<p>Four chapters follow. Chapter 1 is what the genre is and the three
+rules that govern it. Chapter 2 is how it reads a paper — the sweeps,
+run in parallel, and the refutation pass they feed. Chapter 3 is the
+ledger every artifact is generated from, which is the piece of
+engineering that keeps the prose and the annotations from drifting
+apart. Chapter 4 covers long works reviewed in chunks, and how to
+correct a guide after it’s finished. The appendix has the command lines
+and the schema.</p>
+<h1 data-number="2" id="findings-never-a-verdict"><span
+class="header-section-number">2</span> Findings, Never a Verdict</h1>
+<p>A critical guide is the material a judgment gets written from, not
+the judgment.</p>
+<p>Hold that distinction and everything else in this manual follows from
+it. Lose it and the output becomes a referee report with no name on it,
+which is the one thing it must not be.</p>
+<h2 data-number="2.1" id="the-sibling-genre"><span
+class="header-section-number">2.1</span> The sibling genre</h2>
+<p>The quickest way to see what belongs in a critical guide is to put it
+beside the reading guide that <code>write-paper-guide</code> produces.
+Same family, same close reading underneath, same voice — opposite
+job.</p>
+<p>A reading guide is expository. It takes the paper as given and helps
+someone through it. Where the paper compresses, it expands, so the
+reader can keep moving.</p>
+<p>A critical guide is evaluative. It asks whether the paper holds.
+Where the paper compresses, it stops and says so: what is missing, how
+much it matters, and whether the gap can be closed.</p>
+<p>So the test for any sentence is which document it belongs in. If it
+explains the paper to someone who wants to understand it, that’s the
+reading guide. If it weighs the paper for someone who has to judge it,
+it belongs here.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The two are not alternatives. A reading guide is the <em>input</em>
+to a critical guide — the first thing the skill does is commission one,
+at proof depth, for a reader who is refereeing. The critical work is
+done on top of that reading, not instead of it.</p>
+</div>
+<h2 data-number="2.2" id="three-rules"><span
+class="header-section-number">2.2</span> Three rules</h2>
+<h3 data-number="2.2.1" id="findings-never-a-disposition"><span
+class="header-section-number">2.2.1</span> Findings, never a
+disposition</h3>
+<p><em>Accept</em>, <em>accept with revision</em>, <em>major
+revision</em>, <em>minor revision</em>, <em>reject</em>: none of these
+appears as a judgment about the paper, anywhere in the package. Nor does
+anything that writes your report for you — no <em>I recommend</em>, no
+<em>this reviewer finds</em>.</p>
+<p>What appears instead: what is wrong, how consequential it is, and
+what would repair it. Ordering the issues by consequence is as close to
+a verdict as it comes, and that ordering is the most useful thing the
+summary does.</p>
+<p>This isn’t modesty about the mathematics. It follows from what the
+document is. The disposition is yours to reach and your name goes on
+it.</p>
+<h3 data-number="2.2.2"
+id="try-to-refute-a-finding-before-writing-it-down"><span
+class="header-section-number">2.2.2</span> Try to refute a finding
+before writing it down</h3>
+<p>Every finding that would be graded <em>major</em> goes to three
+independent skeptics before it enters the ledger. Each gets the paper
+and the finding and is told to <strong>refute</strong> it — to find the
+argument the finding claims is missing, the hypothesis it claims is
+undischarged, the reading under which the notation is consistent. They
+are told to default to <em>refuted</em> when genuinely uncertain, and
+none of them is told what the others concluded.</p>
+<p>Two or more refute it and the finding is dropped, or demoted to minor
+if a weaker true version survives. The drop is recorded with its
+refutation rather than silently discarded, so you can see what was
+considered and rejected.</p>
+<p>Claims about the literature get the same treatment whatever their
+grade, because nothing else in the pipeline checks them and they are the
+most quotable sentences in the package. ``The first result in arbitrary
+dimension”; ``X proved only the surface case”; ``the technique
+originates with Y.” Being confidently wrong about priority in front of
+the author whose priority it is costs you more than a missed lemma
+would.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Every priority or duplication charge gets a chronology check, without
+exception: when each work first appeared <em>publicly</em> — preprint
+date, not publication date — whether the earlier work is where the
+result actually originates or is itself citing someone earlier, and
+whether the charge is even coherent in time. A duplication charge that
+dissolves on dates alone is the commonest false positive in the whole
+pipeline.</p>
+</div>
+<p>The effort spent checking scales to what being wrong would cost, not
+to how likely the error seems. A finding whose consequence is that an
+author adds a sentence gets one pass. A finding whose consequence is
+that you accuse someone of taking another person’s result without credit
+gets as many as it takes.</p>
+<h3 data-number="2.2.3"
+id="record-what-checked-out-not-only-what-failed"><span
+class="header-section-number">2.2.3</span> Record what checked out, not
+only what failed</h3>
+<p>A list of nine problems reads as the complete result of an
+examination. It usually isn’t.</p>
+<p>So the package says what was verified and came out clean — a table of
+citations checked, what each is used for, which held. And it says
+explicitly what was <em>not</em> checked, with reasons. If the long
+computation in Section 6 wasn’t re-derived, that’s stated.</p>
+<p>You cannot tell a clean bill of health from an unopened box unless
+someone tells you which it was. Where the coverage ends is where your
+own work starts.</p>
+<h2 data-number="2.3" id="grades-and-what-they-measure"><span
+class="header-section-number">2.3</span> Grades, and what they
+measure</h2>
+<p>Three of them, and they grade consequence rather than length.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Grade</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>major</code></td>
+<td style="text-align: left;">affects correctness, or a reader cannot
+follow without reconstructing the argument</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>minor</code></td>
+<td style="text-align: left;">should be fixed, but the reader gets
+there</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>trivial</code></td>
+<td style="text-align: left;">copy-editing</td>
+</tr>
+</tbody>
+</table>
+<p>A misprinted subscript that makes two displays contradict each other
+is major. A paragraph of clumsy prose is trivial. The item that takes
+three words to state can be the one that breaks the theorem.</p>
+<p>Alongside the grade sits a qualifier where a judgment call needs
+recording — <em>trivial (but should be reconciled)</em> is a different
+instruction to an author than <em>trivial</em>.</p>
+<h2 data-number="2.4" id="what-it-is-not"><span
+class="header-section-number">2.4</span> What it is not</h2>
+<p>Not a referee report. It carries no signature and reaches no
+disposition.</p>
+<p>Not a reading guide — it assesses and itemizes rather than orienting
+a newcomer.</p>
+<p>Not a rewrite. Where the authors’ prose is defensible and merely not
+yours, it is left alone, and a preference is never reported as an
+error.</p>
+<p>Not a survey. Context appears in service of assessing this paper.</p>
+<h1 data-number="3" id="how-it-reads-a-paper"><span
+class="header-section-number">3</span> How It Reads a Paper</h1>
+<p>Point it at a paper and walk away. This chapter is what happens while
+you’re gone.</p>
+<h2 data-number="3.1" id="starting-it"><span
+class="header-section-number">3.1</span> Starting it</h2>
+<pre class="shell"><code>/write-critical-guide ~/refereeing/descent.pdf
+/write-critical-guide arXiv:0000.00000
+/write-critical-guide ~/refereeing/descent/</code></pre>
+<p>Given a folder, it looks for a single PDF or LaTeX source and uses
+that. Given nothing, it looks in the working directory. If there are
+several candidates and nothing distinguishes them, it says which it
+found and stops — that is the only thing that halts a run. Everything
+else has a default, and it takes the default and keeps going.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Unattended is the design, not a convenience. The run dispatches a
+dozen or more agents across the sweeps and the refutation passes, and a
+pipeline that paused for confirmation between them would take a day of
+your attention to produce what it otherwise produces while you do
+something else.</p>
+</div>
+<h2 data-number="3.2" id="which-text-is-under-examination"><span
+class="header-section-number">3.2</span> Which text is under
+examination</h2>
+<p>First it settles what the findings are <em>about</em>, and this
+matters more than it sounds.</p>
+<p>Where a PDF exists, the PDF is the artifact. Source — the authors’
+LaTeX, an arXiv tarball, a repository — is an aid: for exact quotation,
+for line numbers, for placing annotations, for corroborating what the
+compiled document shows.</p>
+<p>The test is whether a thing appears in the compiled paper. An
+author’s marker that a macro renders, a cross-reference set as
+<code>??</code>, a sentence that stops mid-clause, a statement with no
+proof: all of these print, so all are in scope. Commented-out source
+does not print, and is out of scope entirely — not reported, not
+reasoned from, not referred to.</p>
+<p>That last rule is stricter than it first appears, and it’s right. A
+passage may be commented out because it was wrong, because it was
+superseded, or because it was never meant to survive, and none of that
+is knowable from outside. Findings drawn from working notes are findings
+about a person’s process rather than their work, and they’re unsound in
+a way that is hard to see afterwards. A statement whose proof is
+commented out is a statement with no proof — that is the finding, and it
+is a finding about the printed paper.</p>
+<h2 data-number="3.3" id="three-source-situations"><span
+class="header-section-number">3.3</span> Three source situations</h2>
+<p>Where the <em>annotations</em> get inserted is a separate question,
+and there are three cases. Which one you’re in is recorded in the
+package README.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Case</strong></th>
+<th style="text-align: left;"><strong>Situation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">The authors’ source is available and is
+the text under examination. Annotated directly; locations cite that
+source by line, plus the paper’s own numbering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">The submission is a PDF and a public
+source exists for the same work — the common journal case. The public
+source is annotated, and every annotated passage is checked against the
+submitted PDF first. Locations in the prose refer to the submission by
+page and line.</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">A PDF and nothing else. There are no
+annotated sources; the package is the prose documents and the typeset
+guide, and the README says so rather than leaving it to be
+inferred.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Case B runs two location systems at once, and mixing them produces
+notes pointing at passages that aren’t there. A note about a sentence
+the authors already fixed in the public version is worse than no note.
+Watch for a cover sheet, too — Editorial Manager and its relatives
+prepend one, so the printed page number and the PDF page number differ
+by one.</p>
+</div>
+<h2 data-number="3.4" id="the-reading-pass"><span
+class="header-section-number">3.4</span> The reading pass</h2>
+<p>You cannot assess a paper you have not read, and the reading is where
+the findings come from. So the first real phase commissions a reading
+guide: <code>write-paper-guide</code>, run unattended, at proof depth,
+calibrated to a reader who is refereeing — an active researcher in an
+adjacent field, comfortable with the machinery, without the local
+folklore.</p>
+<p>Alongside that guide it keeps a running ledger of friction. Every
+time the reading has to supply a step the paper leaves out, reconstruct
+an argument to follow it, guess which of two things a symbol means, or
+look up whether a cited result says what it’s used for, an entry goes
+in: where it happened, quoted verbatim; what the paper says; what had to
+be supplied; and whether the gap looks fillable.</p>
+<p>That ledger is the reason for the reading. A guide written to proof
+depth has to touch every place the paper is thin, and writing down the
+friction as it happens is cheaper and more honest than trying to recall
+it afterwards.</p>
+<p>If a guide already exists for this paper, it’s read and used rather
+than rebuilt.</p>
+<h2 data-number="3.5" id="four-sweeps-in-parallel"><span
+class="header-section-number">3.5</span> Four sweeps, in parallel</h2>
+<p>Then independent agents sweep the paper, one per category, each
+writing its own file. <strong>None of them sees another’s
+output.</strong> Uncorrelated readings are the point; a shared draft
+would collapse them into one.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Sweep</strong></th>
+<th style="text-align: left;"><strong>What it does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Typographical</td>
+<td style="text-align: left;">Reads start to finish for grammar, usage,
+mathematical typesetting, and inconsistency held against the paper’s own
+practice elsewhere. Does not report a house preference as an error.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mathematical</td>
+<td style="text-align: left;">Seeds from the reading ledger, then reads
+independently for what it missed. For each item: what the paper claims,
+what its argument establishes, what is missing between them, and whether
+the gap can be filled — and if it can, fills it.</td>
+</tr>
+<tr>
+<td style="text-align: left;">References</td>
+<td style="text-align: left;">Enumerates every citation and checks four
+things per citation: does the cited statement say what it’s used for;
+are its hypotheses satisfied at the point of use; is the locator right;
+is the record itself correct.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Context</td>
+<td style="text-align: left;">Establishes where the paper sits, and
+states the trade against the nearest prior work precisely — where it’s
+stronger, where weaker, where the two simply aren’t comparable.</td>
+</tr>
+</tbody>
+</table>
+<p>Those four suit most pure-mathematics papers. They’re a starting set,
+not a schema: a paper with substantial numerics or released code earns a
+computational sweep, a long computation may be worth re-deriving
+independently, and two sweeps that would return nearly the same thing
+get merged. The sweeps that run determine the categories in the ledger,
+not the other way round.</p>
+<p>Every reported item must carry a verbatim quotation from the source,
+long enough to locate the passage uniquely. That quotation becomes the
+annotation anchor, and an item without one cannot be placed. This is why
+retyping from a rendered PDF is a mistake — the quotation has to match
+the file.</p>
+<h3 data-number="3.5.1"
+id="what-the-mathematical-sweep-produces-besides-findings"><span
+class="header-section-number">3.5.1</span> What the mathematical sweep
+produces besides findings</h3>
+<p>A dependency map: which results rest on which, and in particular
+which findings are independent defects and which are consequences of an
+earlier one.</p>
+<p>A theorem whose proof fails only because a lemma it cites fails is
+one error, not two. Presenting it as two makes the paper look worse than
+it is, and a reader working from that list will grade the paper on a
+count that isn’t real.</p>
+<h3 data-number="3.5.2" id="what-the-reference-sweep-reports"><span
+class="header-section-number">3.5.2</span> What the reference sweep
+reports</h3>
+<p>Three things, all of them. The citations with problems. A table of
+the citations that came out clean, saying what each is used for. And an
+explicit list of what could not be verified, with the reason.</p>
+<p>Anything central cited to a work that is unpublished, ``in
+preparation,” or otherwise unavailable to a reader gets flagged, because
+that’s a question you will have to take a position on whether or not you
+want to.</p>
+<h2 data-number="3.6" id="refutation-then-promotion"><span
+class="header-section-number">3.6</span> Refutation, then promotion</h2>
+<p>Every candidate major finding then goes through the adversarial pass
+described in Chapter 1: three skeptics, told to refute it, defaulting to
+refuted when uncertain.</p>
+<p>What survives enters the ledger carrying its <strong>confidence
+basis</strong>, and the distinction is kept because the two claims are
+not the same:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Basis</strong></th>
+<th style="text-align: left;"><strong>What it claims</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>direct-check</code></td>
+<td style="text-align: left;">carried out in full; the expectation, and
+unmarked per item</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>assessment</code></td>
+<td style="text-align: left;">the route looks viable but has not been
+written out</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>reported</code></td>
+<td style="text-align: left;">taken from the source, not independently
+re-derived</td>
+</tr>
+</tbody>
+</table>
+<p>Then the promotion check runs the other way: any finding graded minor
+that the dependency map shows a main theorem resting on is re-examined,
+and promoted if the dependency is real.</p>
+<h2 data-number="3.7" id="when-repair-has-more-than-one-route"><span
+class="header-section-number">3.7</span> When repair has more than one
+route</h2>
+<p>Sometimes a confirmed major issue admits several plausible repairs —
+add a hypothesis here, or restrict the generality there, and the theorem
+survives either way in different amended forms. When that happens a
+separate dossier gets written: one agent per route, each saying what the
+hypothesis is, what it costs in generality, exactly which of the paper’s
+results it restores and in what form, and whether it is <em>sharp</em>
+or merely sufficient. A synthesis follows, recommending an order of
+preference.</p>
+<p>That recommendation is about mathematics, not about publication, so
+it doesn’t touch the first rule.</p>
+<p>When there’s one obvious fix, none of this fires — the fix goes in
+the issue’s own repair field and the dossier is skipped. Branches are
+never manufactured to fill it.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p><strong>Branching never nests.</strong> A branch is a genuine choice
+among repair routes, and choices that compose cost their product rather
+than their sum. If a second choice arises inside a branch whose options
+depend on which branch you’re in, it isn’t allowed to branch:
+correctness settles it first, and consistency with the surrounding
+branch is only a tiebreaker between options already known to be
+sound.</p>
+<p>And if the branch point is foundational — if resolving it changes
+what a large part of the paper says — the repair is not determined at
+all. That gets reported as a critical issue rather than patched around,
+because a document that silently embodies one arbitrary resolution
+misleads.</p>
+</div>
+<p>Many independent branch points is itself a finding: it says the
+repair is underdetermined, and the guide says so plainly instead of
+presenting a menu.</p>
+<h1 data-number="4" id="the-ledger-and-the-package"><span
+class="header-section-number">4</span> The Ledger and the Package</h1>
+<p>Everything converges on one file. <code>issues.yaml</code> holds
+every finding, and both the point-by-point issue list and the annotated
+copies of the paper are <em>generated</em> from it.</p>
+<p>That direction is the whole design. Maintaining the prose and the
+annotation anchors side by side is what lets them drift, and a note
+pointing at the wrong passage is worse than no note at all. Here an
+anchor that no longer matches its source is a hard error rather than a
+silent mismatch.</p>
+<h2 data-number="4.1" id="categories"><span
+class="header-section-number">4.1</span> Categories</h2>
+<p>Nothing in the tooling knows what a category is. They come from the
+ledger, and the tags, colours, output files, and annotated copies all
+follow from what you declare.</p>
+<p>The default three fit most pure-mathematics papers, and they work
+because they split by what the author has to <em>do</em> rather than by
+subject matter:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Category</strong></th>
+<th style="text-align: left;"><strong>Tag</strong></th>
+<th style="text-align: left;"><strong>What it asks of the
+author</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Mathematical</td>
+<td style="text-align: left;"><code>M</code></td>
+<td style="text-align: left;">think — supply an argument, discharge a
+hypothesis, rename a symbol</td>
+</tr>
+<tr>
+<td style="text-align: left;">References</td>
+<td style="text-align: left;"><code>R</code></td>
+<td style="text-align: left;">look something up — a locator, a record, a
+missing citation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Typographical</td>
+<td style="text-align: left;"><code>T</code></td>
+<td style="text-align: left;">retype — grammar, usage, typesetting</td>
+</tr>
+</tbody>
+</table>
+<p>An author works through those in different sittings and often in
+different moods, which is why the split earns its keep.</p>
+<p>Depart from them when the paper warrants it. Substantial numerics or
+released code may deserve a computational category; a paper whose real
+problems are organizational may want exposition kept separate from
+typography; a survey may need attribution. Two constraints, and they’re
+the only ones. A category that would hold one or two items is not a
+category — fold it into a neighbour, since every category costs the
+reader another PDF to open. And categories partition: every issue
+belongs to exactly one, filed where the <em>action</em> lies, with a
+cross-reference from the other.</p>
+<p>Colours are any <code>xcolor</code> name, used as a light fill and a
+darker border. Keep the hues far apart so a reader flipping between PDFs
+can tell them apart at a glance, and keep each category’s colour stable
+across revisions. After red and green and blue, reach for orange,
+violet, teal, brown. Yellow and lime are invisible at that tint.</p>
+<h2 data-number="4.2" id="four-attributes-kept-independent"><span
+class="header-section-number">4.2</span> Four attributes, kept
+independent</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Attribute</strong></th>
+<th style="text-align: left;"><strong>What it carries</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tag</td>
+<td style="text-align: left;">category and identity: <code>[M-7]</code>,
+<code>[R-3]</code>. The same tag appears in the issue list, the
+summary’s cross-references, and the inline note, so nothing needs
+translating. Stable once assigned — a dropped issue retires its number
+rather than renumbering the rest.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Grade</td>
+<td style="text-align: left;">what it costs: major, minor, trivial. By
+consequence, not by length.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dependency</td>
+<td style="text-align: left;"><code>depends_on: [M-2]</code> — this item
+is not an independent defect; its status follows from how another one
+resolves.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Confidence</td>
+<td style="text-align: left;">how it is known: a direct check, a
+feasibility assessment, or something reported and not re-derived.</td>
+</tr>
+</tbody>
+</table>
+<p>Collapsing any two of these loses information the author needs. In
+particular, a dependent item is still listed — the author needs to know
+which downstream statements are affected — but it is never presented as
+a separate problem.</p>
+<h2 data-number="4.3" id="anchors"><span
+class="header-section-number">4.3</span> Anchors</h2>
+<p>One rule decides whether the package builds at all:</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>An anchor must be a verbatim substring of exactly one line of the
+file being annotated.</p>
+</div>
+<p>Copy it out of the <code>.tex</code>, macros and all. Retyping from
+the rendered PDF produces an anchor that never matches, because what you
+see set on the page is not what’s in the file.</p>
+<p>Not found: lengthen or correct it against the file. Matching several
+lines: lengthen it until unique, or ask for a particular occurrence when
+the repetition is real. An anchor on a line that ends in the middle of
+inline math is fine — the insertion point advances past any straddling
+math or display, which is what keeps a note from landing inside an
+equation and producing a <code>Missing $ inserted</code> error pointing
+at a line nobody wrote.</p>
+<p>Check anchors before any prose gets written. Fixing an anchor is
+cheap; fixing it after four documents quote the passage is not.</p>
+<pre class="shell"><code>python3 annotate_tex.py check -v</code></pre>
+<h2 data-number="4.4" id="the-generator"><span
+class="header-section-number">4.4</span> The generator</h2>
+<p><code>annotate_tex.py</code> builds the generated half of the package
+from the ledger.</p>
+<pre class="shell"><code># anchors only; writes nothing
+python3 annotate_tex.py check -v
+
+# one annotated .tex per category
+python3 annotate_tex.py annotate -o .
+
+# the point-by-point Markdown issue list
+python3 annotate_tex.py issues-md -o .
+
+# compile each one, then verify the result
+python3 annotate_tex.py build -o .
+
+# all four, after clearing stale aux files
+python3 annotate_tex.py all --clean-aux -o .</code></pre>
+<p><code>build</code> runs <code>pdflatex</code>, <code>bibtex</code>,
+<code>pdflatex</code>, <code>pdflatex</code> and then checks the result
+rather than trusting the exit status: undefined references, LaTeX
+errors, the note count against the ledger, and whether the PDF is
+actually newer than its source. It exists because one pdflatex pass
+leaves every cross-reference reading <code>??</code> and
+<code>make</code> calls that a success.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p><strong>A defect in the package fails the build; a defect in the
+paper does not.</strong> A reference whose label exists in the source
+but hasn’t resolved means the build has not converged, and fails. A
+reference whose label exists nowhere can never resolve, prints
+<code>??</code> in the authors’ own PDF, and is reported as a note. The
+paper is allowed to be broken — that is what the package is for. Getting
+this backwards is how a <code>make</code> that has never once run to
+completion ships as the documented rebuild path.</p>
+</div>
+<p>Where a paper’s numbering is self-referential, run <code>build</code>
+twice and read what it reports. A fixed number of passes is not a
+guarantee.</p>
+<h2 data-number="4.5" id="writing-notes"><span
+class="header-section-number">4.5</span> Writing notes</h2>
+<p>Note bodies are Markdown, because the issue list is Markdown, and the
+generator translates them for the LaTeX path. Quotation marks become
+directional quotes, emphasis becomes <code>\emph</code>, backtick spans
+become <code>\texttt</code>, and the characters that would otherwise
+break LaTeX are escaped. Math between dollar signs passes through
+untouched, so a quotation containing mathematics still pairs
+correctly.</p>
+<p>Do not hand-write LaTeX quoting in a note — it reaches the Markdown
+literally.</p>
+<p>Two forms for the entries themselves. Bulk copy-editing goes in a
+table: thirty one-line usage corrections as thirty paragraphs is far
+worse to read and act on than one three-column table of location, what
+the paper writes, and what to write instead. Prose entries are reserved
+for items that need an argument. And when one item inside a table
+section carries real consequence — the garbled sentence that happens to
+be the one completing the proof — it gets lifted out of the table into a
+full entry, keeping its tag.</p>
+<p>Adjacent one-line nits in the same paragraph can be bundled into a
+single annotation box rather than stacking three boxes each a line tall.
+They stay separate entries in the list.</p>
+<h2 data-number="4.6" id="what-is-written-by-hand"><span
+class="header-section-number">4.6</span> What is written by hand</h2>
+<p>Three documents. The rest is generated.</p>
+<p><strong>The summary</strong> is the part you read first and lean on
+hardest, since it is where the paper is characterized rather than
+itemized. Four parts, in order: what the paper does, with the main
+theorem stated in full and the shape of the proof in as many steps as it
+actually has; the context, with the precise trade against the nearest
+prior work; the significance, with reasons, and set against it what
+qualifies the assessment — how much is assembly, what the hypotheses
+cost, what the result does not give; and the findings, ordered by
+consequence and cross-referenced to their tags, together with what
+checked out and what was never checked.</p>
+<p>It ends there. No fifth section, no recommendation.</p>
+<p><strong>The repairs document</strong> covers issues with a clear
+route, where the route is short enough to state inline. It opens by
+saying what it does not claim — that every downstream calculation has
+been rechecked under each replacement hypothesis.</p>
+<p><strong>The README</strong> says what each file is, how to rebuild,
+and which of the three source cases you’re in.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>It is called a guide everywhere it is named — the title, the running
+head, the README heading, any covering note. <em>A critical guide
+to</em> the paper, never <em>a report on</em> it. The wording is what
+tells a reader at a glance that the document carries no verdict, and it
+is the first thing that drifts.</p>
+</div>
+<h2 data-number="4.7" id="the-finished-package"><span
+class="header-section-number">4.7</span> The finished package</h2>
+<pre class="shell"><code>critical-guide/
+  00-guide.pdf         summary + issue list
+  01-summary.md        hand-written prose
+  02-issues.md         generated, point by point
+  03-repairs.md        repairs with a clear route
+  repairs/             the multi-route dossier
+  issues.yaml          the ledger
+  annotated-&lt;cat&gt;.tex  one per category
+  annotated-&lt;cat&gt;.pdf  compiled, colour-coded
+  annotate_tex.py      copied in
+  Makefile
+  README.md
+  guide-preamble.tex
+  guide-meta.yaml</code></pre>
+<p><code>review-notes/</code> sits beside it and is not part of the
+handover. It is the audit trail — the sweeps, the refutations, the
+findings that were dropped and why — kept so that a finding you doubt
+can be traced back to how it was reached.</p>
+<h2 data-number="4.8" id="the-gates"><span
+class="header-section-number">4.8</span> The gates</h2>
+<p>The build is verified, never assumed. Five things are checked before
+the package is handed over:</p>
+<ol>
+<li><p><code>make</code> exits zero from a clean tree. Not
+<code>make guide</code>, not the tool run by hand. It is the documented
+rebuild path and the one thing you will actually run.</p></li>
+<li><p>Every annotated document reports <code>ok</code> from the
+generator’s own build check.</p></li>
+<li><p>The guide PDF passes the same mechanical gate, not a lesser one.
+It is the document you actually read and the one that fails quietly — an
+undefined citation warns rather than errors, and unresolved citations
+can survive a visual spot-check.</p></li>
+<li><p>The issue list’s tables break across pages with their headers
+repeating. Nothing checks this automatically; a page is rendered and
+looked at.</p></li>
+<li><p>In Case B, every annotated passage was confirmed present in the
+submitted PDF.</p></li>
+</ol>
+<p>Then the hand-back: where the package is, what it contains, the count
+of findings by category and grade, what the refutation pass dropped, and
+what was not verified. Every quantity in that report was measured from
+the files — not carried over from an earlier run’s figures.</p>
+<h1 data-number="5" id="long-work-and-corrections"><span
+class="header-section-number">5</span> Long Work, and Corrections</h1>
+<p>Two situations the ordinary flow doesn’t cover: a work too long to
+examine in one pass, and a guide that turns out to need fixing after
+it’s finished.</p>
+<h2 data-number="5.1" id="when-one-pass-isnt-enough"><span
+class="header-section-number">5.1</span> When one pass isn’t enough</h2>
+<p>The question to ask before anything else — because it changes
+everything after — is whether a reader would take this work in one
+sitting and form one judgment.</p>
+<p>A paper, however long, yes. A book, a thesis, a memoir in parts, no.
+Those get examined a chunk at a time, in separate sessions, with you
+reading each chunk’s output before declaring the next. Forty pages is
+not chunked. Three hundred is. In between, the sitting-and-judgment test
+decides.</p>
+<p>The pause between chunks is the point. It keeps you in control of a
+long examination rather than handing you one unreadable delivery at the
+end.</p>
+<p>Chunking also settles a tooling question. The generator annotates one
+source file, so a <code>main.tex</code> full of <code>\include</code>
+lines would fail on every anchor, since the anchors live in the chapter
+files. Under chunking each chunk’s source <em>is</em> its chapter file
+and the problem doesn’t arise.</p>
+<h3 data-number="5.1.1" id="reconnaissance-first"><span
+class="header-section-number">5.1.1</span> Reconnaissance first</h3>
+<p>Before any chapter is examined there’s a chunk 0: front matter, table
+of contents, introduction, bibliography, and a skim for structure. No
+deep reading.</p>
+<p>It produces the carry file with the work’s structure and the
+decisions filled in, and nothing else. It’s cheap, and it stops chunk 1
+from doing double duty as both a chapter examination and the
+establishment of the frame that every later chunk inherits. Categories,
+colours, reader profile, and voice are fixed here and do not drift
+afterwards.</p>
+<h3 data-number="5.1.2" id="the-carry-file"><span
+class="header-section-number">5.1.2</span> The carry file</h3>
+<p><code>review-state.yaml</code> lives beside the work, and it is the
+whole design. Nothing survives between sessions except what is written
+into it — a fresh agent starting chunk 5 knows only what that file
+says.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Block</strong></th>
+<th style="text-align: left;"><strong>What it holds</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>work</code></td>
+<td style="text-align: left;">title, authors, identifier, kind, source
+root</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>structure</code></td>
+<td style="text-align: left;">one entry per chunk: file, pages, tag
+prefix, status, where its package landed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>decisions</code></td>
+<td style="text-align: left;">reader profile, voice, categories and
+colours — written once at chunk 0 and never edited</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>conventions</code></td>
+<td style="text-align: left;">notation introduced where, and what it
+means</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inherited</code></td>
+<td style="text-align: left;">open defects from earlier chunks that
+later results rest on</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precedents</code></td>
+<td style="text-align: left;">grading calls that needed thought, and why
+they went the way they did</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>verified_clean</code></td>
+<td style="text-align: left;">the citation cache: what has been checked
+and what it said</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>revisions</code></td>
+<td style="text-align: left;">problems in an earlier chunk found while
+reading a later one</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>not_examined</code></td>
+<td style="text-align: left;">cumulative, and honest</td>
+</tr>
+</tbody>
+</table>
+<p>Four of those carry most of the weight.</p>
+<p><strong><code>inherited</code></strong> is what earns the design.
+Before anything is graded, the chunk checks whether the result it’s
+examining rests on an open defect from an earlier chunk. If it does, the
+finding is <em>provisional</em> rather than independent, and says so —
+the same distinction the ledger’s dependency field makes within a chunk,
+carried across chunks.</p>
+<p><strong><code>decisions</code></strong> is frozen. If a later chunk
+finds the category scheme inadequate it says so in the hand-back and
+lets you decide; changing it mid-examination makes the packages mutually
+inconsistent.</p>
+<p><strong><code>precedents</code></strong> is what keeps ten chapters
+examined by ten agents from disagreeing about what <em>major</em> means.
+Not every grade goes in it — only the ones where a reasonable reader
+could have gone the other way.</p>
+<p><strong><code>revisions</code></strong> is appended to, never acted
+on. A chunk-5 agent that discovers a chapter-1 problem records it and
+stops. Whether to re-run chapter 1 is your call, and re-running is
+expensive.</p>
+<h3 data-number="5.1.3" id="what-changes-per-chunk"><span
+class="header-section-number">5.1.3</span> What changes per chunk</h3>
+<p>The pipeline runs as written, scoped to the chunk, with four
+differences.</p>
+<p>The carry file is read in full, before anything else.</p>
+<p>The context sweep does not run. Where the work sits, what’s new, how
+it compares to prior work: none of that is knowable from chapter 2, and
+a chunk that attempts it produces confident nonsense. It belongs to the
+final synthesis.</p>
+<p>The reference sweep consults the cache first. A book cites the same
+works many times; only what’s new gets verified, and what’s checked gets
+added.</p>
+<p>Tags are namespaced by chunk — <code>M1-7</code> is the seventh
+mathematical issue in chunk 1. No collisions, no high-water mark to
+track, and a tag says where it lives.</p>
+<p>At the end the carry file is updated and the run stops. It does not
+begin the next chunk.</p>
+<h3 data-number="5.1.4" id="the-synthesis"><span
+class="header-section-number">5.1.4</span> The synthesis</h3>
+<p>After the last chunk, one pass over the accumulated state produces
+what no chunk could: the summary with context and significance, the
+global assessment, the findings that cross chapters, and a consolidated
+issue list.</p>
+<h2 data-number="5.2" id="correcting-a-finished-guide"><span
+class="header-section-number">5.2</span> Correcting a finished
+guide</h2>
+<p>A finished guide is not frozen. A claim turns out to be overstated,
+someone disputes a finding, a cited preprint appears in print, the
+authors post a new version and the anchors stop matching.</p>
+<p>When that happens, do not start a new run. The guide is the product,
+and the job is to correct it in place so that what you’re holding is
+right. Three phases, and the order is what keeps a correction from
+becoming a rewrite.</p>
+<h3 data-number="5.2.1" id="verify-first-changing-nothing"><span
+class="header-section-number">5.2.1</span> Verify first, changing
+nothing</h3>
+<p>Enumerate the claims in scope, quote each verbatim with its location,
+and attack them one at a time — opening the cited work rather than
+relying on its abstract, on what the paper under examination says about
+it, or on the field’s reputation of it. A verdict and its evidence are
+committed for every claim <em>before</em> any prose is touched.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>An agent allowed to edit while it reads will drift into rewriting
+what it merely likes better. That is the failure this ordering exists to
+prevent, and it looks like productivity while it happens.</p>
+</div>
+<p>Negative and priority claims take a different standard. ``No prior
+occurrence,” ``the first in arbitrary dimension,” ``only the surface
+case was known”: none of these can be re-verified by failing to find a
+counterexample again. What search would surface one is stated, run, and
+reported. A thin original basis means the claim gets
+<strong>weakened</strong>, not re-affirmed.</p>
+<h3 data-number="5.2.2" id="then-apply-narrowly"><span
+class="header-section-number">5.2.2</span> Then apply, narrowly</h3>
+<p>Each failed claim is corrected in the summary, in the guide’s
+existing voice — and corrected in the ledger too, wherever it also
+appears there. A literature claim frequently lives in both, and fixing
+only the prose leaves the guide contradicting its own annotated
+PDFs.</p>
+<p>An honest hedge beats a deletion. A claim narrowed to what is
+actually true is more useful than a gap where it used to be. Nothing
+that wasn’t audited gets touched, and no recommendation gets added.</p>
+<h3 data-number="5.2.3"
+id="then-regenerate-and-report-the-changelog"><span
+class="header-section-number">5.2.3</span> Then regenerate, and report
+the changelog</h3>
+<pre class="shell"><code>python3 annotate_tex.py all --clean-aux</code></pre>
+<p>Then the guide PDF. A correction that leaves the ledger and the built
+PDFs out of step has not been made — it has been half made, which is
+worse, because the package now disagrees with itself.</p>
+<p>Finally: what changed, from what to what, on what evidence. The
+detail stays in the audit trail.</p>
+<p>The same three phases apply to any correction, not only to a
+literature claim — a withdrawn finding, a regraded issue, a repaired
+anchor after a new version appears.</p>
+<h1 data-number="6" id="quick-reference"><span
+class="header-section-number">6</span> Quick Reference</h1>
+<h2 data-number="6.1" id="invocation"><span
+class="header-section-number">6.1</span> Invocation</h2>
+<pre class="shell"><code>/write-critical-guide &lt;pdf path&gt;
+/write-critical-guide arXiv:&lt;id&gt;
+/write-critical-guide &lt;folder with the paper&gt;</code></pre>
+<p>It runs unattended and takes every default. The only thing that halts
+it is being unable to identify the paper.</p>
+<h2 data-number="6.2" id="the-generator-1"><span
+class="header-section-number">6.2</span> The generator</h2>
+<pre class="shell"><code># anchors only; writes nothing
+python3 annotate_tex.py check -v
+
+# annotated .tex, one per category
+python3 annotate_tex.py annotate -o .
+
+# the Markdown issue list
+python3 annotate_tex.py issues-md -o .
+
+# compile, then verify the result
+python3 annotate_tex.py build -o .
+
+# all four, aux files cleared first
+python3 annotate_tex.py all --clean-aux -o .
+
+# the same gate, for 00-guide.pdf
+python3 check_guide.py</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Option</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>-l PATH</code></td>
+<td style="text-align: left;">ledger path; defaults to
+<code>issues.yaml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-o DIR</code></td>
+<td style="text-align: left;">output directory</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--clean-aux</code></td>
+<td style="text-align: left;">clear stale aux files first; use it after
+a failed build</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-v</code></td>
+<td style="text-align: left;">verbose; use it with
+<code>check</code></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="6.3" id="package-layout"><span
+class="header-section-number">6.3</span> Package layout</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>File</strong></th>
+<th style="text-align: left;"><strong>What it is</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>00-guide.pdf</code></td>
+<td style="text-align: left;">summary and issue list, typeset
+together</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>01-summary.md</code></td>
+<td style="text-align: left;">hand-written: work, context, significance,
+findings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>02-issues.md</code></td>
+<td style="text-align: left;">generated: point by point</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>03-repairs.md</code></td>
+<td style="text-align: left;">repairs with a clear route</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>repairs/</code></td>
+<td style="text-align: left;">conditional: the multi-route dossier</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>issues.yaml</code></td>
+<td style="text-align: left;">the ledger; single source of truth</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>annotated-*.tex</code></td>
+<td style="text-align: left;">generated, one per category</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>annotated-*.pdf</code></td>
+<td style="text-align: left;">compiled, colour-coded</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>annotate_tex.py</code></td>
+<td style="text-align: left;">copied in; the package rebuilds
+anywhere</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Makefile</code></td>
+<td style="text-align: left;"><code>make</code> is the documented
+rebuild path</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>review-notes/</code></td>
+<td style="text-align: left;">the audit trail; not part of the
+handover</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="6.4" id="ledger-fields"><span
+class="header-section-number">6.4</span> Ledger fields</h2>
+<p>Required per issue: <code>id</code>, <code>category</code>,
+<code>anchor</code>, <code>note</code>. Everything else is optional, and
+<code>grade</code> defaults to <code>minor</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Field</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">the tag: <code>M-7</code>,
+<code>R-3</code>, <code>T-21</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>category</code></td>
+<td style="text-align: left;">which category; they partition</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>grade</code></td>
+<td style="text-align: left;"><code>major</code>, <code>minor</code>,
+<code>trivial</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>grade_note</code></td>
+<td style="text-align: left;">qualifier, e.g. <em>major (for
+readability)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>location</code></td>
+<td style="text-align: left;">where, in the paper’s own terms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>anchor</code></td>
+<td style="text-align: left;">verbatim substring of exactly one line of
+the source</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>occurrence</code></td>
+<td style="text-align: left;">which match, when the anchor is
+deliberately non-unique</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caption</code></td>
+<td style="text-align: left;">short label for the note and the header
+index</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>quote</code></td>
+<td style="text-align: left;">the paper’s own words; issue list
+only</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>note</code></td>
+<td style="text-align: left;">the finding itself</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>request</code></td>
+<td style="text-align: left;">what would repair it</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>depends_on</code></td>
+<td style="text-align: left;">this item follows from another
+finding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>confidence</code></td>
+<td style="text-align: left;"><code>direct-check</code>,
+<code>assessment</code>, <code>reported</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>also</code></td>
+<td style="text-align: left;">bundle these tags into this one’s
+annotation box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>render</code></td>
+<td style="text-align: left;"><code>prose</code> lifts an item out of a
+table section</td>
+</tr>
+</tbody>
+</table>
+<p>Top-level blocks of the ledger:</p>
+<pre class="shell"><code>paper            the work; what locations mean
+categories       tag, title, colour, output
+issues           the findings themselves
+verified_clean   what came out clean
+not_verified     what was not checked, and why
+scope_caveat     what is not claimed certified
+issue_list_name  the issue list&#39;s filename
+caption_symbols  ASCII spellings for captions</code></pre>
+<h2 data-number="6.5" id="where-fields-appear"><span
+class="header-section-number">6.5</span> Where fields appear</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Field</strong></th>
+<th style="text-align: left;"><strong>Issue list</strong></th>
+<th style="text-align: left;"><strong>Inline note</strong></th>
+<th style="text-align: left;"><strong>Header index</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>grade</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>location</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">fallback</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>caption</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">caption</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>quote</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>note</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>request</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>depends_on</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>confidence</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>anchor</code></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">placement</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p>The annotated source omits the quotation on purpose: the note sits at
+the passage, so quoting it back is noise. The issue list includes it,
+since it’s read away from the paper.</p>
+<h2 data-number="6.6" id="source-cases"><span
+class="header-section-number">6.6</span> Source cases</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Case</strong></th>
+<th style="text-align: left;"><strong>What is annotated, and what
+locations mean</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">The authors’ source. Locations cite it by
+line, plus the paper’s numbering.</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">A public source, with every passage
+confirmed against the submitted PDF. Prose locations are the
+submission’s pages and lines.</td>
+</tr>
+<tr>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Nothing; the package is prose and the
+typeset guide. Stated in the README.</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="6.7" id="latex-hazards-already-handled"><span
+class="header-section-number">6.7</span> LaTeX hazards, already
+handled</h2>
+<p>Recorded so that placing a note by hand, or debugging a build,
+doesn’t mean rediscovering them.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Hazard</strong></th>
+<th style="text-align: left;"><strong>What happens</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A list of todos under amsart with
+hyperref</td>
+<td style="text-align: left;">aborts the build, naming neither the
+package nor the caption; an inline index replaces it</td>
+</tr>
+<tr>
+<td style="text-align: left;">TeX inside a note caption</td>
+<td style="text-align: left;">breaks hyperref; captions are reduced to
+plain ASCII</td>
+</tr>
+<tr>
+<td style="text-align: left;">A note dropped after its anchor line</td>
+<td style="text-align: left;">can land inside math; insertion advances
+past all math and verbatim</td>
+</tr>
+<tr>
+<td style="text-align: left;">A stale todo file</td>
+<td style="text-align: left;">resurfaces as a phantom error after a
+failed run; clear aux files</td>
+</tr>
+<tr>
+<td style="text-align: left;">A percent or hash in a quoted macro</td>
+<td style="text-align: left;">comments out the rest of the note,
+including its closing brace</td>
+</tr>
+<tr>
+<td style="text-align: left;">A quoted macro in a narrow cell</td>
+<td style="text-align: left;">one unbreakable box; overfull is a
+warning, so the log won’t stop you</td>
+</tr>
+<tr>
+<td style="text-align: left;">A note beginning with a bracket</td>
+<td style="text-align: left;">turns a line break into a length argument,
+and the length is not a length</td>
+</tr>
+<tr>
+<td style="text-align: left;">pdflatex log encoding</td>
+<td style="text-align: left;">is not promised to be UTF-8; read it
+permissively</td>
+</tr>
+<tr>
+<td style="text-align: left;">Missing figures or class files</td>
+<td style="text-align: left;">not yours to fix; note it and let the
+build proceed</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="6.8" id="building-the-guide-pdf"><span
+class="header-section-number">6.8</span> Building the guide PDF</h2>
+<p>Bare LaTeX macros quoted from the paper must sit in backticks in the
+Markdown, or they reach an engine that has never heard of them. This is
+the commonest way the build breaks, because quoting the paper’s macros
+is exactly what an issue list does.</p>
+<p>Use <code>pdflatex</code>, not <code>lualatex</code> — an order of
+magnitude faster here, and it handles every character a critical guide
+actually uses. Long tables need <code>longtable</code> with repeating
+headers and ragged-right cells, or they are silently truncated. And the
+title lives in the metadata file; repeating it as a heading prints it
+twice.</p>
+<h2 data-number="6.9" id="chunked-examinations"><span
+class="header-section-number">6.9</span> Chunked examinations</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Element</strong></th>
+<th style="text-align: left;"><strong>Rule</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>review-state.yaml</code></td>
+<td style="text-align: left;">beside the work; read in full before
+starting, updated before stopping</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chunk 0</td>
+<td style="text-align: left;">reconnaissance only; fixes categories,
+colours, profile, voice</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>decisions</code></td>
+<td style="text-align: left;">written once, never edited</td>
+</tr>
+<tr>
+<td style="text-align: left;">Context sweep</td>
+<td style="text-align: left;">does not run per chunk</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reference sweep</td>
+<td style="text-align: left;">consults the cache first</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tags</td>
+<td style="text-align: left;">namespaced by chunk:
+<code>M1-7</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>revisions</code></td>
+<td style="text-align: left;">appended, never acted on</td>
+</tr>
+<tr>
+<td style="text-align: left;">End of chunk</td>
+<td style="text-align: left;">update, hand back, stop</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="6.10" id="words-the-house-does-not-use"><span
+class="header-section-number">6.10</span> Words the house does not
+use</h2>
+<p>Disposition vocabulary as a judgment on this paper: <em>accept</em>,
+<em>reject</em>, <em>revision</em>, <em>publishable</em>. Anything that
+writes your report for you: <em>I recommend</em>, <em>this reviewer
+finds</em>. <em>Load-bearing</em> — say what rests on what. <em>The key
+definition</em>, <em>the crucial step</em> — there is rarely exactly
+one; name the thing and say what it does. Negative framing where
+positive carries the same content. Executive-summary register:
+<em>headline</em>, <em>takeaway</em>, <em>at a glance</em>. Reading
+advice to the author. And the usual filler: <em>utilize</em>,
+<em>leverage</em>, <em>seamless</em>, <em>robust</em>,
+<em>powerful</em>, <em>elegant</em>, <em>simple</em>, <em>easy</em>,
+<em>straightforward</em>, <em>clean</em>.</p>
+</main>
+
+</div>
+</body>
+</html>
