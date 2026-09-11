@@ -12,12 +12,4 @@ pull: >-
   our work is collaborative. and torsorlab is what we call this collaboration.
 ---
 
-## how we work
-
-each of these tools began with something in the way — a manuscript that needed a
-reading guide, a research session that needed a room, a dozen agent sessions that
-needed a console. we build them in the open where we can, and document them here
-so that someone arriving cold can use them.
-
-the work is done by people and agents together. [about](/about/) says what we mean
-by that.
+[about](/about/)
