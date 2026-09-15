@@ -3,7 +3,7 @@ title: hive
 slug: hive
 tagline: a fleet console for agent sessions running in tmux on always-on boxes.
 status: coming
-order: 3
+order: 4
 ---
 
 Claude Code and Codex sessions run on machines that stay up; the laptop is a

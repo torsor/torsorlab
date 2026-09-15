@@ -29,8 +29,8 @@ layout: base
   {%- if skills.size > 0 -%}
   <section class="band">
     <div class="band__head">
-      <p class="eyebrow">the skills</p>
-      <h2>what each one does</h2>
+      <p class="eyebrow">{{ page.docs_eyebrow | default: 'documentation' }}</p>
+      <h2>{{ page.docs_heading | default: 'the pages' }}</h2>
       {%- if overview -%}
         <p class="band__note">new here? <a href="{{ overview.url | relative_url }}">{{ overview.summary }}</a></p>
       {%- endif -%}

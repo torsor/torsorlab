@@ -5,6 +5,8 @@ tagline: eleven writing skills for Claude Code to create reading guides, critica
 status: released
 repo: https://github.com/torsor/claude-plugins
 order: 1
+docs_eyebrow: the skills
+docs_heading: what each one does
 ---
 
 ## getting it

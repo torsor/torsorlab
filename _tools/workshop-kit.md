@@ -3,7 +3,7 @@ title: workshop-kit
 slug: workshop-kit
 tagline: a platform for running AI-aided mathematics research workshops on a provisioned host.
 status: coming
-order: 2
+order: 3
 ---
 
 agents work a research problem in a persistent room; we attach, steer, and hand
