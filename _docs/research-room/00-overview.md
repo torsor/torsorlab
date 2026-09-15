@@ -4,7 +4,7 @@ tool: research-room
 slug: overview
 permalink: /tools/research-room/overview/
 order: 0
-summary: what a research room is, and what it is careful about.
+summary: what a research room is.
 notes:
   - title: a theorem is not the only outcome
     text: >-
