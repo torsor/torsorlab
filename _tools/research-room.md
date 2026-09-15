@@ -5,6 +5,7 @@ tagline: a folder template for doing sustained mathematical research with an age
 status: released
 repo: https://github.com/torsor/research-room
 order: 2
+manual: true
 docs_eyebrow: the room
 docs_heading: how it is put together
 ---

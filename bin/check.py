@@ -117,7 +117,7 @@ def main():
         if fm.get("status") == "released" and not docs_by_tool.get(slug):
             errors.append(f"_tools/{slug}: released but has no docs")
 
-    # a doc page that advertises a manual must actually have one on disk
+    # anything that advertises a manual must actually have one on disk
     for p in sorted((ROOT / "_docs").rglob("*.md")):
         fm = front_matter(p) or {}
         if fm.get("manual") != "true":
@@ -127,6 +127,16 @@ def main():
             errors.append(
                 f"_docs/{p.relative_to(ROOT / '_docs')}: manual: true but "
                 f"{manual.relative_to(ROOT)} is missing — run `make manuals`")
+
+    for p in sorted((ROOT / "_tools").glob("*.md")):
+        fm = front_matter(p) or {}
+        if fm.get("manual") != "true":
+            continue
+        manual = ROOT / "tools" / fm.get("slug", "") / "manual" / "index.html"
+        if not manual.exists():
+            errors.append(
+                f"_tools/{p.name}: manual: true but {manual.relative_to(ROOT)} "
+                f"is missing — run `make manuals`")
 
     if errors:
         print("check failed:")

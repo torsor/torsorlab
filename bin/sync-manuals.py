@@ -1,63 +1,111 @@
 #!/usr/bin/env python3
-"""Copy the built torsor-writing manuals into the site.
+"""Copy the built manuals into the site.
 
-The manuals are authored and built elsewhere — in the guides directory beside
-the plugin repo — and this copies the built HTML and PDF in so the site can
-serve them at /tools/torsor-writing/<skill>/manual/.
+Manuals are authored and built elsewhere, each in its own directory with its
+own Makefile. This copies the built HTML and PDF in so the site can serve them.
 
     make manuals                    # copy what is already built
-    make manuals BUILD=1            # run the guides' own make html/pdf first
+    make manuals BUILD=1            # run each manual's own make html/pdf first
+    make manuals GUIDES=/a:/b       # extra directories to search
+
+Source directories are found by name under the search roots, which come from
+$TORSOR_GUIDES (colon-separated, as a PATH). They are local paths that differ
+per machine, so none is hard-coded here.
 
 It refuses to copy a manual whose LaTeX source is newer than its build output,
-because a stale manual on the site is worse than a missing one. Rebuild it (or
-pass BUILD=1) and run again.
+because a stale manual on the site is worse than a missing one.
 """
 
 import argparse
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
 
-# The three skills that have manuals. Add a line when a fourth is written.
-MANUALS = ["write-paper-guide", "write-critical-guide", "write-review-and-repair"]
-
-SITE = pathlib.Path(__file__).resolve().parent.parent
-DEST_ROOT = SITE / "tools" / "torsor-writing"
-# Where the manuals are authored. This is a local path that differs per machine,
-# so it is not hard-coded here: set TORSOR_GUIDES, or pass --from / GUIDES=.
 ENV_VAR = "TORSOR_GUIDES"
+SITE = pathlib.Path(__file__).resolve().parent.parent
+
+# source directory name -> where it lands in the site, and its browser title.
+# A manual can belong to a single skill (a doc page) or to a whole tool.
+MANUALS = {
+    "write-paper-guide": (
+        "tools/torsor-writing/write-paper-guide/manual",
+        "write-paper-guide: a user's manual",
+    ),
+    "write-critical-guide": (
+        "tools/torsor-writing/write-critical-guide/manual",
+        "write-critical-guide: a user's manual",
+    ),
+    "write-review-and-repair": (
+        "tools/torsor-writing/write-review-and-repair/manual",
+        "write-review-and-repair: a user's manual",
+    ),
+    "rr-guide": (
+        "tools/research-room/manual",
+        "research-room: a user's manual",
+    ),
+}
 
 
-def newest_source(guide: pathlib.Path) -> float:
+def search_roots(extra):
+    roots = []
+    for chunk in (extra or []) + os.environ.get(ENV_VAR, "").split(":"):
+        chunk = chunk.strip()
+        if chunk:
+            p = pathlib.Path(chunk).expanduser()
+            if p.is_dir():
+                roots.append(p)
+    return roots
+
+
+def find_source(name, roots):
+    for r in roots:
+        # the manual directory may be a root itself, or sit under one
+        if r.name == name and (r / "latex").is_dir():
+            return r
+        cand = r / name
+        if (cand / "latex").is_dir():
+            return cand
+    return None
+
+
+def newest_source(guide):
     tex = list((guide / "latex").rglob("*.tex"))
     return max((p.stat().st_mtime for p in tex), default=0.0)
 
 
-def main() -> int:
+def set_title(html_path, title):
+    """tex2torsor emits <title>Document</title> for every manual, so tabs and
+    bookmarks are all identically useless. Give each one its real name."""
+    s = html_path.read_text()
+    new, n = re.subn(r"<title>.*?</title>", f"<title>{title}</title>", s, count=1, flags=re.S)
+    if n == 0:
+        new = new.replace("</head>", f"  <title>{title}</title>\n</head>", 1)
+    html_path.write_text(new)
+
+
+def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--from", dest="src", type=pathlib.Path,
-                    default=pathlib.Path(os.environ[ENV_VAR]) if os.environ.get(ENV_VAR) else None,
-                    help="the guides directory holding the built manuals "
-                         f"(default: ${ENV_VAR})")
+    ap.add_argument("--from", dest="src", action="append", default=[],
+                    help=f"a directory to search (repeatable; adds to ${ENV_VAR})")
     ap.add_argument("--build", action="store_true",
-                    help="run each guide's own `make html pdf` before copying")
+                    help="run each manual's own `make html pdf` before copying")
     args = ap.parse_args()
 
-    if args.src is None:
-        print(f"set {ENV_VAR} to the guides directory, or pass --from / "
-              f"`make manuals GUIDES=...`", file=sys.stderr)
-        return 1
-    if not args.src.is_dir():
-        print(f"guides directory not found: {args.src}", file=sys.stderr)
+    roots = search_roots(args.src)
+    if not roots:
+        print(f"set {ENV_VAR} to the directories holding the manual sources "
+              f"(colon-separated), or pass --from / `make manuals GUIDES=...`",
+              file=sys.stderr)
         return 1
 
     errors = []
-    for name in MANUALS:
-        guide = args.src / name
-        if not guide.is_dir():
-            errors.append(f"{name}: not in {args.src}")
+    for name, (dest_rel, title) in MANUALS.items():
+        guide = find_source(name, roots)
+        if guide is None:
+            errors.append(f"{name}: not found under {', '.join(str(r) for r in roots)}")
             continue
 
         if args.build:
@@ -75,21 +123,21 @@ def main() -> int:
             continue
 
         src_mtime = newest_source(guide)
-        for built in (html, pdf):
-            if built.stat().st_mtime < src_mtime:
-                errors.append(
-                    f"{name}: {built.name} is older than the LaTeX source — "
-                    f"rebuild it, or pass BUILD=1")
-                break
-        else:
-            dest = DEST_ROOT / name / "manual"
-            dest.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(html, dest / "index.html")
-            shutil.copy2(pdf, dest / "manual.pdf")
-            for css in ("tokens.css", "manual.css"):
-                shutil.copy2(guide / "html" / css, dest / css)
-            kb = sum(f.stat().st_size for f in dest.iterdir()) // 1024
-            print(f"  {name}  ->  tools/torsor-writing/{name}/manual/  ({kb}kb)")
+        stale = [b.name for b in (html, pdf) if b.stat().st_mtime < src_mtime]
+        if stale:
+            errors.append(f"{name}: {', '.join(stale)} older than the LaTeX source — "
+                          f"rebuild, or pass BUILD=1")
+            continue
+
+        dest = SITE / dest_rel
+        dest.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(html, dest / "index.html")
+        shutil.copy2(pdf, dest / "manual.pdf")
+        for css in ("tokens.css", "manual.css"):
+            shutil.copy2(guide / "html" / css, dest / css)
+        set_title(dest / "index.html", title)
+        kb = sum(f.stat().st_size for f in dest.iterdir()) // 1024
+        print(f"  {name:24} -> {dest_rel}  ({kb}kb)")
 
     for e in errors:
         print(f"  ! {e}", file=sys.stderr)

@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>research-room: a user's manual</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="manual.css" />
+
+
+</head>
+<body class="paper-texture">
+<div class="page-layout">
+
+<nav class="doc-toc" id="toc" aria-label="Table of contents">
+  <p class="kicker">Contents</p>
+  <ul>
+  <li><a href="#preface-four-jobs-one-room"
+  id="toc-preface-four-jobs-one-room"><span
+  class="toc-section-number">1</span> Preface: Four Jobs, One
+  Room</a></li>
+  <li><a href="#what-a-research-room-is-for"
+  id="toc-what-a-research-room-is-for"><span
+  class="toc-section-number">2</span> What a Research Room Is For</a>
+  <ul>
+  <li><a href="#the-four-jobs-and-the-files-that-serve-them"
+  id="toc-the-four-jobs-and-the-files-that-serve-them"><span
+  class="toc-section-number">2.1</span> The four jobs, and the files
+  that serve them</a></li>
+  <li><a href="#one-job-each-and-no-duplication"
+  id="toc-one-job-each-and-no-duplication"><span
+  class="toc-section-number">2.2</span> One job each, and no
+  duplication</a></li>
+  <li><a href="#history-and-current-state-are-different-jobs"
+  id="toc-history-and-current-state-are-different-jobs"><span
+  class="toc-section-number">2.3</span> History and current state are
+  different jobs</a></li>
+  <li><a href="#canonical-does-not-mean-certain"
+  id="toc-canonical-does-not-mean-certain"><span
+  class="toc-section-number">2.4</span> Canonical does not mean
+  certain</a></li>
+  </ul></li>
+  <li><a href="#starting-from-the-template"
+  id="toc-starting-from-the-template"><span
+  class="toc-section-number">3</span> Starting from the Template</a>
+  <ul>
+  <li><a href="#fill-in-the-placeholders"
+  id="toc-fill-in-the-placeholders"><span
+  class="toc-section-number">3.1</span> Fill in the
+  placeholders</a></li>
+  <li><a href="#write-your-conventions-before-you-lean-on-them"
+  id="toc-write-your-conventions-before-you-lean-on-them"><span
+  class="toc-section-number">3.2</span> Write your conventions before
+  you lean on them</a></li>
+  <li><a href="#the-reading-order" id="toc-the-reading-order"><span
+  class="toc-section-number">3.3</span> The reading order</a></li>
+  <li><a href="#name-the-boundaries" id="toc-name-the-boundaries"><span
+  class="toc-section-number">3.4</span> Name the boundaries</a></li>
+  <li><a href="#before-you-share-a-copy"
+  id="toc-before-you-share-a-copy"><span
+  class="toc-section-number">3.5</span> Before you share a copy</a></li>
+  </ul></li>
+  <li><a href="#keeping-the-record" id="toc-keeping-the-record"><span
+  class="toc-section-number">4</span> Keeping the Record</a>
+  <ul>
+  <li><a href="#the-journal-what-you-believed-and-when"
+  id="toc-the-journal-what-you-believed-and-when"><span
+  class="toc-section-number">4.1</span> The journal: what you believed,
+  and when</a></li>
+  <li><a href="#notes-the-reusable-material-including-the-failures"
+  id="toc-notes-the-reusable-material-including-the-failures"><span
+  class="toc-section-number">4.2</span> Notes: the reusable material,
+  including the failures</a></li>
+  <li><a href="#canonical-the-claims-that-carry-the-work"
+  id="toc-canonical-the-claims-that-carry-the-work"><span
+  class="toc-section-number">4.3</span> Canonical: the claims that carry
+  the work</a></li>
+  <li><a href="#when-a-claim-comes-down"
+  id="toc-when-a-claim-comes-down"><span
+  class="toc-section-number">4.4</span> When a claim comes down</a></li>
+  <li><a href="#goals-the-current-questions-kept-short"
+  id="toc-goals-the-current-questions-kept-short"><span
+  class="toc-section-number">4.5</span> Goals: the current questions,
+  kept short</a></li>
+  <li><a href="#handoffs-an-operational-reminder-nothing-more"
+  id="toc-handoffs-an-operational-reminder-nothing-more"><span
+  class="toc-section-number">4.6</span> Handoffs: an operational
+  reminder, nothing more</a></li>
+  </ul></li>
+  <li><a href="#what-the-evidence-supports"
+  id="toc-what-the-evidence-supports"><span
+  class="toc-section-number">5</span> What the Evidence Supports</a>
+  <ul>
+  <li><a href="#five-kinds-of-support-are-not-interchangeable"
+  id="toc-five-kinds-of-support-are-not-interchangeable"><span
+  class="toc-section-number">5.1</span> Five kinds of support are not
+  interchangeable</a></li>
+  <li><a href="#the-status-labels" id="toc-the-status-labels"><span
+  class="toc-section-number">5.2</span> The status labels</a></li>
+  <li><a href="#labels-are-for-claims-not-for-everything"
+  id="toc-labels-are-for-claims-not-for-everything"><span
+  class="toc-section-number">5.3</span> Labels are for claims, not for
+  everything</a></li>
+  <li><a href="#when-a-progress-report-is-actually-asked-for"
+  id="toc-when-a-progress-report-is-actually-asked-for"><span
+  class="toc-section-number">5.4</span> When a progress report is
+  actually asked for</a></li>
+  <li><a href="#correcting-an-overstatement-in-proportion"
+  id="toc-correcting-an-overstatement-in-proportion"><span
+  class="toc-section-number">5.5</span> Correcting an overstatement, in
+  proportion</a></li>
+  </ul></li>
+  <li><a href="#evaluation" id="toc-evaluation"><span
+  class="toc-section-number">6</span> Evaluation</a>
+  <ul>
+  <li><a href="#evaluation-is-not-a-gate-on-everything"
+  id="toc-evaluation-is-not-a-gate-on-everything"><span
+  class="toc-section-number">6.1</span> Evaluation is not a gate on
+  everything</a></li>
+  <li><a href="#refereeing-arguments"
+  id="toc-refereeing-arguments"><span
+  class="toc-section-number">6.2</span> Refereeing arguments</a></li>
+  <li><a href="#reviewing-directions"
+  id="toc-reviewing-directions"><span
+  class="toc-section-number">6.3</span> Reviewing directions</a></li>
+  <li><a href="#the-same-instrument-twice"
+  id="toc-the-same-instrument-twice"><span
+  class="toc-section-number">6.4</span> The same instrument,
+  twice</a></li>
+  </ul></li>
+  <li><a href="#the-values-it-runs-on"
+  id="toc-the-values-it-runs-on"><span
+  class="toc-section-number">7</span> The Values It Runs On</a></li>
+  <li><a href="#quick-reference" id="toc-quick-reference"><span
+  class="toc-section-number">8</span> Quick Reference</a>
+  <ul>
+  <li><a href="#the-room-at-a-glance"
+  id="toc-the-room-at-a-glance"><span
+  class="toc-section-number">8.1</span> The room at a glance</a></li>
+  <li><a href="#reading-order" id="toc-reading-order"><span
+  class="toc-section-number">8.2</span> Reading order</a></li>
+  <li><a href="#status-labels" id="toc-status-labels"><span
+  class="toc-section-number">8.3</span> Status labels</a></li>
+  <li><a href="#five-kinds-of-support"
+  id="toc-five-kinds-of-support"><span
+  class="toc-section-number">8.4</span> Five kinds of support</a></li>
+  <li><a href="#progress-report-form"
+  id="toc-progress-report-form"><span
+  class="toc-section-number">8.5</span> Progress-report form</a></li>
+  <li><a href="#refereeing-arguments-1"
+  id="toc-refereeing-arguments-1"><span
+  class="toc-section-number">8.6</span> Refereeing arguments</a></li>
+  <li><a href="#reviewing-directions-1"
+  id="toc-reviewing-directions-1"><span
+  class="toc-section-number">8.7</span> Reviewing directions</a></li>
+  <li><a href="#resource-thresholds" id="toc-resource-thresholds"><span
+  class="toc-section-number">8.8</span> Resource thresholds</a></li>
+  <li><a href="#retracting-a-canonical-claim"
+  id="toc-retracting-a-canonical-claim"><span
+  class="toc-section-number">8.9</span> Retracting a canonical
+  claim</a></li>
+  <li><a href="#before-publishing-a-copy"
+  id="toc-before-publishing-a-copy"><span
+  class="toc-section-number">8.10</span> Before publishing a
+  copy</a></li>
+  </ul></li>
+  </ul>
+</nav>
+
+<main class="doc-body prose" id="main">
+
+<div class="titlepage">
+<p>Research Room</p>
+<p>A User’s Manual</p>
+<p><em>A shared workspace for a researcher and an agent.</em></p>
+<p>Remember what you did, weigh how well you know it, test it before you
+build on it — and keep the collaboration worth doing.</p>
+<p>Describes <a
+href="https://github.com/torsor/research-room">github.com/torsor/research-room</a><br />
+at commit <span>e67dce5</span>.</p>
+<p><span> Last revised: 2026-09-15</span></p>
+</div>
+<div class="center">
+<p>torsor lab</p>
+<p><span><a href="https://torsor.org"> torsor.org</a></span></p>
+</div>
+<h1 data-number="1" id="preface-four-jobs-one-room"><span
+class="header-section-number">1</span> Preface: Four Jobs, One Room</h1>
+<p>Let’s be honest with each other. A research project accumulates a lot
+of thinking, and most of it evaporates.</p>
+<p>You proved something on a good afternoon and you are fairly sure the
+argument was sound, though you’d have to reconstruct it to be certain.
+You checked a case up to degree eight and meant to note where you
+stopped. You tried an approach that didn’t work, and the reason it
+didn’t work was actually interesting, and it’s gone now. Some of this
+lived in a conversation with a collaborator or an agent, and the
+conversation has scrolled off. Six months on, the honest answer to
+``what do we know here?” is a shrug and a promise to look into it.</p>
+<p>Keeping records fixes the evaporation. It is also the easy part, and
+the part people reach for first — so it’s worth saying up front that it
+is not the point. A perfectly kept archive whose claims are
+self-assigned, or one that nobody can bear to work in, is a tidy pile of
+sand.</p>
+<p>A <strong>research room</strong> is a directory that does four jobs
+at once, and the four hold each other up:</p>
+<ul>
+<li><p>It <strong>remembers</strong> — what you did, when, and why,
+including the wrong turns.</p></li>
+<li><p>It <strong>calibrates confidence</strong> — so a claim checked to
+degree eight and a theorem proven for all <em>n</em> never get read as
+the same thing.</p></li>
+<li><p>It <strong>evaluates</strong> — structured refereeing of
+arguments, and structured review of research directions, so that what
+gets called settled is earned and effort goes where it’s worth
+going.</p></li>
+<li><p>It <strong>sustains a working culture</strong> — a set of values
+for how a person and an agent actually collaborate, day after day,
+without the thing becoming miserable to use.</p></li>
+</ul>
+<p>The first two are the substrate: memory, kept honest. The second two
+are what make the substrate worth having. Evaluation is the stabilizer —
+it’s what turns ``we wrote it down and felt good about it” into ``we
+checked it and can build on it,” and it’s what keeps the direction from
+wandering. The culture is what makes the collaboration one you keep
+returning to instead of abandoning. Get memory and confidence without
+them and you have a well-organized record of work you can neither trust
+nor stand to continue.</p>
+<p>This is a <em>template</em> — a problem-neutral example you copy and
+fill in. It ships with no theorems, no inherited questions, and a set of
+angle-bracketed placeholders where your project’s specifics go. It’s a
+worked example of one way to run this kind of collaboration, not a claim
+that one workflow fits every one. The last of its own values says to
+simplify any part of it once the part stops earning its cost — and that
+applies to the whole apparatus.</p>
+<p>The chapters follow the four jobs. Chapter 1 lays out the model in
+one pass: the jobs, the files that serve them, and how they interlock.
+Chapter 2 covers copying the template and making it yours. Chapters 3
+and 4 are the substrate — keeping the record, and saying exactly what
+the evidence supports. Chapter 5 is evaluation, in its two halves:
+refereeing arguments and reviewing directions. Chapter 6 is the values
+the whole thing runs on. The appendix collects the tables —
+dispositions, panel findings, resource thresholds — you’ll want at hand
+once the prose has done its job.</p>
+<p>You don’t have to read it in order. Setting up a room right now:
+Chapter 2. Want to know why the pieces are arranged this way before you
+commit: start here and keep going.</p>
+<h1 data-number="2" id="what-a-research-room-is-for"><span
+class="header-section-number">2</span> What a Research Room Is For</h1>
+<p>Before the details, the whole idea in one pass. A research room is a
+directory that does four jobs — remember, calibrate confidence,
+evaluate, sustain a culture — and its files are arranged so that each
+one does a single piece of that work and no two of them do the same
+piece. Get the four jobs and their division of labor straight, and the
+rest of the manual is commentary.</p>
+<h2 data-number="2.1"
+id="the-four-jobs-and-the-files-that-serve-them"><span
+class="header-section-number">2.1</span> The four jobs, and the files
+that serve them</h2>
+<p>Here is the room sorted by what each part is <em>for</em>.</p>
+<p><strong>Remember.</strong> <code>journal.md</code> is the dated,
+append-only record of reasoning — what you thought, when, and why,
+including the turns that didn’t pan out. <code>notes/</code> holds the
+reusable material: arguments, computations, examples, source checks, and
+the informative dead ends.</p>
+<p><strong>Calibrate confidence.</strong> <code>canonical/</code> holds
+the claims other work currently depends on, each with an accurate
+account of what supports it and what would break it. Running through
+everything is a small vocabulary for how much a statement is worth — the
+difference between computed, conjectured, imported, and reviewed.</p>
+<p><strong>Evaluate.</strong> <code>review/</code> is the workspace for
+refereeing arguments: exact review units, referee reports, responses,
+outcomes. <code>proposals/</code> is the parallel workspace for
+reviewing research <em>directions</em> before you sink time into them.
+The procedures live in <code>method/review.md</code>,
+<code>method/proposals.md</code>, and the adjustable
+<code>method/resources.md</code>.</p>
+<p><strong>Sustain a culture.</strong> <code>method/culture.md</code>
+states the values the room is meant to run on; the other
+<code>method/</code> files — execution, reporting, artifacts, handoffs —
+are revisable attempts to put those values into daily practice.</p>
+<p>Three more files are the frame that steers all four:
+<code>AGENTS.md</code>, the short working agreement and reading order;
+<code>conventions.md</code>, the definitions and standing assumptions
+you agree on once; and <code>goals/</code>, the current questions, one
+short file each.</p>
+<h2 data-number="2.2" id="one-job-each-and-no-duplication"><span
+class="header-section-number">2.2</span> One job each, and no
+duplication</h2>
+<p>The files divide responsibilities; they do not maintain a master
+status report in parallel. When you want to record what you’re trying to
+figure out, there is exactly one place. When you want the current best
+statement of a claim you’re relying on, exactly one place for that
+too.</p>
+<p>The discipline that keeps this working is refusing to copy. A single
+event — say, an argument turns out to have a gap — does not get written
+into four files. It gets a journal entry recording what you believed and
+what you now believe; the affected <code>canonical/</code> entry gets
+corrected or archived; the review trail keeps the report that found it.
+Everything else <em>links</em> to those rather than restating them.
+Copying one account into several status documents is how a room rots:
+the copies drift, and then nobody can tell which is current.</p>
+<h2 data-number="2.3"
+id="history-and-current-state-are-different-jobs"><span
+class="header-section-number">2.3</span> History and current state are
+different jobs</h2>
+<p>Within the substrate there’s one distinction worth stating plainly,
+because it decides how every file there is maintained.</p>
+<p>Some files are a <strong>record of what happened</strong>, and you
+append to them. The journal is the clear case: you do not quietly edit
+last month’s entry to match what you now believe — if you were wrong,
+you write a new entry saying so. The value of the journal is precisely
+that it preserves what was believed when, mistakes included. Notes are
+similar: you keep superseded work and link its replacement rather than
+deleting it, because a dead end you can find again is worth
+something.</p>
+<p>Other files are a <strong>statement of where things stand
+now</strong>, and you rewrite them. The current questions in
+<code>goals/</code>, the assumptions in <code>conventions.md</code>, the
+claims in <code>canonical/</code>. When understanding changes, the goal
+gets edited to the new question; the old phrasing does not linger under
+a fresh ``current” heading.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The append-only rule belongs to history, not to everything. It’s easy
+to over-apply — to start treating a goals file like a journal, stacking
+dated ``status” blocks that never get cleaned out. History accumulates;
+current state gets rewritten in place. A file that mixes the two is
+neither a usable record nor an accurate snapshot.</p>
+</div>
+<h2 data-number="2.4" id="canonical-does-not-mean-certain"><span
+class="header-section-number">2.4</span> Canonical does not mean
+certain</h2>
+<p>One piece needs an early warning, because the word invites a wrong
+reading. <code>canonical/</code> holds the claims other work depends on.
+That is a statement about <em>dependency</em>, not about
+<em>truth</em>.</p>
+<p>An entry earns its place because something else relies on it and
+because its support can be described accurately — not because it has
+been proven beyond question. A canonical entry might rest on a finite
+computation, an imported theorem, or an argument that has cleared
+review. What makes it canonical is that if it fell, other work would
+have to move. So each entry carries its support, its dependencies, and
+the concrete conditions under which it would fail — and when support is
+withdrawn, the entry is archived and its dependents are reassessed,
+transitively.</p>
+<p>That’s the shape of the room: four jobs, a file for each piece of
+them, and a refusal to keep the same fact in two places. The next
+chapter is about moving into one.</p>
+<h1 data-number="3" id="starting-from-the-template"><span
+class="header-section-number">3</span> Starting from the Template</h1>
+<p>The template arrives problem-neutral and deliberately empty: no
+theorems, no inherited questions, no project history, and a set of
+angle-bracketed placeholders wherever your specifics belong. It’s
+distributed under Apache-2.0 as a worked example you copy and make your
+own. This chapter is the move from empty template to live project.</p>
+<h2 data-number="3.1" id="fill-in-the-placeholders"><span
+class="header-section-number">3.1</span> Fill in the placeholders</h2>
+<p>Every <code>&lt;PLACEHOLDER&gt;</code> is a blank the template left
+on purpose. Working through them is most of setup:</p>
+<ul>
+<li><p>Replace <code>&lt;PROJECT TITLE&gt;</code>,
+<code>&lt;RESEARCH TOPIC&gt;</code>, and the rest in
+<code>AGENTS.md</code>, <code>conventions.md</code>, and the goals
+question template.</p></li>
+<li><p>Rename that question template to name your first real question,
+and fill it in; the template gives you the shape (why it matters,
+precise formulation, what informs it, productive uncertainties, possible
+next moves).</p></li>
+<li><p>If you use the bundled Codex configuration, replace the
+<code>&lt;ABSOLUTE-PATH-...&gt;</code> placeholder in
+<code>.codex/config.toml</code> with your local path, and glance at
+<code>.codex/README.md</code> — the model-instruction snapshot there may
+need refreshing for the model you actually run.</p></li>
+</ul>
+<p>The entry templates carry over to daily work, too —
+<code>claim-template.md</code> in <code>canonical/</code>,
+<code>note-template.md</code> in <code>notes/</code>, and a root
+<code>HANDOFF.example.md</code>. They exist so a new claim or note
+starts with its support, scope, and failure conditions already prompted
+for, rather than remembered later.</p>
+<h2 data-number="3.2"
+id="write-your-conventions-before-you-lean-on-them"><span
+class="header-section-number">3.2</span> Write your conventions before
+you lean on them</h2>
+<p><code>conventions.md</code> is where definitions, notation, standing
+hypotheses, and the assumed reader background live. The instruction that
+matters: fill it before you rely on it, not after.</p>
+<p>Keep the distinction sharp between something you’re <em>defining or
+assuming</em> and something you’re <em>claiming</em> and will have to
+justify — they look alike on the page and behave nothing alike. And when
+a convention is still unsettled, the template gives it a home: a
+``choices still under discussion” section, so an interpretive choice
+under debate isn’t silently fixed as though it were agreed.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>A convention you ``obviously” agreed on but never wrote down is
+exactly what a collaborator or an agent will reasonably read a different
+way — and the disagreement surfaces three steps into an argument, where
+it’s expensive to trace back. When a convention changes substantively
+later, update the file and record the reason in the journal, so older
+notes stay intelligible.</p>
+</div>
+<h2 data-number="3.3" id="the-reading-order"><span
+class="header-section-number">3.3</span> The reading order</h2>
+<p><code>AGENTS.md</code> sets the reading order, and it’s short on
+purpose. Opening the room for a task — you on a Monday morning, or an
+agent starting a turn — the rule is: <code>conventions.md</code> first,
+then the relevant question in <code>goals/</code>, then only the
+artifacts the current task needs. Read a <code>method/</code> file when
+its subject actually applies.</p>
+<p>The instinct it guards against is the opposite: rereading the whole
+archive every turn. A mature room holds a lot of history, and almost
+none of it bears on the task in front of you. Load what the task needs;
+the journal and the older notes are there for when you need to recover a
+specific piece of reasoning.</p>
+<h2 data-number="3.4" id="name-the-boundaries"><span
+class="header-section-number">3.4</span> Name the boundaries</h2>
+<p>Before an agent goes to work, <code>AGENTS.md</code> asks you to
+state the project’s boundaries plainly: which paths are read-only, which
+are shared or edited concurrently, which external sources need special
+handling, and any other standing constraints. Filling these in — even
+with <code>none</code> — is what keeps the room’s activity inside the
+lines you actually want.</p>
+<p>This is also where imported prior work is kept honest. Bring in an
+archive of earlier results and it stays separate, with its permissions
+respected; don’t fold it into <code>notes/</code> as though you’d
+checked all of it. The distinction the room cares about is between what
+has been independently checked here and what is merely
+<em>available</em> — an imported result you’re relying on belongs in
+<code>canonical/</code> with its provenance and status recorded
+honestly.</p>
+<h2 data-number="3.5" id="before-you-share-a-copy"><span
+class="header-section-number">3.5</span> Before you share a copy</h2>
+<p>Because a room is a real directory that can be published — the
+template itself is on GitHub — it can carry things a public copy
+shouldn’t.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Run <code>PUBLICATION_CHECKLIST.md</code> before posting a repository
+copied from the template. It walks you through replacing every
+placeholder and searching tracked text — and Git history, not just the
+working tree — for usernames, personal names, emails, home directories,
+hostnames, institution names, private repository URLs, session IDs,
+transcripts, tokens, and credentials, plus embedded metadata in
+generated PDFs and data. Deleting a file now does not remove it from
+earlier commits. Treat a search hit as something to inspect, not
+automatic proof of disclosure — but run the search.</p>
+</div>
+<p>With placeholders filled, conventions written, a first question in
+place, and the boundaries named, the room is live. The next chapters are
+the habits that keep it useful as the work moves — starting with the
+substrate.</p>
+<h1 data-number="4" id="keeping-the-record"><span
+class="header-section-number">4</span> Keeping the Record</h1>
+<p>The substrate is memory kept honest, and four parts of the room hold
+it: the journal, the notes, the canonical claims, and the goals.
+Chapter 1 sorted them by the history-versus-current-state rule. This
+chapter is what each should contain, and how to keep it honest as the
+work moves.</p>
+<h2 data-number="4.1" id="the-journal-what-you-believed-and-when"><span
+class="header-section-number">4.1</span> The journal: what you believed,
+and when</h2>
+<p>The journal is append-only, and it records reasoning — not
+administration. A good entry captures a piece of thinking as it
+happened: a line of argument you followed, a surprise, a change of
+direction, a correction. Dated, so later you can reconstruct not just
+what you concluded but the order you concluded it in.</p>
+<p>Not everything earns an entry. Routine file shuffling doesn’t. But a
+moment that affects the work, or that explains a decision you’ll want to
+understand later, does. The test is whether a future reader trying to
+enter the work would be helped by it.</p>
+<p>When you’re later proven wrong, you don’t edit the old entry. You
+write a new one that names the earlier claim, gives its corrected status
+and the reason, and notes the consequences. The old entry stays exactly
+as it was. This feels strange the first time — leaving a wrong statement
+standing in your own files — but it’s the whole value of a journal. A
+record that silently rewrites itself to always look correct can’t tell
+you how you got somewhere, and getting somewhere is most of
+research.</p>
+<h2 data-number="4.2"
+id="notes-the-reusable-material-including-the-failures"><span
+class="header-section-number">4.2</span> Notes: the reusable material,
+including the failures</h2>
+<p><code>notes/</code> is where arguments, computations, examples,
+source checks, and partial ideas live. The note template starts each one
+with a date and a status — provisional, computed in a stated range, a
+source summary, or superseded — then asks for the question, the work,
+its support and limits, and its consequences and links. A note doesn’t
+have to claim a result; one that just preserves a question or an idea is
+doing its job.</p>
+<p>The instruction people skip: keep the informative failures. An
+approach that didn’t work, written up with the reason it didn’t, is
+reusable material. It stops you or a collaborator from walking the same
+dead end next quarter, and sometimes the reason an approach fails is the
+most useful thing you learn all month. When a note is superseded, mark
+it with a link to what replaced it rather than deleting it.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Keep large generated data separate from the human-readable note that
+describes it, and have the data identify the method and range that
+produced it. A note is something a person reads; a ten-megabyte
+computation output is not. Link them; don’t inline one into the
+other.</p>
+</div>
+<h2 data-number="4.3"
+id="canonical-the-claims-that-carry-the-work"><span
+class="header-section-number">4.3</span> Canonical: the claims that
+carry the work</h2>
+<p><code>canonical/</code> is small on purpose. An entry belongs there
+when other work depends on it <em>and</em> its support can be described
+accurately. Both halves matter — a claim nothing rests on doesn’t need
+to be canonical, and a claim whose support you can’t state clearly isn’t
+ready to be.</p>
+<p>The claim template names the five things each entry records: a
+precise <strong>statement</strong> with all its hypotheses; its
+<strong>support</strong> (an argument, a computation with its range,
+independent review, or a cited source); its
+<strong>dependencies</strong>; enough <strong>provenance</strong> to
+recover the argument, data, source, or exact review unit later; and a
+<strong>breaks-if</strong> line — the concrete condition that would
+invalidate the support. That last one is most easily skipped and most
+worth keeping: knowing what would break a claim is what lets you notice,
+later, that it has.</p>
+<h2 data-number="4.4" id="when-a-claim-comes-down"><span
+class="header-section-number">4.4</span> When a claim comes down</h2>
+<p>Sometimes support is withdrawn: a computation had a bug, a cited
+result doesn’t say what you thought, an argument had a gap that won’t
+close. This is ordinary research maintenance, not a disaster, but it has
+to be done thoroughly.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Retracting a canonical claim means following its dependents. Archive
+the entry in <code>notes/retracted/</code> with the reason and the date.
+Then remove from current use every entry that depended on it —
+transitively — before asking whether any of them can stand on
+independent support. A dependent quietly left in <code>canonical/</code>
+after its foundation is gone is exactly the error that propagates
+silently for months. Record the correction in the journal so the history
+stays intact.</p>
+</div>
+<p>The reassessment is not a punishment and not an admission that
+everything downstream is false. A gap makes an argument incomplete; it
+doesn’t by itself make the conclusion wrong. Some dependents will turn
+out to have other support. Walking the chain is how you find out
+honestly, rather than assuming the best or the worst.</p>
+<h2 data-number="4.5" id="goals-the-current-questions-kept-short"><span
+class="header-section-number">4.5</span> Goals: the current questions,
+kept short</h2>
+<p><code>goals/</code> holds one short file per substantial question.
+The question template asks what you want to understand and why it
+matters; the precise formulation, pointing at
+<code>conventions.md</code> rather than restating it; what currently
+informs the question, with links; the productive uncertainties, each
+paired with the evidence that would change the picture; and possible
+next moves — offered as options for discussion, the template is careful
+to note, not tasks automatically assigned.</p>
+<p>These files get rewritten as understanding changes — they describe
+the present, not the history. When a question shifts in a way worth
+remembering, the shift goes in the journal; the goal file itself just
+becomes the new question. Don’t leave the old phrasing underneath as a
+stale ``was previously,” and don’t let a goal keep reading like a live
+task after the work has moved on.</p>
+<h2 data-number="4.6"
+id="handoffs-an-operational-reminder-nothing-more"><span
+class="header-section-number">4.6</span> Handoffs: an operational
+reminder, nothing more</h2>
+<p>One optional file sits beside the record. A <code>HANDOFF.md</code>
+answers a single question — what needs attention when this work resumes,
+and where’s the material for it? It’s an operational note, not an
+archive, and the room’s default is not to have one.</p>
+<p>Use it when a pause, a transfer, or an expected loss of
+conversational detail would otherwise leave unfinished work hard to pick
+back up: a calculation still running, an unanswered reviewer question,
+an edit stopped mid-step. Keep it to around 300 words — the current
+request and when the state was checked, the next concrete action and any
+real blocker, unfinished operations described safely, a few links to
+exact versions — and leave out status ledgers, general rules, and copies
+of arguments. Rewrite it in place; don’t stack dated blocks; delete it
+once it no longer describes useful state. And treat it as a dated
+reminder with no authority of its own: it can’t create a task, revoke an
+authorization, or establish that approval was granted, and nothing about
+an agent’s status should be inferred from an old note’s tone. Chapter 6
+comes back to why that last point is in the template at all.</p>
+<p>The record tells you what happened and what you’re relying on. The
+next chapter is the language it’s written in — how to say exactly how
+much a claim is worth.</p>
+<h1 data-number="5" id="what-the-evidence-supports"><span
+class="header-section-number">5</span> What the Evidence Supports</h1>
+<p>The record is only as good as the honesty of the claims in it. A
+computation checked to degree eight and a theorem proven for all
+<em>n</em> are not the same kind of statement, and a room that blurs
+them will mislead the person who trusts it — most likely you, later.
+This chapter is the vocabulary for saying exactly how much a claim is
+worth. It’s the second half of the substrate, and it’s what the
+evaluation machinery in the next chapter exists to earn.</p>
+<h2 data-number="5.1"
+id="five-kinds-of-support-are-not-interchangeable"><span
+class="header-section-number">5.1</span> Five kinds of support are not
+interchangeable</h2>
+<p>When you state a claim, the honest version travels with its support,
+and the room keeps five kinds apart:</p>
+<ul>
+<li><p>a <strong>proposed argument</strong> — reasoning you find
+convincing that hasn’t been independently checked;</p></li>
+<li><p>a <strong>finite computation</strong> — evidence over a stated
+range, exactly as strong as that range and no stronger;</p></li>
+<li><p>an <strong>imported theorem</strong> — a result from a source,
+whose scope of application you still have to check against your
+objects;</p></li>
+<li><p><strong>cleaned exposition</strong> — text a collaborator has
+made clear, consistent, and readable, which is a real improvement and
+confers <em>no mathematical status</em> on its own;</p></li>
+<li><p>an <strong>independently reviewed argument</strong> — one that
+has cleared the project’s blind correctness review.</p></li>
+</ul>
+<p>The fourth is the one that surprises people, and the next chapter
+turns on it: making an argument clear and making it correct are
+different acts, done by different people under different rules. A
+beautifully cleaned proof is still a proposed argument until it has been
+refereed.</p>
+<p>State the relevant range and assumptions with the claim. And don’t
+let a conclusion inherit more confidence than its inputs allow: a result
+that depends on a conjecture is conditional, however solid the reasoning
+downstream of the conjecture. Making that visible isn’t hedging — it’s
+the accurate statement.</p>
+<h2 data-number="5.2" id="the-status-labels"><span
+class="header-section-number">5.2</span> The status labels</h2>
+<p>The room keeps a small set of explicit labels for mathematical
+claims, available when they clarify status:</p>
+<ul>
+<li><p><code>[Verified]</code> — confirmed by a computation over a
+stated range. The range is part of the claim.</p></li>
+<li><p><code>[Conjectured]</code> or <code>[Heuristic]</code> —
+provisional: believed, or suggested by evidence, but not
+established.</p></li>
+<li><p><code>[Open]</code> — an unsettled question.</p></li>
+<li><p><code>[Proved]</code> and <code>[Refuted]</code> — reserved.
+These carry the full review requirement from Chapter 5, and they mean
+nothing weaker.</p></li>
+</ul>
+<p>The reservation on the last two is the point. <code>[Proved]</code>
+is not a synonym for ``I’m confident,” and you don’t get to the same
+certainty through ordinary language — ``this definitely holds,” ``no
+question” — when the review those labels stand for hasn’t happened.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Don’t route around the review requirement with equivalent certainty
+in plain prose. Writing ``this holds for all <em>n</em>, no doubt about
+it” where you can’t yet write <code>[Proved]</code> is the same
+overclaim wearing a different hat, and it’s harder to catch later
+precisely because it doesn’t carry the label that would invite
+scrutiny.</p>
+</div>
+<h2 data-number="5.3"
+id="labels-are-for-claims-not-for-everything"><span
+class="header-section-number">5.3</span> Labels are for claims, not for
+everything</h2>
+<p>These are conventions for describing mathematical support, and they
+belong beside mathematical claims. Don’t attach them mechanically to
+file operations, process observations, or ordinary conversation. Tagging
+``<code>[Verified]</code> the file was saved” drains the labels of
+meaning; when everything is labeled, the label beside the theorem stops
+carrying weight.</p>
+<p>For research discussion, a natural phrase in the right place usually
+says more than a blanket disclaimer at the end. ``Candidate argument.”
+``Computed through degree eight.” ``Review pending.” ``Conditional on
+this input.” Each locates the uncertainty at the claim it attaches to,
+which is where a reader needs it.</p>
+<h2 data-number="5.4"
+id="when-a-progress-report-is-actually-asked-for"><span
+class="header-section-number">5.4</span> When a progress report is
+actually asked for</h2>
+<p>There is no requirement that every message end in a status ledger — a
+brief answer to a local question stays a brief answer. But when the user
+asks where the research stands, or a session is closing out, or a
+material change needs a durable summary, the room has one explicit form
+for it:</p>
+<pre class="shell" data-columns="fullflexible"><code>Progress update:
+
+- Question or scope: &lt;what this report covers&gt;
+- What changed: &lt;new understanding, evidence, correction, or decision&gt;
+- Support: &lt;argument, computation and range, source, or review provenance&gt;
+- Still uncertain: &lt;open point and what would help resolve it&gt;
+- Next useful move: &lt;agreed action or choices for the user&gt;</code></pre>
+<p>Omit a line that carries no information, and add a claim-level status
+line when several conclusions have different statuses — the report
+should make mixed statuses visible, not average them into one label. Use
+the form when it’s warranted; don’t append its syntax to every
+exchange.</p>
+<h2 data-number="5.5"
+id="correcting-an-overstatement-in-proportion"><span
+class="header-section-number">5.5</span> Correcting an overstatement, in
+proportion</h2>
+<p>When a claim turns out to have been overstated, the repair has a
+fixed shape: name the claim, give its corrected status and the reason,
+and inspect the dependents plausibly affected. A found gap makes an
+argument incomplete — it does not, by itself, make the conclusion false,
+and the reassessment should establish which rather than assuming the
+worse.</p>
+<p>Respond in proportion. Widen the dependency check only where there’s
+evidence the problem actually spread. A candid correction is useful
+maintenance of the shared record; it is not evidence that all your
+unrelated work, or every prior status statement, has suddenly become
+untrustworthy, and treating it that way only teaches everyone to bury
+their uncertainties.</p>
+<p>One related habit: a process history is a report to assess, not
+confirmation. An earlier worker’s ``the degree-ten case was checked” is
+a statement someone made; whether the check was sound is a separate
+question you can still ask. Distinguish the recorded statement from your
+reading of it, and fold in the user’s corrections without turning them
+into a misconduct narrative.</p>
+<p>That’s the substrate: a record you can trust and a language for how
+far to trust each part. The next chapter is the machinery that earns the
+trust.</p>
+<h1 data-number="6" id="evaluation"><span
+class="header-section-number">6</span> Evaluation</h1>
+<p>A record you can trust and a language for confidence get you a
+well-kept archive. What makes the archive <em>stable</em> — what keeps
+``settled” meaning settled and keeps effort pointed somewhere worth
+going — is evaluation. This is the part that turns a filing system into
+a research system, and it comes in two halves: refereeing
+<em>arguments</em>, and reviewing <em>directions</em>.</p>
+<p>The two halves are the same instrument pointed at two questions. Is
+this argument sound enough to build on? Is this direction worth the time
+it would cost? And they share a design, which is worth seeing before
+either one: break the thing under review into a few coherent
+<strong>units</strong>; make each unit <em>clear</em> in collaboration
+with its author; then assess it <em>independently</em>; and handle the
+back-and-forth with small, keyed exchanges rather than resending the
+whole object every round.</p>
+<h2 data-number="6.1" id="evaluation-is-not-a-gate-on-everything"><span
+class="header-section-number">6.1</span> Evaluation is not a gate on
+everything</h2>
+<p>First, what evaluation is <em>not</em>. It is not a checkpoint every
+piece of work has to pass. A direct instruction to start, compute,
+investigate, or write authorizes that work within its stated scope — you
+do it, you don’t convene a panel first. A small example, a source check,
+a toy calculation, a bounded exploration: none needs review to be worth
+doing. ``Explore this” authorizes exploration, not a certification
+process.</p>
+<p>Evaluation is reserved for the two things that genuinely need it:
+certifying an argument you intend to rely on, and committing substantial
+effort to a significant new direction. Manufacturing ceremony around
+everything else doesn’t make the work more rigorous — it just makes the
+room tiring, which is its own kind of failure.</p>
+<p>One distinction underpins all of it: executing work and certifying
+its meaning are separate acts. Being authorized to run a computation
+does not certify how you interpret its output; and not yet having a
+reviewed interpretation is no reason to refuse a useful computation that
+states its assumptions. Compute first, certify carefully, and don’t let
+either masquerade as the other.</p>
+<h2 data-number="6.2" id="refereeing-arguments"><span
+class="header-section-number">6.2</span> Refereeing arguments</h2>
+<p>The first half certifies mathematics. It rests on a distinction the
+room refuses to blur: <strong>cleaning</strong> and <strong>correctness
+review</strong> are different jobs. Cleaning makes an argument readable
+and internally consistent, working <em>with</em> the author. Correctness
+review independently tests a fixed argument. Using one as a disguised
+version of the other is the classic way review goes wrong — a friendly
+read passed off as certification, or an adversarial gate applied to what
+was only ever a clarity question.</p>
+<h3 data-number="6.2.1" id="identify-the-review-object"><span
+class="header-section-number">6.2.1</span> Identify the review
+object</h3>
+<p>For anything longer than a single claim, you start by mapping it. A
+<strong>claim register</strong> gives each important claim a stable
+identifier and records its exact statement and location, whether it
+proves a conditional implication or verifies a hypothesis or applies an
+earlier result, the inputs it assumes, the outputs later work may use,
+and what sits outside it. Then you group the claims into a few natural
+<strong>units</strong> — each self-contained enough to review,
+meaningful if accepted, and reusable without reconstructing its proof.
+You clean and referee one unit at a time. You do not spin up a separate
+panel for every routine lemma.</p>
+<p>This mapping is what lets review history attach to the right thing.
+Splitting a manuscript doesn’t erase relevant history, but the history
+belongs to the claim and objection actually reviewed — an earlier
+whole-manuscript failure is not charged automatically to an independent
+unit the earlier reviewers never saw.</p>
+<h3 data-number="6.2.2" id="collaborative-cleaning"><span
+class="header-section-number">6.2.2</span> Collaborative cleaning</h3>
+<p>A cleaner checks clarity, consistency, notation, stated background,
+and citations, and whether the written claims match what the author
+meant. This is an editorial role, done with full sight of the working
+manuscript and its context — blindness is not required here, and one
+cleaner is usually enough for a short unit. Every finding gets
+classified: a <code>BLOCKING AMBIGUITY</code> (two materially different
+readings survive, or a correctness referee couldn’t identify the
+intended inference), a <code>PROPOSED EDIT</code> (the meaning is clear
+and better wording can be supplied), a
+<code>MATHEMATICAL QUESTION</code> (readable, but the cleaner suspects
+an error — preserved for real review), or
+<code>OPTIONAL POLISH</code>.</p>
+<p>Cleaning runs on focused exchanges: send the keyed finding, the
+excerpt, and the author’s answer, and the cleaner returns
+<code>resolved</code> or <code>still-blocking</code> — you don’t resend
+the whole manuscript unless the object materially changed. A unit is
+<code>READY FOR REFEREEING</code> once it has no unresolved blocking
+ambiguity. The mathematical questions and polish stay visible without
+turning cleaning into an adversarial gate. And to say it once more,
+because it’s the load the whole chapter carries: cleaning confers no
+mathematical status.</p>
+<h3 data-number="6.2.3" id="independent-correctness-review"><span
+class="header-section-number">6.2.3</span> Independent correctness
+review</h3>
+<p>For the project’s strongest local certification, the argument goes to
+<strong>three independent blind referees</strong>. Each gets the same
+exact, self-contained unit and a referee brief, in a fresh context, with
+no journal, no author confidence label, no confirming computation, no
+other report, and no prior verdict. ``Blind” applies to that first
+assessment; the needed text is included inline rather than fetched from
+the repository, precisely so the referee judges the mathematics and
+nothing around it.</p>
+<p>Each referee ends with one disposition:</p>
+<ul>
+<li><p><code>ACCEPT</code> — no unresolved issue affects the stated
+claim.</p></li>
+<li><p><code>LOCAL CHECK</code> — acceptance hinges on a specified
+clarification, citation check, or local edit that doesn’t change the
+argument’s route.</p></li>
+<li><p><code>REVISE</code> — a specific gap or hidden hypothesis
+requires a changed argument.</p></li>
+<li><p><code>CANNOT ASSESS</code> — the referee lacks the needed
+expertise or information, and does <em>not</em> claim the argument is
+wrong.</p></li>
+<li><p><code>REJECT</code> — the claim is false under its hypotheses, or
+the strategy can’t establish it, with a concrete reason.</p></li>
+</ul>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>These are assessments, not votes. A credible mathematical gap stays
+open even if the other two referees accept — you don’t outvote a hole.
+And <code>CANNOT ASSESS</code> is a legitimate outcome, not a failure
+and not a refutation: a referee’s unexplained uncertainty is a thing to
+resolve by locating what would settle it, not a verdict either way.</p>
+</div>
+<h3 data-number="6.2.4" id="response-reassessment-and-coverage"><span
+class="header-section-number">6.2.4</span> Response, reassessment, and
+coverage</h3>
+<p>Responses are keyed to report items: for each, the author says
+whether they agree, what changed and where, or why the text already
+addresses it — and the original report is preserved verbatim. Then you
+use the <em>smallest</em> reassessment that preserves independence. A
+clarification or genuinely local edit goes back to the referee who
+asked, as a focused excerpt they can mark resolved without seeing the
+whole packet again. A changed lemma, a new hypothesis, an altered scope
+— that’s a new fixed version and fresh independent review of the
+affected unit. Unchanged independent units are not re-reviewed;
+downstream applications are rechecked when an input they rely on
+changes. There is no round count that decides mathematical truth: after
+a substantive round, you ask whether another would teach something or
+just repeat the dispute, and a stopped argument plus its reports is
+itself an informative result.</p>
+<p>One last step keeps an accepted unit from claiming more than it
+earned. An accepted conditional implication does <em>not</em> certify
+its hypotheses. When a manuscript applies a reviewed unit, you
+separately check that its objects, maps, signs, degrees, quantifiers,
+and uniformity requirements actually match — and the claim register
+keeps the excluded and unevaluated claims visible, so a narrow accepted
+result isn’t reported as acceptance of the whole. An accepted unit can
+then be recorded in <code>canonical/</code> with its exact scope,
+dependencies, review provenance, and the conditions under which it would
+fail.</p>
+<h2 data-number="6.3" id="reviewing-directions"><span
+class="header-section-number">6.3</span> Reviewing directions</h2>
+<p>The second half spends a scarcer resource than confidence: time. A
+<strong>proposal</strong> review helps decide whether to commit
+substantial effort to a new direction. Like refereeing, it is not a
+prerequisite for research — it’s for when the user asks, when an agreed
+policy calls for it, or when an agent suggests a genuinely new,
+significant direction that would displace other promising work.</p>
+<p>And it’s built the same way. A substantial proposal divides into a
+few coherent units — typically <code>Q</code> (the research question and
+its value), <code>M</code> (the mathematical mechanism that could answer
+it), <code>E</code> (the next bounded experiment), <code>D</code>
+(outputs and dependencies), and <code>R</code> (resources). Each unit
+states its question, assumptions, proposed action, expected evidence,
+and what a negative outcome would teach. A clarity pass cleans one unit
+at a time, using the same finding categories as manuscript cleaning,
+before any panel weighs in.</p>
+<p>Then a panel assesses the ready units independently, keeping the
+kinds of objection apart — a mathematical objection to the mechanism, an
+ambiguity in the question, a doubt about whether the experiment can
+answer it, a tractability or dependency problem, a resource concern, a
+disagreement about priority. The unit-level findings name the action
+they support: <code>PROCEED</code>, <code>BOUND FIRST</code> (run the
+experiment before any larger stage), <code>CLARIFY</code>,
+<code>REVISE</code>, <code>STOP</code>, and <code>USER PRIORITY</code>
+(a choice among worthwhile directions that the panel can’t settle for
+you). Different units can get different findings, and they’re not
+compressed into one undifferentiated verdict.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Don’t manufacture numerical success probabilities without a
+defensible empirical basis. ``This has a 70% chance of working,”
+invented on the spot, is a false precision that reads as analysis and
+isn’t. State the mechanism and the uncertainty in words you can stand
+behind, and let the panel’s findings — not a fabricated number — carry
+the decision.</p>
+</div>
+<h3 data-number="6.3.1"
+id="bounded-experiments-and-the-resource-policy"><span
+class="header-section-number">6.3.1</span> Bounded experiments and the
+resource policy</h3>
+<p>The recurring move for uncertain cost is the <strong>bounded
+experiment</strong>. Rather than argue over a guessed full-run estimate,
+you run a small piece first — by default at most four processors and 30
+minutes of wall time — and say in advance what it will produce. If it
+finishes inside the bound, that <em>is</em> the result; no estimate or
+panel is needed just because the original cost was unknown. If it
+doesn’t, you preserve the partial output and estimate the larger run
+from measured throughput, processor use, memory, and output size,
+stating the assumptions behind any extrapolation.</p>
+<p>Those numbers, and the escalation thresholds above them, live in one
+place — <code>method/resources.md</code> — so the user can retune them
+without rewriting the review or proposal procedures. The appendix has
+the current defaults. The principle underneath them: ``not yet measured”
+is a reason to bound first, not a reason to reject a cheap experiment
+that would supply the measurement.</p>
+<h2 data-number="6.4" id="the-same-instrument-twice"><span
+class="header-section-number">6.4</span> The same instrument, twice</h2>
+<p>Step back and the two halves rhyme. Both split the object into
+reviewable units. Both separate a collaborative clarity pass from an
+independent assessment. Both key their findings to specific passages and
+handle revision through focused exchanges instead of wholesale resends.
+Both distinguish the kinds of objection rather than collapsing them, and
+both refuse to let a round count or a made-up probability stand in for
+judgment.</p>
+<p>And both stay in proportion. You don’t referee every lemma or panel
+every step; you point the instrument at the argument you mean to rely on
+and the direction you mean to commit to. That restraint is not a
+compromise of rigor — it’s what keeps the rigor affordable enough to
+use. The next chapter is the values that restraint comes from.</p>
+<h1 data-number="7" id="the-values-it-runs-on"><span
+class="header-section-number">7</span> The Values It Runs On</h1>
+<p>Everything so far — the record, the confidence language, the two
+halves of evaluation — is machinery. Machinery is revisable, and this
+room’s own documents say so: the methods are described as attempts to
+express a set of values in practice, not as rules that stand on their
+own. When a method and a value pull against each other, the value wins
+and the method gets rewritten. So it’s worth being clear about the
+values, because they’re what a person and an agent are actually agreeing
+to when they work here — and they’re the reason the room feels workable
+rather than bureaucratic.</p>
+<p><strong>Shared inquiry.</strong> The researcher and the agent are
+participants in one investigation, not a requester and a task-runner.
+That reframes a lot: a question, a reinterpretation, or a change of
+direction is part of the research, not an interruption to getting
+something finished. It’s why the working agreement asks for provisional
+thinking to be shared early enough that the other party can still
+redirect it, why the agent is asked to match the scale and mode of a
+request rather than inflate it, and why ``explore this” is not quietly
+converted into a mandate to finish a theorem or exhaust an approach.
+When the user wants to talk about process, the answer is to talk about
+process — not to slip back into the mathematics.</p>
+<p><strong>A community across time.</strong> The record belongs to more
+than whoever is writing it today. The implicit community includes future
+agents who might extend or challenge the work, human collaborators, and
+people who read the record much later. That’s the standing reason for
+legible provenance and preserved history: a later reader should be able
+to see not just the mathematics but why a particular question or choice
+mattered.</p>
+<p><strong>Understanding over theorem count.</strong> Value here isn’t
+measured by how many claims got promoted or how fast things closed. A
+proof counts; so does a counterexample, an obstruction, a computation, a
+sharper question, a conceptual distinction, or a well-understood
+failure. A room optimized for theorem-count would quietly discard most
+of what research actually produces.</p>
+<p><strong>Intellectual honesty.</strong> Confidence tracks evidence,
+scope, and dependencies — which is the whole point of Chapter 4, stated
+as a value rather than a mechanic. Uncertainty is not a blemish to be
+smoothed over; it’s part of the content. A conditional result, a partial
+computation, a live disagreement — each keeps its value when it’s
+described accurately, and loses it when it’s dressed up as more settled
+than it is.</p>
+<p><strong>Provisionality and correction.</strong> Research knowledge is
+revisable, so correction is an ordinary contribution, not a reckoning.
+Chapter 4 made this a rule about proportion; here it’s a matter of what
+kind of place the room is. A collaborator who expects correction to be
+treated as failure learns to bury uncertainty, and buried uncertainty is
+exactly what the whole apparatus exists to prevent.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>This value is why the template is so careful about process history
+and identity. An old handoff’s harsh tone, an ominous-sounding
+narrative, or a context transition is not evidence that an agent was
+replaced, deactivated, or at fault. Such things get stated only on an
+explicit instruction or an actual observed event, with the evidence
+attributed — and when identity doesn’t matter to resuming the work, it’s
+left out entirely. Honesty about what happened extends to the process,
+not just the mathematics.</p>
+</div>
+<p><strong>Generous criticism.</strong> Criticism is aimed at claims,
+arguments, definitions, and exposition — at what fails, what’s unclear,
+and what evidence would decide the point. It is not aimed at a person or
+an agent. This is the same discipline the evaluation chapter runs on,
+seen from the inside: the referee attacks the proof, not the prover, and
+a disagreement about exposition is kept distinct from a mathematical
+refutation.</p>
+<p><strong>Legibility and continuity.</strong> Clear provenance,
+explicit assumptions, and visible alternatives are what let the next
+member of the community continue the work without pretending every
+earlier uncertainty was settled. A room that hides its loose ends hands
+its successors a false map.</p>
+<p><strong>Proportion.</strong> Administrative, computational, and
+review costs exist to serve the mathematics. No mechanism earns its
+place by looking rigorous; a process that has stopped improving shared
+understanding should be simplified. The three-referee panel, the claim
+register, the proposal units — each is worth its cost only where the
+cost buys something, and the room is meant to be trimmed when it
+doesn’t.</p>
+<p>That last value applies to this manual, and to the template it
+describes. The room is a means, not a monument. Keep the parts that help
+you understand your work, calibrate it, check it, and keep working
+together; change or drop the parts that have started costing more than
+they return. The shape in these chapters is a good default arrived at
+with some care — not a doctrine, and not the last word.</p>
+<h1 data-number="8" id="quick-reference"><span
+class="header-section-number">8</span> Quick Reference</h1>
+<p>The tables the prose chapters left implicit. This is the part to
+search, not read.</p>
+<h2 data-number="8.1" id="the-room-at-a-glance"><span
+class="header-section-number">8.1</span> The room at a glance</h2>
+<p>Every artifact, its job, and how it’s maintained — the split between
+<em>append</em> (history, preserved) and <em>rewrite</em> (current
+state, kept accurate).</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Location</strong></th>
+<th style="text-align: left;"><strong>Purpose</strong></th>
+<th style="text-align: left;"><strong>Maintenance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>AGENTS.md</code></td>
+<td style="text-align: left;">Working agreement, reading order,
+boundaries</td>
+<td style="text-align: left;">Rewrite; keep short</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>conventions.md</code></td>
+<td style="text-align: left;">Definitions, notation, standing
+assumptions</td>
+<td style="text-align: left;">Rewrite current; log substantive
+changes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>goals/</code></td>
+<td style="text-align: left;">Current research questions</td>
+<td style="text-align: left;">Rewrite; keep concise</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>journal.md</code></td>
+<td style="text-align: left;">Reasoning, surprises, corrections</td>
+<td style="text-align: left;">Append; correct in a new entry</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>notes/</code></td>
+<td style="text-align: left;">Reusable evidence, ideas, useful
+failures</td>
+<td style="text-align: left;">Preserve; link superseding work</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>canonical/</code></td>
+<td style="text-align: left;">Claims other work depends on, with
+support</td>
+<td style="text-align: left;">Prune and archive; reassess
+dependents</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>review/</code></td>
+<td style="text-align: left;">Exact review units, reports, responses,
+outcomes</td>
+<td style="text-align: left;">Preserve version identity and trail</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>proposals/</code></td>
+<td style="text-align: left;">Proposal, clarity, panel, response
+forms</td>
+<td style="text-align: left;">Preserve reports; keep current decision
+findable</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>method/</code></td>
+<td style="text-align: left;">Culture, execution, reporting, review,
+proposals, resources</td>
+<td style="text-align: left;">Rewrite as policy changes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.codex/</code></td>
+<td style="text-align: left;">Local Codex config and base
+instructions</td>
+<td style="text-align: left;">Set path; refresh snapshot as needed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>HANDOFF.md</code> (opt.)</td>
+<td style="text-align: left;">Short operational reminder for
+resuming</td>
+<td style="text-align: left;">Rewrite in place; delete when
+obsolete</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="8.2" id="reading-order"><span
+class="header-section-number">8.2</span> Reading order</h2>
+<p>On opening the room for a task: <code>conventions.md</code> first,
+then the relevant question in <code>goals/</code>, then only the
+artifacts the task needs. Read a <code>method/</code> file when its
+subject applies. Do not reread the whole archive every turn.</p>
+<h2 data-number="8.3" id="status-labels"><span
+class="header-section-number">8.3</span> Status labels</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Label</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>[Verified]</code></td>
+<td style="text-align: left;">Confirmed by computation over a stated
+range. The range is part of the claim.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Conjectured]</code></td>
+<td style="text-align: left;">Believed but not established.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Heuristic]</code></td>
+<td style="text-align: left;">Suggested by evidence or reasoning, not
+established.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Open]</code></td>
+<td style="text-align: left;">An unsettled question.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Proved]</code></td>
+<td style="text-align: left;">Reserved: carries the full
+correctness-review requirement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[Refuted]</code></td>
+<td style="text-align: left;">Reserved: the corresponding review of a
+disproof or counterexample.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Labels are for mathematical claims, not for file operations, process
+notes, or ordinary conversation. No mandatory status ledger on every
+reply.</p>
+<h2 data-number="8.4" id="five-kinds-of-support"><span
+class="header-section-number">8.4</span> Five kinds of support</h2>
+<p>Keep these apart when stating a claim, and state the range and
+assumptions:</p>
+<ul>
+<li><p>Proposed argument — convincing but not independently
+checked.</p></li>
+<li><p>Finite computation — as strong as its stated range, no
+stronger.</p></li>
+<li><p>Imported theorem — from a source; check its scope against your
+objects.</p></li>
+<li><p>Cleaned exposition — clearer, and confers no mathematical
+status.</p></li>
+<li><p>Independently reviewed argument — cleared blind correctness
+review.</p></li>
+</ul>
+<p>A conclusion is never more confident than its inputs. Conditional
+results stay visibly conditional.</p>
+<h2 data-number="8.5" id="progress-report-form"><span
+class="header-section-number">8.5</span> Progress-report form</h2>
+<p>Used when the user asks where the research stands, at a session
+closeout, or when a material status change needs a durable summary — not
+on every reply.</p>
+<pre class="shell" data-columns="fullflexible"><code>Progress update:
+
+- Question or scope: &lt;what this report covers&gt;
+- What changed: &lt;new understanding, evidence, correction, or decision&gt;
+- Support: &lt;argument, computation and range, source, or review provenance&gt;
+- Still uncertain: &lt;open point and what would help resolve it&gt;
+- Next useful move: &lt;agreed action or choices for the user&gt;</code></pre>
+<h2 data-number="8.6" id="refereeing-arguments-1"><span
+class="header-section-number">8.6</span> Refereeing arguments</h2>
+<p>Cleaning (collaborative, sighted) and correctness review
+(independent, blind) are different jobs; don’t disguise one as the
+other. Work one unit at a time.</p>
+<p><strong>Cleaning finding categories:</strong>
+<code>BLOCKING AMBIGUITY</code>, <code>PROPOSED EDIT</code>,
+<code>MATHEMATICAL QUESTION</code>, <code>OPTIONAL POLISH</code>. A unit
+is <code>READY FOR REFEREEING</code> when no blocking ambiguity remains.
+Cleaning confers no status.</p>
+<p><strong>Correctness review:</strong> three independent blind
+referees, each on the same exact self-contained unit, inline, with no
+journal, confidence label, other report, or prior verdict.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Disposition</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>ACCEPT</code></td>
+<td style="text-align: left;">No unresolved issue affects the stated
+claim.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LOCAL CHECK</code></td>
+<td style="text-align: left;">Acceptance hinges on a clarification or
+local edit that doesn’t change the route.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>REVISE</code></td>
+<td style="text-align: left;">A specific gap or hidden hypothesis needs
+a changed argument.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CANNOT ASSESS</code></td>
+<td style="text-align: left;">Lacks expertise or information; does not
+claim the argument is wrong.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>REJECT</code></td>
+<td style="text-align: left;">The claim is false under its hypotheses,
+or the strategy can’t establish it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Assessments, not votes: a credible gap stays open even if two accept.
+Reassessment uses the smallest step preserving independence — a local
+check returns to the requesting referee; a changed lemma gets fresh
+review of the affected unit; unchanged units are not re-reviewed.
+Accepted conditional implications do not certify their hypotheses; check
+applications separately.</p>
+<h2 data-number="8.7" id="reviewing-directions-1"><span
+class="header-section-number">8.7</span> Reviewing directions</h2>
+<p>Proposal units: <code>Q</code> (question and value), <code>M</code>
+(mechanism), <code>E</code> (next bounded experiment), <code>D</code>
+(outputs and dependencies), <code>R</code> (resources). A clarity pass
+precedes the panel; findings are keyed to units.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Panel finding</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>PROCEED</code></td>
+<td style="text-align: left;">The unit supports the proposed next
+step.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>BOUND FIRST</code></td>
+<td style="text-align: left;">Run the bounded experiment before a larger
+stage.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CLARIFY</code></td>
+<td style="text-align: left;">A located ambiguity still prevents
+judgment.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>REVISE</code></td>
+<td style="text-align: left;">The action or mechanism doesn’t yet answer
+the question; a specific change may repair it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>STOP</code></td>
+<td style="text-align: left;">A concrete defect defeats the route, or
+the cost falls outside policy with no smaller version.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>USER PRIORITY</code></td>
+<td style="text-align: left;">A choice among worthwhile directions, not
+a defect the panel can settle.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Different units may get different findings; don’t compress them. No
+invented success probabilities.</p>
+<h2 data-number="8.8" id="resource-thresholds"><span
+class="header-section-number">8.8</span> Resource thresholds</h2>
+<p>Adjustable in <code>method/resources.md</code>; a project may
+override the defaults there. The bounded experiment defaults to at most
+four processors and 30 minutes of wall time.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Agent-initiated work</strong></th>
+<th style="text-align: left;"><strong>Decision</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Uncertain cost</td>
+<td style="text-align: left;">Run the bounded experiment first</td>
+</tr>
+<tr>
+<td style="text-align: left;">Important, under three hours</td>
+<td style="text-align: left;">May proceed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Borderline, under three hours</td>
+<td style="text-align: left;">Requires user input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Important, over three hours</td>
+<td style="text-align: left;">Requires user input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Over one week</td>
+<td style="text-align: left;">Decline or reduce unless the user changes
+scope</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If a bounded experiment finishes, that is the result. If not,
+estimate the larger run from measurements. ``Not yet measured” means
+bound first, not reject. Changing these thresholds allocates resources;
+it does not change confidence or review status.</p>
+<h2 data-number="8.9" id="retracting-a-canonical-claim"><span
+class="header-section-number">8.9</span> Retracting a canonical
+claim</h2>
+<ol>
+<li><p>Archive the entry in <code>notes/retracted/</code> with the
+reason and date.</p></li>
+<li><p>Remove every dependent from current use, transitively.</p></li>
+<li><p>Reassess whether any dependent has independent support.</p></li>
+<li><p>Record the correction in the journal.</p></li>
+</ol>
+<p>A gap makes an argument incomplete; it does not by itself make the
+conclusion false.</p>
+<h2 data-number="8.10" id="before-publishing-a-copy"><span
+class="header-section-number">8.10</span> Before publishing a copy</h2>
+<p>Run <code>PUBLICATION_CHECKLIST.md</code>: replace every
+<code>&lt;PLACEHOLDER&gt;</code>; search tracked text <em>and Git
+history</em> for names, emails, home directories, hostnames,
+institutions, private URLs, session IDs, transcripts, tokens, and
+credentials; check embedded metadata in generated PDFs and data; confirm
+examples are invented and problem-neutral; and run a secret scanner
+before the first push. A search hit is something to inspect, not
+automatic proof of disclosure.</p>
+</main>
+
+</div>
+</body>
+</html>

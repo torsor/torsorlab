@@ -25,6 +25,21 @@ layout: base
     </div>
   </section>
 
+  {%- if page.manual -%}
+  <section class="band measure">
+    <div class="doc-manual">
+      <p class="doc-manual__label">the manual</p>
+      <p class="doc-manual__text">
+        a full user's manual, written for someone about to work in a room.
+      </p>
+      <p class="doc-manual__links">
+        <a href="{{ page.url | append: 'manual/' | relative_url }}">read it</a>
+        <a href="{{ page.url | append: 'manual/manual.pdf' | relative_url }}">pdf</a>
+      </p>
+    </div>
+  </section>
+  {%- endif -%}
+
   {%- comment -%} the skills are the point, so they come first {%- endcomment -%}
   {%- if skills.size > 0 -%}
   <section class="band">

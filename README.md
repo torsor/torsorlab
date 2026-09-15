@@ -51,16 +51,31 @@ cream); doc pages use Direction B (spinal, lavender). The artwork in
 
 ## The manuals
 
-Three skills — `write-paper-guide`, `write-critical-guide`, and
-`write-review-and-repair` — have full user's manuals, authored and built
-elsewhere (in the `guides/` directory beside the plugin repo). `make manuals`
-copies the built HTML and PDF into `tools/torsor-writing/<skill>/manual/`, and
-the doc page links to them when its front matter says `manual: true`.
+Four manuals are authored and built elsewhere, each in its own directory with
+its own Makefile. `make manuals` copies the built HTML and PDF into the site.
 
-`bin/sync-manuals.py` refuses to copy a manual whose LaTeX source is newer than
-its build output — a stale manual on the site is worse than a missing one.
-Rebuild it, or run `make manuals BUILD=1` to have the guides' own Makefiles do
-it. Point it elsewhere with `make manuals GUIDES=/path/to/guides`.
+A manual can belong to a single skill or to a whole tool:
+
+| manual | belongs to | lands at |
+|---|---|---|
+| `write-paper-guide` | a skill | `tools/torsor-writing/write-paper-guide/manual/` |
+| `write-critical-guide` | a skill | `tools/torsor-writing/write-critical-guide/manual/` |
+| `write-review-and-repair` | a skill | `tools/torsor-writing/write-review-and-repair/manual/` |
+| `rr-guide` | the `research-room` tool | `tools/research-room/manual/` |
+
+Set `manual: true` in the front matter of the doc page or the tool, and it
+renders a link. `bin/check.py` fails if anything claims a manual it does not
+have. The source-to-destination map is `MANUALS` in `bin/sync-manuals.py`.
+
+Source directories are found by name under the roots in `$TORSOR_GUIDES`
+(colon-separated, like `PATH`). `bin/sync-manuals.py` also rewrites each
+manual's `<title>`, because `tex2torsor` emits `<title>Document</title>` for
+every one of them.
+
+It refuses to copy a manual whose LaTeX source is newer than its build output —
+a stale manual on the site is worse than a missing one. Rebuild it, or run
+`make manuals BUILD=1` to have each manual's own Makefile do it. Add search
+roots with `make manuals GUIDES=/path/one:/path/two`.
 
 Note that `bin/` holds the build scripts and `tools/` is site content — the
 manuals live under `tools/` because that is the site's URL space.
