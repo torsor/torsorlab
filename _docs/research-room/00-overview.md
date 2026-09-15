@@ -4,7 +4,7 @@ tool: research-room
 slug: overview
 permalink: /tools/research-room/overview/
 order: 0
-summary: what a research room is, and what it is trying to protect.
+summary: what a research room is, and what it is careful about.
 notes:
   - title: a theorem is not the only outcome
     text: >-
@@ -48,7 +48,7 @@ culture, execution, reporting, artifacts, review, proposals, adjustable
 resources, and an optional handoff policy. a method file is read when its
 subject applies, not on every turn.
 
-## what it is protecting
+## what the room is careful about
 
 **your ability to steer.** a direct instruction to start or proceed authorizes
 that work; the agent does not answer it with a proposal panel instead. small
