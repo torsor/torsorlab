@@ -20,6 +20,7 @@ Voice and tone rules live in `AGENTS.md` — read that before writing site prose
 | Nav links | `_data/nav.yml` |
 | Home page words | `index.md` (front matter carries the hero) |
 | A tool's blurb or status | `_tools/<tool>.md` |
+| A tool that is public before its docs exist | `docs_pending: true` in its `_tools` entry |
 | A doc page | `_docs/<tool>/<nn>-<slug>.md` |
 | Marginalia on a doc page | the `notes:` list in that page's front matter |
 | Whether a doc page links to a manual | `manual: true` in its front matter |

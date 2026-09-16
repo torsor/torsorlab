@@ -63,5 +63,12 @@ layout: base
   </section>
   {%- endif -%}
 
+  {%- if page.docs_pending -%}
+  <section class="band measure">
+    <p class="pending">documentation for this one is being written. the repository
+    is the place to look in the meantime.</p>
+  </section>
+  {%- endif -%}
+
   <section class="band measure">{{ content }}</section>
 </main>

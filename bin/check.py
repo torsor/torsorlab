@@ -114,8 +114,14 @@ def main():
             errors.append(f"_docs/{tool}: duplicate order `{o}`")
 
     for slug, fm in tools.items():
-        if fm.get("status") == "released" and not docs_by_tool.get(slug):
-            errors.append(f"_tools/{slug}: released but has no docs")
+        if fm.get("status") != "released" or docs_by_tool.get(slug):
+            continue
+        # A tool can go public before its documentation is written, but that
+        # has to be declared rather than silently tolerated.
+        if fm.get("docs_pending") != "true":
+            errors.append(
+                f"_tools/{slug}: released but has no docs — write some, or set "
+                f"`docs_pending: true` to say they are still being written")
 
     # anything that advertises a manual must actually have one on disk
     for p in sorted((ROOT / "_docs").rglob("*.md")):

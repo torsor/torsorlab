@@ -208,3 +208,11 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
 
   .doc-manual__text { font-family: var(--font-body); }
 }
+
+// said on a tool that is public before its documentation is written
+.pending {
+  border-left: 2px solid var(--coral);
+  padding-left: 16px;
+  color: var(--muted);
+  margin: 0;
+}
