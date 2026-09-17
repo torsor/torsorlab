@@ -5,6 +5,10 @@ slug: write-paper-repairs
 permalink: /tools/torsor-writing/write-paper-repairs/
 order: 4
 summary: a skill to take the potential issues a critical guide found, and write the suggested changes into a copy of the paper's own source.
+howto_lead: >-
+  new to this? open a folder holding the paper and the critical guide already made for it in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write the suggested changes for the paper in this folder, using the critical guide that is already there
 notes:
   - title: it needs a critical guide first
     text: >-

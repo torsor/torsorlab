@@ -195,3 +195,31 @@ table {
     flex-wrap: wrap;
   }
 }
+
+// --- how to run it ----------------------------------------------------------
+// Two lines: what to open, then the literal sentence to type at the agent.
+// Appears in tool heroes and on skill pages, so it is styled once here.
+
+.howto {
+  margin: 22px 0 0;
+  max-width: 620px;
+
+  &__lead {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+
+  &__say {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: rgba(139, 134, 214, 0.09);
+    border-left: 2px solid var(--violet);
+    border-radius: 0 3px 3px 0;
+    padding: 11px 14px;
+    margin: 0;
+  }
+}

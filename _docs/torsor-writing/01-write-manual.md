@@ -5,6 +5,10 @@ slug: write-manual
 permalink: /tools/torsor-writing/write-manual/
 order: 1
 summary: a skill to take a folder containing a project, and write a user manual for it.
+howto_lead: >-
+  new to this? open a folder holding the project you want documented in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a user manual for the project in this folder
 notes:
   - title: the preface comes first
     text: >-

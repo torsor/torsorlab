@@ -6,6 +6,10 @@ permalink: /tools/torsor-writing/write-review-and-repair/
 order: 5
 manual: true
 summary: a skill to take one mathematical paper, find potential issues, and mark up the repairs.
+howto_lead: >-
+  new to this? open a folder holding the paper's LaTeX source in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and review the paper in this folder and mark up the suggested changes
 notes:
   - title: written is not accepted
     text: >-

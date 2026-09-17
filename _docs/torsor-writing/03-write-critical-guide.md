@@ -6,6 +6,10 @@ permalink: /tools/torsor-writing/write-critical-guide/
 order: 3
 manual: true
 summary: a skill to take one mathematical paper, and catalog the potential issues in it, indexed and analyzed.
+howto_lead: >-
+  new to this? open a folder holding the paper's LaTeX source or PDF in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a critical guide for the paper in this folder
 notes:
   - title: findings, never a disposition
     text: >-

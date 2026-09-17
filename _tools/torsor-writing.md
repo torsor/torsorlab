@@ -4,6 +4,10 @@ slug: torsor-writing
 tagline: eleven writing skills for Claude Code to create reading guides, critical reviews, repairs, papers and reports, from your source material, each built as a self-contained manuscript.
 status: released
 repo: https://github.com/torsor/claude-plugins
+howto_lead: >-
+  new to this? open a folder holding your manuscript's LaTeX source in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a critical guide for the paper in this folder
 order: 1
 docs_eyebrow: the skills
 docs_heading: what each one does

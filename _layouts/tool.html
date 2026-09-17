@@ -19,6 +19,9 @@ layout: base
       </p>
       <h1>{{ page.title }}</h1>
       <p class="lede">{{ page.tagline }}</p>
+      {%- if page.howto_say -%}
+        {% include howto.html lead=page.howto_lead say=page.howto_say %}
+      {%- endif -%}
       {%- if page.repo -%}
         <p class="hero__repo"><a href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a></p>
       {%- endif -%}

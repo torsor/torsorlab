@@ -5,6 +5,10 @@ slug: write-topic-guide
 permalink: /tools/torsor-writing/write-topic-guide/
 order: 6
 summary: a skill to take several papers or books on one topic, and write a single guide explaining it.
+howto_lead: >-
+  new to this? open a folder holding the sources you want synthesized in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a topic guide on <your topic> from the sources in this folder
 notes:
   - title: scanned sources are read, not OCR'd
     text: >-

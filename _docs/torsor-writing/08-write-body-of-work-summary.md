@@ -5,6 +5,10 @@ slug: write-body-of-work-summary
 permalink: /tools/torsor-writing/write-body-of-work-summary/
 order: 8
 summary: a skill to take one mathematician's papers, and write an overview of their research program.
+howto_lead: >-
+  new to this? open a folder holding the papers in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write an overview of the research program in the papers in this folder
 notes:
   - title: purpose sets the person
     text: >-

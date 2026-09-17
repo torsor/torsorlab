@@ -5,6 +5,10 @@ slug: write-study-guide
 permalink: /tools/torsor-writing/write-study-guide/
 order: 7
 summary: a skill to take a target result in the Stacks project or Kerodon, and write a reading route to it.
+howto_lead: >-
+  new to this? open any folder you want the guide written into in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a study guide routing me through the Stacks project to <the result you want>
 notes:
   - title: citation is not pedagogical dependence
     text: >-

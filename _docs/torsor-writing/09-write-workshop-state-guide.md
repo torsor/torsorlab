@@ -5,6 +5,10 @@ slug: write-workshop-state-guide
 permalink: /tools/torsor-writing/write-workshop-state-guide/
 order: 9
 summary: a skill to take a live workshop's working record, and write up where the work stands.
+howto_lead: >-
+  new to this? open the workshop folder in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a state guide for the work in this folder
 notes:
   - title: labels are carried verbatim
     text: >-

@@ -5,6 +5,10 @@ slug: write-technical-report
 permalink: /tools/torsor-writing/write-technical-report/
 order: 11
 summary: a skill to take an experiment's logs, outputs and artifacts, and write them into a technical report.
+howto_lead: >-
+  new to this? open a folder holding the experiment's logs, outputs and artifacts in Claude Code or Codex, and say:
+howto_say: >-
+  use the repository at https://github.com/torsor/claude-plugins and write a technical report from the material in this folder
 notes:
   - title: the evidence ledger is a gate
     text: >-

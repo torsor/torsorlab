@@ -40,6 +40,12 @@ description should tell a reader what they can do with it.
 **no hype.** no "powerful", "seamless", "revolutionary". the tools are useful;
 that is the claim.
 
+**assume the reader has never opened Claude Code.** every tool and every skill
+carries `howto_lead` and `howto_say` in its front matter: what folder to open,
+then the literal sentence to type at the agent. write the `say` line as
+something a person can paste without editing, and use `<angle brackets>` only
+where they genuinely have to substitute their own topic.
+
 ## the rest
 
 `README.md` has the structure: where to edit what, the collection front matter,
