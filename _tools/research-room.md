@@ -6,6 +6,7 @@ status: released
 repo: https://github.com/torsor/research-room
 order: 2
 manual: true
+manual_blurb: a full user's manual, written for someone about to work in a room.
 docs_eyebrow: the room
 docs_heading: how it is put together
 ---

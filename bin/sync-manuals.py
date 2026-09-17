@@ -46,6 +46,10 @@ MANUALS = {
         "tools/research-room/manual",
         "research-room: a user's manual",
     ),
+    "hive-guide": (
+        "tools/hive/manual",
+        "hive: a user's manual",
+    ),
 }
 
 

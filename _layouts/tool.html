@@ -30,7 +30,7 @@ layout: base
     <div class="doc-manual">
       <p class="doc-manual__label">the manual</p>
       <p class="doc-manual__text">
-        a full user's manual, written for someone about to work in a room.
+        {{ page.manual_blurb | default: "a full user's manual for this tool." }}
       </p>
       <p class="doc-manual__links">
         <a href="{{ page.url | append: 'manual/' | relative_url }}">read it</a>

@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hive: a user's manual</title>
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="manual.css" />
+
+
+</head>
+<body class="paper-texture">
+<div class="page-layout">
+
+<nav class="doc-toc" id="toc" aria-label="Table of contents">
+  <p class="kicker">Contents</p>
+  <ul>
+  <li><a href="#preface-the-laptop-is-the-wrong-place"
+  id="toc-preface-the-laptop-is-the-wrong-place"><span
+  class="toc-section-number">1</span> Preface: The Laptop Is the Wrong
+  Place</a></li>
+  <li><a href="#the-fleet" id="toc-the-fleet"><span
+  class="toc-section-number">2</span> The Fleet</a>
+  <ul>
+  <li><a href="#four-roles" id="toc-four-roles"><span
+  class="toc-section-number">2.1</span> Four roles</a></li>
+  <li><a href="#what-talks-to-what" id="toc-what-talks-to-what"><span
+  class="toc-section-number">2.2</span> What talks to what</a></li>
+  <li><a href="#what-each-machine-has-to-provide"
+  id="toc-what-each-machine-has-to-provide"><span
+  class="toc-section-number">2.3</span> What each machine has to
+  provide</a></li>
+  <li><a href="#the-tailnet-is-the-authentication"
+  id="toc-the-tailnet-is-the-authentication"><span
+  class="toc-section-number">2.4</span> The tailnet is the
+  authentication</a></li>
+  <li><a href="#what-a-session-actually-is"
+  id="toc-what-a-session-actually-is"><span
+  class="toc-section-number">2.5</span> What a session actually
+  is</a></li>
+  <li><a href="#what-happens-when-a-piece-goes-missing"
+  id="toc-what-happens-when-a-piece-goes-missing"><span
+  class="toc-section-number">2.6</span> What happens when a piece goes
+  missing</a></li>
+  </ul></li>
+  <li><a href="#quick-start-let-an-agent-do-it"
+  id="toc-quick-start-let-an-agent-do-it"><span
+  class="toc-section-number">3</span> Quick Start: Let an Agent Do
+  It</a>
+  <ul>
+  <li><a href="#before-you-start" id="toc-before-you-start"><span
+  class="toc-section-number">3.1</span> Before you start</a></li>
+  <li><a href="#what-to-ask-for" id="toc-what-to-ask-for"><span
+  class="toc-section-number">3.2</span> What to ask for</a></li>
+  <li><a href="#what-it-can-do-for-you"
+  id="toc-what-it-can-do-for-you"><span
+  class="toc-section-number">3.3</span> What it can do for you</a></li>
+  <li><a href="#what-it-will-have-to-ask-you-for"
+  id="toc-what-it-will-have-to-ask-you-for"><span
+  class="toc-section-number">3.4</span> What it will have to ask you
+  for</a></li>
+  <li><a href="#how-to-tell-it-actually-worked"
+  id="toc-how-to-tell-it-actually-worked"><span
+  class="toc-section-number">3.5</span> How to tell it actually
+  worked</a></li>
+  <li><a href="#then-stop-and-read-about-the-consoles"
+  id="toc-then-stop-and-read-about-the-consoles"><span
+  class="toc-section-number">3.6</span> Then stop and read about the
+  consoles</a></li>
+  </ul></li>
+  <li><a href="#standing-up-the-fleet"
+  id="toc-standing-up-the-fleet"><span
+  class="toc-section-number">4</span> Standing Up the Fleet</a>
+  <ul>
+  <li><a href="#what-a-converge-does"
+  id="toc-what-a-converge-does"><span
+  class="toc-section-number">4.1</span> What a converge does</a></li>
+  <li><a href="#one-ansible-on-your-laptop"
+  id="toc-one-ansible-on-your-laptop"><span
+  class="toc-section-number">4.2</span> One: Ansible on your
+  laptop</a></li>
+  <li><a href="#two-describe-your-fleet"
+  id="toc-two-describe-your-fleet"><span
+  class="toc-section-number">4.3</span> Two: describe your
+  fleet</a></li>
+  <li><a href="#three-the-sudo-detour-if-you-need-it"
+  id="toc-three-the-sudo-detour-if-you-need-it"><span
+  class="toc-section-number">4.4</span> Three: the sudo detour, if you
+  need it</a></li>
+  <li><a href="#four-converge" id="toc-four-converge"><span
+  class="toc-section-number">4.5</span> Four: converge</a></li>
+  <li><a href="#five-linger" id="toc-five-linger"><span
+  class="toc-section-number">4.6</span> Five: linger</a></li>
+  <li><a href="#six-verify" id="toc-six-verify"><span
+  class="toc-section-number">4.7</span> Six: verify</a></li>
+  <li><a href="#seven-the-phone-console"
+  id="toc-seven-the-phone-console"><span
+  class="toc-section-number">4.8</span> Seven: the phone
+  console</a></li>
+  <li><a href="#where-everything-landed"
+  id="toc-where-everything-landed"><span
+  class="toc-section-number">4.9</span> Where everything landed</a></li>
+  <li><a href="#adding-a-box-later" id="toc-adding-a-box-later"><span
+  class="toc-section-number">4.10</span> Adding a box later</a></li>
+  <li><a href="#pinning-a-version" id="toc-pinning-a-version"><span
+  class="toc-section-number">4.11</span> Pinning a version</a></li>
+  </ul></li>
+  <li><a href="#three-consoles" id="toc-three-consoles"><span
+  class="toc-section-number">5</span> Three Consoles</a>
+  <ul>
+  <li><a href="#the-terminal" id="toc-the-terminal"><span
+  class="toc-section-number">5.1</span> The terminal</a></li>
+  <li><a href="#the-mac-panel" id="toc-the-mac-panel"><span
+  class="toc-section-number">5.2</span> The Mac panel</a></li>
+  <li><a href="#the-phone" id="toc-the-phone"><span
+  class="toc-section-number">5.3</span> The phone</a></li>
+  <li><a href="#attach-the-escape-hatch"
+  id="toc-attach-the-escape-hatch"><span
+  class="toc-section-number">5.4</span> Attach: the escape
+  hatch</a></li>
+  <li><a href="#which-one-to-reach-for"
+  id="toc-which-one-to-reach-for"><span
+  class="toc-section-number">5.5</span> Which one to reach for</a></li>
+  </ul></li>
+  <li><a href="#running-agents" id="toc-running-agents"><span
+  class="toc-section-number">6</span> Running Agents</a>
+  <ul>
+  <li><a href="#the-four-decisions" id="toc-the-four-decisions"><span
+  class="toc-section-number">6.1</span> The four decisions</a></li>
+  <li><a href="#passing-arguments-to-the-agent"
+  id="toc-passing-arguments-to-the-agent"><span
+  class="toc-section-number">6.2</span> Passing arguments to the
+  agent</a></li>
+  <li><a href="#the-permission-trap" id="toc-the-permission-trap"><span
+  class="toc-section-number">6.3</span> The permission trap</a></li>
+  <li><a href="#stop-restart-kill-resume"
+  id="toc-stop-restart-kill-resume"><span
+  class="toc-section-number">6.4</span> Stop, restart, kill,
+  resume</a></li>
+  <li><a href="#what-happens-on-the-box"
+  id="toc-what-happens-on-the-box"><span
+  class="toc-section-number">6.5</span> What happens on the box</a></li>
+  <li><a href="#stars" id="toc-stars"><span
+  class="toc-section-number">6.6</span> Stars</a></li>
+  <li><a href="#looking-around-a-box-before-you-start"
+  id="toc-looking-around-a-box-before-you-start"><span
+  class="toc-section-number">6.7</span> Looking around a box before you
+  start</a></li>
+  </ul></li>
+  <li><a href="#chat-and-transcripts"
+  id="toc-chat-and-transcripts"><span
+  class="toc-section-number">7</span> Chat and Transcripts</a>
+  <ul>
+  <li><a href="#saying-something" id="toc-saying-something"><span
+  class="toc-section-number">7.1</span> Saying something</a></li>
+  <li><a href="#reading-the-conversation"
+  id="toc-reading-the-conversation"><span
+  class="toc-section-number">7.2</span> Reading the
+  conversation</a></li>
+  <li><a href="#when-the-conversation-goes-stale"
+  id="toc-when-the-conversation-goes-stale"><span
+  class="toc-section-number">7.3</span> When the conversation goes
+  stale</a></li>
+  <li><a href="#when-theres-nothing-to-read-yet"
+  id="toc-when-theres-nothing-to-read-yet"><span
+  class="toc-section-number">7.4</span> When there’s nothing to read
+  yet</a></li>
+  </ul></li>
+  <li><a href="#keeping-it-running" id="toc-keeping-it-running"><span
+  class="toc-section-number">8</span> Keeping It Running</a>
+  <ul>
+  <li><a href="#pushing-new-code" id="toc-pushing-new-code"><span
+  class="toc-section-number">8.1</span> Pushing new code</a></li>
+  <li><a href="#after-a-reboot" id="toc-after-a-reboot"><span
+  class="toc-section-number">8.2</span> After a reboot</a></li>
+  <li><a href="#the-failures-youll-see"
+  id="toc-the-failures-youll-see"><span
+  class="toc-section-number">8.3</span> The failures you’ll see</a></li>
+  <li><a href="#health-at-a-glance" id="toc-health-at-a-glance"><span
+  class="toc-section-number">8.4</span> Health at a glance</a></li>
+  <li><a href="#housekeeping" id="toc-housekeeping"><span
+  class="toc-section-number">8.5</span> Housekeeping</a></li>
+  <li><a href="#moving-the-hub" id="toc-moving-the-hub"><span
+  class="toc-section-number">8.6</span> Moving the hub</a></li>
+  <li><a href="#what-isnt-automatic" id="toc-what-isnt-automatic"><span
+  class="toc-section-number">8.7</span> What isn’t automatic</a></li>
+  </ul></li>
+  <li><a href="#quick-reference" id="toc-quick-reference"><span
+  class="toc-section-number">9</span> Quick Reference</a>
+  <ul>
+  <li><a href="#fleet-and-sessions" id="toc-fleet-and-sessions"><span
+  class="toc-section-number">9.1</span> Fleet and sessions</a></li>
+  <li><a href="#daemons" id="toc-daemons"><span
+  class="toc-section-number">9.2</span> Daemons</a></li>
+  <li><a href="#ports" id="toc-ports"><span
+  class="toc-section-number">9.3</span> Ports</a></li>
+  <li><a href="#configuration-files" id="toc-configuration-files"><span
+  class="toc-section-number">9.4</span> Configuration files</a></li>
+  <li><a href="#environment-variables"
+  id="toc-environment-variables"><span
+  class="toc-section-number">9.5</span> Environment variables</a></li>
+  <li><a href="#http-api" id="toc-http-api"><span
+  class="toc-section-number">9.6</span> HTTP API</a></li>
+  <li><a href="#provisioning" id="toc-provisioning"><span
+  class="toc-section-number">9.7</span> Provisioning</a></li>
+  <li><a href="#building-from-source"
+  id="toc-building-from-source"><span
+  class="toc-section-number">9.8</span> Building from source</a></li>
+  <li><a href="#running-it-locally" id="toc-running-it-locally"><span
+  class="toc-section-number">9.9</span> Running it locally</a></li>
+  <li><a href="#when-something-is-wrong"
+  id="toc-when-something-is-wrong"><span
+  class="toc-section-number">9.10</span> When something is
+  wrong</a></li>
+  </ul></li>
+  </ul>
+</nav>
+
+<main class="doc-body prose" id="main">
+
+<div class="titlepage">
+<p>hive</p>
+<p>A User’s Manual</p>
+<p><em>A fleet console for coding agents.</em></p>
+<p>Your laptop sleeps. The agents keep working.</p>
+<p><span> Last revised: 2026-09-16</span></p>
+</div>
+<div class="center">
+<p>torsor lab</p>
+<p><span><a href="https://torsor.org"> torsor.org</a></span></p>
+</div>
+<h1 data-number="1" id="preface-the-laptop-is-the-wrong-place"><span
+class="header-section-number">1</span> Preface: The Laptop Is the Wrong
+Place</h1>
+<p>The agent is still running and you need to close the lid.</p>
+<p>Maybe you’re leaving the office. Maybe the battery is at 4%. Maybe
+you just want to go to dinner. The agent doesn’t care — it’s forty
+minutes into a refactor, and the moment your laptop sleeps, so does the
+work. You’ve probably already tried the obvious fix: run it on a machine
+that stays on, reach it over SSH, keep it alive inside
+<code>tmux</code>. That works. It works right up until there are four
+such machines, six such sessions, and no memory of which box you left
+the interesting one on.</p>
+<p>At that point you’re not running agents. You’re doing archaeology.
+You SSH somewhere, run <code>tmux ls</code>, squint at names you chose
+in a hurry, attach to the wrong one, detach, try the next box. And
+because that ritual is tedious, you stop starting long jobs — which is
+the real cost, and the one that’s hard to notice.</p>
+<p><strong>hive</strong> is a console for agent sessions that live on
+other machines.</p>
+<p>You keep the agents where they belong — on boxes that stay powered on
+— and hive gives you one view of all of them: what’s running where, what
+each one last said, and a way to answer it. From a terminal. From a
+native app on your Mac. From your phone while you’re standing in line
+for coffee. Same fleet, same sessions, three different places to reach
+them.</p>
+<p>The part that takes a moment to accept is that hive is not a single
+program you install. It is several programs and a handful of
+configuration files, spread across the machines you already have, and
+the arrangement is the product. One program runs on each box and owns
+the truth about what’s running there. One program runs on a single
+always-on machine and collects that truth from all the boxes. The things
+you actually touch — the terminal command, the Mac panel, the phone
+console — hold no state at all; they ask the collector. The
+configuration files say which machine is which.</p>
+<p>That shape is why your laptop is allowed to sleep, and it’s why hive
+asks more of you up front than a one-line install would. You need
+machines that stay on, and you need them able to find each other.
+<em>The Fleet</em> lays out exactly what those machines are and what
+each one has to provide. Read it before you install anything; it’s
+short, and it’s the chapter that makes the rest make sense.</p>
+<p><em>Quick Start</em> is the fast path, and an unusual one: hand the
+repository to a coding agent and let it do the setup. This works better
+than it sounds, because hive’s own conventions are written down where an
+agent will find them — but only up to a point, and the chapter is mostly
+about where that point is. What an agent can do unattended, what it will
+have to ask you for, and how you tell a real success from a
+plausible-looking failure. <em>Standing Up the Fleet</em> covers the
+same ground by hand, slowly, for when you’d rather drive.</p>
+<p>Then the payoff. <em>Three Consoles</em> is the <code>hive</code>
+command, the Mac panel, the phone console — what each is good at, and
+why chat from a phone turns out to be the feature that changes how you
+work. <em>Running Agents</em> is starting agents and managing their
+lifecycles. <em>Chat and Transcripts</em> is talking to a running agent
+and reading what it said, including the one genuinely confusing thing in
+the system, which is how a session gets attached to a transcript and
+what to do when that attachment goes stale. <em>Keeping It Running</em>
+is keeping a fleet healthy over months.</p>
+<p>The appendix is the exhaustive part — every command, flag, endpoint,
+config field, and path. Nothing in the chapters tries to be complete.
+The appendix does.</p>
+<h1 data-number="2" id="the-fleet"><span
+class="header-section-number">2</span> The Fleet</h1>
+<p>Most software asks what operating system you have. hive asks
+something harder: which of your machines never turns off.</p>
+<p>That’s the requirement underneath everything else in this manual.
+hive exists to keep agent sessions alive while you walk away, and
+nothing in the software can supply a computer that stays powered on. So
+before any install command, it’s worth being concrete about which
+machines you’re going to use and what job each one does. There are four
+jobs. One machine can hold more than one of them.</p>
+<h2 data-number="2.1" id="four-roles"><span
+class="header-section-number">2.1</span> Four roles</h2>
+<p>An <strong>agent box</strong> is a machine that stays on and actually
+runs the agents. Each one runs a small daemon called
+<code>hive-host</code>, which starts agents inside <code>tmux</code>,
+keeps a file describing each session, and answers questions about them
+over HTTP. The box is the truth: if <code>hive-host</code> says a
+session is running, it’s because the <code>tmux</code> session is really
+there, on that machine, right now. Most fleets have two to four boxes.
+One is enough.</p>
+<p>The <strong>hub</strong> is one designated always-on machine that
+collects. Every few seconds it asks each box what it’s running and
+caches the answer. It also forwards commands — your “stop this session”
+goes to the hub, and the hub passes it to the right box. The hub is an
+ordinary agent box that has been given this extra job, so it can run
+agents too. What makes it the hub is that everything else depends on it
+being reachable, which means you should pick the machine you trust most
+to stay up.</p>
+<p>A <strong>desktop client</strong> is your laptop — the
+<code>hive</code> command in a terminal, or the Mac panel, or both.
+Clients keep no state. They ask the hub and render what comes back,
+which is precisely why the laptop is allowed to sleep, get closed, or
+fly across an ocean.</p>
+<p>A <strong>phone</strong> is the fourth. It loads a small web console
+served from the hub and talks to the same API your laptop uses. You
+install nothing on the phone beyond Tailscale itself.</p>
+<h2 data-number="2.2" id="what-talks-to-what"><span
+class="header-section-number">2.2</span> What talks to what</h2>
+<pre class="shell" data-breaklines="false"><code>laptop               phone
+  hive CLI, Mac panel  web console
+       |                   |
+       |    HTTP + SSE     |
+       +---------+---------+
+                 |
+                 v
+           hive-hub :8787
+           nginx    :80 /hive/
+                 |
+                 | HTTP over the tailnet
+       +---------+---------+
+       |         |         |
+       v         v         v
+     box-a     box-b      hub
+   hive-host hive-host hive-host
+     :8788     :8788     :8788
+       |         |         |
+      tmux      tmux      tmux</code></pre>
+<p>Two things in that picture are worth saying out loud.</p>
+<p>First, the clients never connect to a box. They talk to the hub, and
+only to the hub. This is what makes the phone console possible at all —
+one address to reach, one thing to be reachable.</p>
+<p>Second, there’s no SSH on that diagram. Status, chat, starting an
+agent, stopping one: all HTTP. SSH appears in exactly two places in this
+manual — installing the software in the first place, and attaching a
+real terminal to a running agent when you want to type at it
+directly.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The hub is listed twice above, as <code>hub:8787</code> and
+<code>hub:8788</code>. That isn’t a typo. A hub that also runs agents is
+running two daemons: the collector on 8787 and its own
+<code>hive-host</code> on 8788. The collector polls its own box over
+HTTP just like any other.</p>
+</div>
+<h2 data-number="2.3" id="what-each-machine-has-to-provide"><span
+class="header-section-number">2.3</span> What each machine has to
+provide</h2>
+<h3 data-number="2.3.1" id="every-agent-box-including-the-hub"><span
+class="header-section-number">2.3.1</span> Every agent box, including
+the hub</h3>
+<p>A Linux machine with <code>apt</code> — the provisioning assumes the
+Debian/Ubuntu family. It has to stay powered on and awake; a box that
+suspends is a box whose agents stop.</p>
+<p>You need four things on it before hive can be installed, and the
+installer cannot supply any of them for you:</p>
+<ul>
+<li><p><strong>Tailscale, up and authenticated.</strong> Every hive
+daemon binds to the machine’s Tailscale address and refuses to bind
+anywhere else.</p></li>
+<li><p><strong>SSH access</strong> from your laptop, under the account
+that will own the agents.</p></li>
+<li><p><strong><code>sudo</code></strong> for that account, for the
+first install only.</p></li>
+<li><p><strong>The agent itself</strong> — <code>claude</code>, or
+<code>codex</code>, or both — installed <em>and already signed in</em>
+for that same account.</p></li>
+</ul>
+<p>That last one is the requirement people miss. hive does not install
+coding agents and does not hold credentials for them. It runs whatever
+<code>claude</code> or <code>codex</code> it finds on the box, as you,
+using the login you already did there. A box with no agent installed
+will provision perfectly and then fail the moment you ask it to start a
+session.</p>
+<p>Everything else — <code>git</code>, <code>tmux</code>, a compiler, a
+Rust toolchain, the hive binaries themselves — is installed for you
+during setup.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>hive builds from source <em>on each box</em>. The first install on a
+new machine spends several minutes compiling Rust, which is normal and
+which you should not interrupt. Copying a binary from your Mac does not
+work; it’s the wrong architecture and the wrong operating system.</p>
+</div>
+<h3 data-number="2.3.2" id="the-hub-additionally"><span
+class="header-section-number">2.3.2</span> The hub, additionally</h3>
+<p>Whatever a box needs, plus a web server for the phone console, which
+the installer configures. Nothing more is asked of the machine. What’s
+asked of you is the choice: this is the machine that everything else
+routes through, and if it’s off, every client goes blind at once. The
+agents keep running. You just can’t see them.</p>
+<h3 data-number="2.3.3" id="your-laptop"><span
+class="header-section-number">2.3.3</span> Your laptop</h3>
+<p>For the terminal, one program: the <code>hive</code> command, plus a
+two-line config file naming your hub.</p>
+<p>For setting up the fleet, additionally <code>ansible-core</code> and
+SSH keys to the boxes. Only the machine that provisions needs this — a
+second laptop can use hive perfectly well with nothing but the
+<code>hive</code> command and the hub’s address.</p>
+<p>For the Mac panel, a macOS machine and a Node toolchain to build it.
+The panel is a native application that speaks to the hub over HTTP; it
+is not a browser window pointed at the hub.</p>
+<h3 data-number="2.3.4" id="your-phone"><span
+class="header-section-number">2.3.4</span> Your phone</h3>
+<p>Tailscale, signed in to the same network. That’s the whole list. The
+console is a web page served by the hub, so there’s nothing to install
+and nothing to keep updated.</p>
+<h2 data-number="2.4" id="the-tailnet-is-the-authentication"><span
+class="header-section-number">2.4</span> The tailnet is the
+authentication</h2>
+<p>hive has no accounts, no passwords, no tokens, and no TLS. Being on
+your Tailscale network <em>is</em> the credential.</p>
+<p>This is a deliberate trade, and it’s the right one for a personal
+fleet — it’s what makes a phone console a fifteen-minute feature instead
+of an authentication project. But it has a consequence you should hold
+clearly in mind.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Anyone who can reach your tailnet can read your agents’
+conversations, send them messages, start new agents on your machines,
+and stop running ones. There is no second check. Treat tailnet
+membership exactly as seriously as you would treat an SSH key to the
+same machines, and don’t add devices you don’t control.</p>
+</div>
+<p>The software enforces its half of the bargain strictly. Both daemons
+refuse to start unless their bind address is a Tailscale address — they
+will not bind to <code>0.0.0.0</code>, and they will not bind to
+loopback unless you explicitly pass a development flag. You cannot
+accidentally publish your fleet to the open internet, because the
+program will stop rather than let you.</p>
+<h2 data-number="2.5" id="what-a-session-actually-is"><span
+class="header-section-number">2.5</span> What a session actually is</h2>
+<p>One agent, running on one box, under a name you chose.</p>
+<p>The name is the handle for everything — a box and a task name
+identify a session completely:</p>
+<pre class="shell"><code>hive stop box-a period-index</code></pre>
+<p>On the box, that name becomes two things: a <code>tmux</code> session
+named <code>hive-</code> followed by the task, and a small metadata file
+recording the working directory, which agent it is, and when it started.
+Nothing else about a session lives anywhere — there’s no central
+database, and the hub’s copy is just a cache it refreshes every few
+seconds.</p>
+<p>The practical consequence: the box is always right, and everything
+else is a view. If the hub says something the box disagrees with, the
+box wins, and the disagreement resolves itself within seconds.</p>
+<h2 data-number="2.6" id="what-happens-when-a-piece-goes-missing"><span
+class="header-section-number">2.6</span> What happens when a piece goes
+missing</h2>
+<p><strong>Your laptop sleeps.</strong> Nothing happens. This is the
+whole point. Clients hold no state and nothing depends on them; agents
+keep working and you pick up where you left off.</p>
+<p><strong>A box goes down.</strong> Its row in the fleet table reads
+<code>(unreachable)</code> with the error the hub got. Every other box
+is unaffected — one dead machine doesn’t take down your view of the
+rest.</p>
+<p><strong>The hub goes down.</strong> Every client goes blind at once:
+no status, no chat, no starting or stopping anything. The agents
+themselves are entirely unaffected, still running in <code>tmux</code>
+on their boxes. When the hub comes back, so does your view, with no
+reconciliation needed. If you need to reach an agent while the hub is
+down, SSH to its box and attach to <code>tmux</code> directly — that
+path never stops working.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>hive is a console, not a supervisor. It shows you what your agents
+are doing and lets you talk to them. It does not restart an agent that
+crashed, resume one after a reboot, or notice that a session has been
+stuck waiting for input since Tuesday. Those remain your job.</p>
+</div>
+<p>That’s the whole architecture. Two daemons, some configuration files
+saying which machine is which, and three consoles that hold nothing. The
+next chapter puts it on real machines.</p>
+<h1 data-number="3" id="quick-start-let-an-agent-do-it"><span
+class="header-section-number">3</span> Quick Start: Let an Agent Do
+It</h1>
+<p>There’s a pleasing circularity to setting up hive by handing the
+repository to a coding agent and asking it to install the thing that
+will manage coding agents. It also happens to be the fastest route,
+because hive’s conventions are written down inside the repository in the
+places an agent looks first.</p>
+<p>It is not, however, a route you can start and walk away from. This
+chapter is mostly about where the agent’s usefulness stops — what it can
+do unattended, what it has to ask you for, and how to tell a real
+success from a confident-sounding failure.</p>
+<h2 data-number="3.1" id="before-you-start"><span
+class="header-section-number">3.1</span> Before you start</h2>
+<p>Have this ready. None of it can be produced by the agent, and each
+missing piece stops the install at a different point.</p>
+<ul>
+<li><p>The names of your boxes, as you SSH to them, and which one is the
+hub.</p></li>
+<li><p>Tailscale running and signed in on every box, on your laptop, and
+on your phone.</p></li>
+<li><p>Working SSH from your laptop to each box, and the
+<code>sudo</code> password for the account you SSH as.</p></li>
+<li><p><code>claude</code> or <code>codex</code> installed and signed in
+on each box, under that same account.</p></li>
+<li><p>A URL the boxes can clone hive from. Each box fetches the source
+itself and builds it, so a repository that only exists on your laptop is
+not enough.</p></li>
+</ul>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The last two are the ones that quietly derail an otherwise clean
+install. Both boil down to the same question — can <em>the box</em>,
+acting as you, get what it needs without you sitting there? An agent
+signed in only on your laptop and a repository reachable only from your
+laptop will both pass every check until the moment they don’t.</p>
+</div>
+<h2 data-number="3.2" id="what-to-ask-for"><span
+class="header-section-number">3.2</span> What to ask for</h2>
+<p>Open an agent session in your clone of the hive repository and
+describe where you’re starting from. Concretely, and with your real
+machine names:</p>
+<pre class="shell"><code>Read README.md, CLAUDE.md, and ansible/README.md.
+
+I want to set up a hive fleet. My boxes are box-a and box-b,
+and hub is the always-on machine that should run hive-hub.
+All three are on my tailnet and I can SSH to them.
+
+Walk me through it. Stop and ask before anything that needs
+my password or changes a machine.</code></pre>
+<p>The last line matters more than the rest. Provisioning is the kind of
+task an agent will happily drive to completion, and you want the first
+converge to be something you watched.</p>
+<h2 data-number="3.3" id="what-it-can-do-for-you"><span
+class="header-section-number">3.3</span> What it can do for you</h2>
+<p>A capable agent working in that repository will get the shape right,
+because the repository tells it the shape. Expect it to handle:</p>
+<p><strong>The configuration files, correctly placed.</strong> hive
+keeps everything about <em>your</em> fleet outside the repository, under
+<code>~/.hive/fleet/</code>. There are two files, both copied from
+examples in the repo and then edited: an inventory naming your boxes and
+marking which one is the hub, and a vars file saying where the boxes
+clone from. Getting these right by hand means reading a README; an agent
+just does it.</p>
+<p><strong>Explaining what the converge will do</strong> before you run
+it, in the order it will happen: install packages, install Rust, clone
+hive on each box, build it there, install the daemons as services, then
+generate your laptop’s client files.</p>
+<p><strong>Reading the failures.</strong> This is where an agent
+genuinely earns its place. Ansible failures are long and the real error
+is rarely in the last line. An agent reads the whole thing and tells you
+which host failed at which task.</p>
+<p><strong>The known traps.</strong> Two are documented in the
+repository, and an agent that read the docs will raise them before they
+bite. On recent Ubuntu, <code>sudo</code> may be routed through an
+implementation that Ansible’s password prompt cannot drive, and the fix
+is a one-line switch run once per box <em>before</em> the first
+converge. Separately, the daemons run as user services, which by default
+stop when you log out — a setting called <em>linger</em> has to be
+enabled once per box or your fleet goes quiet whenever your SSH session
+ends.</p>
+<h2 data-number="3.4" id="what-it-will-have-to-ask-you-for"><span
+class="header-section-number">3.4</span> What it will have to ask you
+for</h2>
+<p><strong>Your <code>sudo</code> password.</strong> The first converge
+installs system packages and creates a directory owned by root. Ansible
+prompts for this, interactively, and an agent cannot type it for you —
+nor should you want it to.</p>
+<p><strong>Which machine is the hub.</strong> There’s no way to infer
+it. It’s a judgment about which of your machines is most reliably
+on.</p>
+<p><strong>Authenticating Tailscale and the coding agents.</strong> Both
+are browser-based logins on each box. The install will complete without
+them and then fail in ways that look unrelated: a box that can’t be
+reached, or a session that starts and immediately dies.</p>
+<p><strong>Permission to push.</strong> The boxes clone from a URL, so
+whatever you want deployed has to be pushed there first. If the agent
+has been editing hive itself, the code on the boxes is whatever was
+pushed — not what’s in your working directory.</p>
+<h2 data-number="3.5" id="how-to-tell-it-actually-worked"><span
+class="header-section-number">3.5</span> How to tell it actually
+worked</h2>
+<p>An install can report success at every step and still leave you with
+a fleet that doesn’t work, so check it yourself. Four checks, in order,
+each one testing a different link in the chain.</p>
+<p><strong>One.</strong> On each box, is the daemon running?</p>
+<pre class="shell"><code>ssh box-a &#39;systemctl --user is-active hive-host&#39;</code></pre>
+<p>You want <code>active</code>. Anything else and that box isn’t in the
+fleet yet.</p>
+<p><strong>Two.</strong> Is it actually answering on the network, rather
+than merely running?</p>
+<pre class="shell"><code>ssh box-a &#39;curl -s http://$(tailscale ip -4):8788/v1/sessions&#39;</code></pre>
+<p>You want <code>[]</code> — an empty list of sessions. An empty
+response instead means the daemon is up but not listening where you
+think it is.</p>
+<p><strong>Three.</strong> Can the hub see everyone? From your
+laptop:</p>
+<pre class="shell"><code>hive status</code></pre>
+<p>Every box should be listed, each saying <code>(no sessions)</code>. A
+box showing <code>(unreachable)</code> is the interesting case, and it
+means the hub couldn’t reach it — which is a different problem from that
+box being down, and <em>Keeping It Running</em> separates them.</p>
+<p><strong>Four.</strong> Start something real and watch it appear:</p>
+<pre class="shell"><code>hive run box-a hello /home/you/some/project
+hive status</code></pre>
+<p>The session should show as <code>running</code>, with the last line
+of the agent’s output beside it. This is the check that exercises
+everything at once — the client, the hub, the box, <code>tmux</code>,
+and the coding agent’s own login. If the first three passed and this one
+fails, the problem is almost always that last item.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Don’t accept “the playbook completed successfully” as evidence.
+Ansible reports on the tasks it ran, not on whether you have a working
+fleet — and the two most common failures, an unauthenticated Tailscale
+and an unauthenticated coding agent, both leave a converge looking
+perfectly clean. Run the four checks.</p>
+</div>
+<h2 data-number="3.6" id="then-stop-and-read-about-the-consoles"><span
+class="header-section-number">3.6</span> Then stop and read about the
+consoles</h2>
+<p>Once <code>hive status</code> lists your boxes, you’re done with
+setup and you haven’t yet used hive for anything. The terminal is the
+least interesting of its three faces; <em>Three Consoles</em> covers the
+Mac panel and the phone console, which are what make a fleet feel like
+something you can keep an eye on rather than something you have to
+remember to check.</p>
+<p>If the install didn’t go cleanly, or you’d rather understand the
+machinery before trusting it, <em>Standing Up the Fleet</em> walks the
+same path by hand.</p>
+<h1 data-number="4" id="standing-up-the-fleet"><span
+class="header-section-number">4</span> Standing Up the Fleet</h1>
+<p>The same install as <em>Quick Start</em>, done deliberately. Read
+this if the agent route stalled, if you’d rather understand what’s
+happening to your machines, or if you’re adding a box to a fleet that
+already exists.</p>
+<p>Provisioning uses Ansible, and it runs from your laptop. Your laptop
+is the only machine that needs it — the boxes need nothing but SSH and a
+willingness to compile.</p>
+<h2 data-number="4.1" id="what-a-converge-does"><span
+class="header-section-number">4.1</span> What a converge does</h2>
+<p>In order, on every box:</p>
+<ol>
+<li><p>Install system packages: <code>git</code>, <code>tmux</code>, a
+compiler, the libraries hive needs.</p></li>
+<li><p>Install a Rust toolchain, if the box doesn’t have one.</p></li>
+<li><p>Clone hive at a pinned version into
+<code>/srv/lab/hive</code>.</p></li>
+<li><p>Build it there, from source.</p></li>
+<li><p>Install <code>hive-host</code> as a service and start
+it.</p></li>
+<li><p>On the hub only: the same for <code>hive-hub</code>, plus the
+phone console.</p></li>
+<li><p>Check that <code>tmux</code> and a coding agent are present, and
+say so if they aren’t.</p></li>
+</ol>
+<p>Then, on your laptop, it writes the two client files that tell
+<code>hive</code> where your fleet is.</p>
+<p>Two things to notice. The build happens on each box — the first
+converge on a new machine spends several minutes in <code>cargo</code>,
+which is expected. And the last step only <em>checks</em> for a coding
+agent; installing and signing in to <code>claude</code> or
+<code>codex</code> on each box is yours to do, and the converge will
+finish happily without it.</p>
+<h2 data-number="4.2" id="one-ansible-on-your-laptop"><span
+class="header-section-number">4.2</span> One: Ansible on your
+laptop</h2>
+<pre class="shell"><code>uv tool install ansible-core</code></pre>
+<h2 data-number="4.3" id="two-describe-your-fleet"><span
+class="header-section-number">4.3</span> Two: describe your fleet</h2>
+<p>Nothing about your machines lives in the hive repository — it’s
+public, and it stays that way. Your fleet is described by two files
+under <code>~/.hive/fleet/</code>, copied from examples in the repo and
+then edited. From your clone:</p>
+<pre class="shell"><code>mkdir -p ~/.hive/fleet/group_vars/all
+cd ansible
+cp inventory.example.yml ~/.hive/fleet/inventory.yml
+cp group_vars.example/all/vars.yml ~/.hive/fleet/group_vars/all/vars.yml</code></pre>
+<p>The inventory names your machines and marks one as the hub:</p>
+<pre class="shell"><code>hive_hosts:
+  hosts:
+    box-a:
+    box-b:
+  children:
+    hive_hub:
+
+hive_hub:
+  hosts:
+    hub:
+  vars:
+    hive_hub_enabled: true
+
+control:
+  hosts:
+    localhost:
+      ansible_connection: local</code></pre>
+<p>Use the names you actually SSH to. The hub sits in its own group that
+is a child of <code>hive_hosts</code>, which is what makes it both the
+collector and an ordinary agent box.</p>
+<p>The vars file says where the boxes get their code:</p>
+<pre class="shell"><code>hive_repo_url: https://github.com/OWNER/hive.git
+hive_ref: main
+hive_checkout_dir: /srv/lab/hive
+hive_hub_host: hub</code></pre>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p><code>hive_repo_url</code> is fetched <em>by the boxes</em>, not by
+your laptop. A path that only resolves locally, or a private repository
+the boxes can’t authenticate to, fails at the clone step. Whatever you
+want running on the fleet has to be pushed to that URL first.</p>
+</div>
+<p>Every command below runs from the <code>ansible</code> directory of
+your clone. That is where the configuration lives that points Ansible at
+your <code>~/.hive/fleet/</code> files.</p>
+<h2 data-number="4.4" id="three-the-sudo-detour-if-you-need-it"><span
+class="header-section-number">4.4</span> Three: the sudo detour, if you
+need it</h2>
+<p>Recent Ubuntu releases may route <code>sudo</code> through a
+reimplementation that Ansible’s password prompt cannot drive. The
+symptom is a converge that hangs at privilege escalation and eventually
+times out. Classic <code>sudo</code> is already installed; switch to it
+once per affected box, before the first converge:</p>
+<pre class="shell"><code>ssh box-a &#39;sudo update-alternatives --set sudo /usr/bin/sudo.ws&#39;</code></pre>
+<h2 data-number="4.5" id="four-converge"><span
+class="header-section-number">4.5</span> Four: converge</h2>
+<p>Start with one box you don’t mind breaking, plus your laptop:</p>
+<pre class="shell"><code>ansible-playbook site.yml -K --limit box-a,localhost</code></pre>
+<p><code>-K</code> prompts for your <code>sudo</code> password, which
+the first run needs to install packages and create the checkout
+directory. Later runs usually don’t.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Including <code>localhost</code> is not decoration. The laptop’s
+client files are written by a separate play that only runs when
+<code>localhost</code> is in scope. Limit to a box alone and the boxes
+get provisioned while your <code>hive</code> command still doesn’t know
+they exist.</p>
+</div>
+<p>When that box looks right, do the rest:</p>
+<pre class="shell"><code>ansible-playbook site.yml -K</code></pre>
+<p>To see what a run would change without changing it:</p>
+<pre class="shell"><code>ansible-playbook site.yml -K --check --diff</code></pre>
+<h2 data-number="4.6" id="five-linger"><span
+class="header-section-number">4.6</span> Five: linger</h2>
+<p>The daemons run as <em>user</em> services, which by default stop when
+you log out. Without a setting called linger, your fleet goes quiet
+every time an SSH session ends — and the symptom is maddening, because
+boxes appear and disappear depending on whether you happen to be logged
+in.</p>
+<p>The converge enables it, but that step needs a password, so it’s easy
+to skip on a run without <code>-K</code>. To be sure:</p>
+<pre class="shell"><code>ssh box-a &#39;sudo loginctl enable-linger $USER&#39;</code></pre>
+<h2 data-number="4.7" id="six-verify"><span
+class="header-section-number">4.7</span> Six: verify</h2>
+<p>The four checks from <em>Quick Start</em>, in order: the service is
+active on each box; it answers on its Tailscale address;
+<code>hive status</code> lists everything from your laptop; and a real
+session starts and appears.</p>
+<pre class="shell"><code>ssh box-a &#39;systemctl --user is-active hive-host&#39;
+ssh box-a &#39;curl -s http://$(tailscale ip -4):8788/v1/sessions&#39;
+hive status</code></pre>
+<p>On the hub, also confirm the collector is up and knows about
+everyone:</p>
+<pre class="shell"><code>ssh hub &#39;systemctl --user is-active hive-hub&#39;
+ssh hub &#39;cat ~/.hive/hosts&#39;</code></pre>
+<h2 data-number="4.8" id="seven-the-phone-console"><span
+class="header-section-number">4.8</span> Seven: the phone console</h2>
+<p>Served by the hub, and deployed separately because it’s built on your
+laptop and copied over:</p>
+<pre class="shell"><code>ansible-playbook site.yml -K --tags web --limit hive_hub</code></pre>
+<p>Then open <code>http://hub/hive/</code> on a phone that’s on your
+tailnet.</p>
+<h2 data-number="4.9" id="where-everything-landed"><span
+class="header-section-number">4.9</span> Where everything landed</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Path</strong></th>
+<th style="text-align: left;"><strong>Machine</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/srv/lab/hive</code></td>
+<td style="text-align: left;">each box: source checkout</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/srv/lab/hive/bin</code></td>
+<td style="text-align: left;">each box: the built daemons</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/sessions</code></td>
+<td style="text-align: left;">each box: one file per session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/host.toml</code></td>
+<td style="text-align: left;">each box: bind address and port</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/hosts</code></td>
+<td style="text-align: left;">hub: generated fleet list</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/hub.toml</code></td>
+<td style="text-align: left;">hub: collector settings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/client.toml</code></td>
+<td style="text-align: left;">laptop: which hub to talk to</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~/.hive/fleet/</code></td>
+<td style="text-align: left;">laptop: your inventory and vars</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Two of these are generated and should not be hand-edited: the hub’s
+fleet list and the laptop’s copy of it, both written from your inventory
+on every converge. To add or remove a machine, edit the inventory and
+converge — editing the generated file works until the next run silently
+undoes it.</p>
+<p><code>client.toml</code> is the exception. It’s seeded once, when
+missing, and then it’s yours; edit it freely to point at a different
+hub.</p>
+<h2 data-number="4.10" id="adding-a-box-later"><span
+class="header-section-number">4.10</span> Adding a box later</h2>
+<p>One entry in the inventory, then:</p>
+<pre class="shell"><code>ansible-playbook site.yml -K --limit box-c,localhost</code></pre>
+<p>The <code>localhost</code> again — without it, the new box provisions
+but never appears in your fleet list.</p>
+<h2 data-number="4.11" id="pinning-a-version"><span
+class="header-section-number">4.11</span> Pinning a version</h2>
+<p><code>hive_ref</code> in your vars file is what the boxes check out.
+It takes a branch, a tag, or a commit. Set it to something specific when
+you want the fleet to stop tracking your latest push, and converge to
+move them.</p>
+<h1 data-number="5" id="three-consoles"><span
+class="header-section-number">5</span> Three Consoles</h1>
+<p>Everything in this chapter talks to the same hub and sees the same
+fleet. What changes is where you are and what you’re trying to do.</p>
+<p>The three consoles aren’t tiers — there’s no “basic” one and no “pro”
+one. They’re shaped for different moments. The terminal is for when
+you’re already in a terminal. The Mac panel is for keeping half an eye
+on four machines while you work on something else. The phone is for the
+twenty minutes you’re away from a desk and an agent has gone quiet in a
+way that might mean it’s finished or might mean it’s stuck.</p>
+<h2 data-number="5.1" id="the-terminal"><span
+class="header-section-number">5.1</span> The terminal</h2>
+<p>One command, <code>hive</code>, with subcommands. It reads a two-line
+config file naming your hub and holds no state of its own.</p>
+<pre class="shell"><code>$ hive status
+ box-a        --     (no sessions)
+ box-b        --     (unreachable)   error sending request for url (...)
+*box-a        demo   running   claude   /home/you/proj
+    Running tests now -- 14 passed, 2 failing...</code></pre>
+<p>One line per session: host, task, state, which agent, working
+directory. The indented line underneath is the last thing that agent
+printed, captured straight from its terminal. A star in the first column
+means you marked the session as one to watch.</p>
+<p>Two rows there aren’t sessions at all. A host with nothing running on
+it says <code>(no sessions)</code>. A host the hub could not reach at
+all says <code>(unreachable)</code>, followed by the actual network
+error. Both are deliberate — a box that vanishes from a fleet listing is
+a box you forget to fix.</p>
+<p>The terminal is the right tool when you already have one open, when
+you want to script something, or when you want output you can pipe. It’s
+the only console that can start the daemons themselves, and it’s the one
+that keeps working when you’re SSH’d into a machine somewhere with
+nothing else available.</p>
+<h2 data-number="5.2" id="the-mac-panel"><span
+class="header-section-number">5.2</span> The Mac panel</h2>
+<p>A native application — not a browser window — that shows your whole
+fleet and refreshes itself as the hub learns things.</p>
+<p>The fleet is a table or a grid of tiles, your choice, and you can
+narrow it by state, host, agent, or starred. With four boxes and a dozen
+sessions that filtering stops being a nicety: most of the time you want
+the three sessions that are actually running and not the nine that
+finished on Tuesday. Filters persist between launches, as do the theme
+and text size, because a panel you leave open all day should look the
+way you like.</p>
+<p>Each session offers what makes sense for its state. A running session
+can be chatted with, attached to, or stopped. A finished one can be
+resumed. Any session can be restarted, killed outright, or opened as a
+plain SSH shell in its working directory — useful when you want to look
+at what the agent did without interrupting it.</p>
+<h3 data-number="5.2.1" id="chat-is-the-part-that-matters"><span
+class="header-section-number">5.2.1</span> Chat is the part that
+matters</h3>
+<p>Click a session and you get its conversation, rendered properly:
+Markdown formatted, mathematics typeset, code in blocks rather than as a
+wall of escape sequences. Underneath, it’s the same transcript the agent
+is writing to disk on the box, streamed to you as it grows. There’s a
+compose box at the bottom. What you type gets typed into the agent’s
+terminal.</p>
+<p>This is a better way to read an agent than attaching to its terminal
+is. Attaching shows you a scrolling pane you can’t search and can’t
+scroll far back in. The panel shows you the conversation.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>When an agent stops to ask permission — to edit a file, run a command
+— the panel says so: <em>waiting on a permission prompt</em>. It won’t
+answer for you. Approving means attaching a real terminal, because the
+prompt is a menu in the agent’s own interface rather than a message in
+the conversation. <em>Running Agents</em> covers how to avoid these
+prompts entirely for sessions you plan to leave alone.</p>
+</div>
+<h3 data-number="5.2.2" id="spawning"><span
+class="header-section-number">5.2.2</span> Spawning</h3>
+<p>The panel’s spawn dialog asks for a host, a directory, a task name,
+and which agent. The directory field browses the <em>box’s</em>
+filesystem, not your laptop’s, which spares you guessing at remote
+paths.</p>
+<h2 data-number="5.3" id="the-phone"><span
+class="header-section-number">5.3</span> The phone</h2>
+<p>Open <code>http://&lt;hub&gt;/hive/</code> on your phone. That’s the
+entire install — it’s a web page the hub serves, so there’s nothing to
+keep updated. Add it to your home screen and it behaves close enough to
+an app.</p>
+<p>You get the fleet as a stack of cards, one per session, filterable by
+host or down to just the starred ones. Each card carries the session’s
+state, its agent, and its directory. From a card you can star, chat,
+stop, restart, or get the SSH command for that session copied to your
+clipboard.</p>
+<p>Chat is the reason to have it. Full-screen, the same rendered
+conversation the Mac panel shows, live. An agent that’s been running for
+an hour while you were at lunch can be read and answered from a phone,
+and that changes which jobs feel safe to start — a long unattended run
+stops being a commitment to stay near your desk.</p>
+<p>You can also start new work from the phone. Spawn is in the header
+and browses the box’s filesystem the same way the panel does.</p>
+<p>Two things the phone deliberately doesn’t do. There’s no terminal in
+the browser, so attach hands you the SSH command to paste into whatever
+terminal app you keep on your phone. And there’s no kill — the
+destructive one is left to the two consoles where you’re less likely to
+hit it with a thumb.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The phone console is served over plain HTTP on your tailnet, with no
+login. That’s the same trust model as the rest of hive (<em>The
+Fleet</em>), but it’s worth noticing on a device that leaves the house.
+A phone that’s signed in to your tailnet is a phone that can drive your
+fleet.</p>
+</div>
+<h2 data-number="5.4" id="attach-the-escape-hatch"><span
+class="header-section-number">5.4</span> Attach: the escape hatch</h2>
+<p>Sometimes you need the agent’s actual terminal — to answer a
+permission prompt, to use a feature the chat view doesn’t expose, to see
+exactly what it’s showing.</p>
+<p>Attach is the one place hive still uses SSH. The hub hands back a
+command:</p>
+<pre class="shell"><code>ssh box-a -t &#39;tmux attach -t hive-demo&#39;</code></pre>
+<p>What happens next depends on the console. The Mac panel runs it in a
+new terminal window — iTerm2 by default, or Terminal, Ghostty, or Warp
+if you’d rather. The <code>hive</code> command runs it in place. The
+phone copies it for you to paste.</p>
+<p>You end up in the agent’s <code>tmux</code> session, exactly as if
+you’d SSH’d in yourself. Detach with <code>Ctrl-b d</code> and the agent
+keeps running, which is the thing to remember: detaching leaves it
+alone, and closing the window is also fine.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>While you’re attached and typing, hive will refuse to send messages
+to that session from any console — it checks for recent keyboard
+activity and declines rather than paste into the middle of what you’re
+doing. If a <code>say</code> from the panel or phone reports that a
+human is attached, that human is you, in another window.</p>
+</div>
+<h2 data-number="5.5" id="which-one-to-reach-for"><span
+class="header-section-number">5.5</span> Which one to reach for</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>You want to</strong></th>
+<th style="text-align: left;"><strong>Reach for</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">See everything at once</td>
+<td style="text-align: left;">the panel</td>
+</tr>
+<tr>
+<td style="text-align: left;">Read a long conversation</td>
+<td style="text-align: left;">the panel, or the phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">Answer a permission prompt</td>
+<td style="text-align: left;">attach</td>
+</tr>
+<tr>
+<td style="text-align: left;">Check in while you’re out</td>
+<td style="text-align: left;">the phone</td>
+</tr>
+<tr>
+<td style="text-align: left;">Script it, or pipe it</td>
+<td style="text-align: left;">the terminal</td>
+</tr>
+<tr>
+<td style="text-align: left;">Start or install the daemons</td>
+<td style="text-align: left;">the terminal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Most people use all three within a day and stop thinking about which
+is which. Starting agents, and deciding what happens when they finish,
+comes next.</p>
+<h1 data-number="6" id="running-agents"><span
+class="header-section-number">6</span> Running Agents</h1>
+<p>Starting an agent takes four decisions: which box, what to call it,
+which directory, and which agent. Everything else about a session
+follows from those.</p>
+<pre class="shell"><code>hive run box-a period-index /home/you/lab/period-index</code></pre>
+<p>That starts Claude on <code>box-a</code>, in that directory, under
+the name <code>period-index</code>. The panel and phone ask the same
+four questions in a dialog; the directory field there browses the box’s
+own filesystem, which saves you guessing at a remote path.</p>
+<h2 data-number="6.1" id="the-four-decisions"><span
+class="header-section-number">6.1</span> The four decisions</h2>
+<p><strong>Which box.</strong> Any box in your fleet. Nothing stops two
+agents from running on the same machine, and nothing balances them for
+you — if one box is doing three compiles and another is idle, that’s
+your call to make.</p>
+<p><strong>What to call it.</strong> The task name is how you’ll refer
+to this session forever after, so pick something you’ll recognize in a
+list next week. Letters, numbers, hyphens, and underscores; no spaces.
+Names are unique per box, and starting a second session with a live name
+is refused rather than silently doing something surprising.</p>
+<p><strong>Which directory.</strong> An absolute path on the box, which
+must already exist. This becomes the agent’s working directory, and it’s
+recorded, so resuming later doesn’t require you to remember it.</p>
+<p><strong>Which agent.</strong> Claude unless you say otherwise:</p>
+<pre class="shell"><code>hive run box-a my-task /home/you/proj --provider codex</code></pre>
+<h2 data-number="6.2" id="passing-arguments-to-the-agent"><span
+class="header-section-number">6.2</span> Passing arguments to the
+agent</h2>
+<p>Anything after the hive arguments goes to the agent itself,
+untouched:</p>
+<pre class="shell"><code>hive run box-a my-task /home/you/proj -- --permission-mode acceptEdits</code></pre>
+<p>hive doesn’t interpret these. Model selection, permission modes,
+whatever flags the agent supports — they pass straight through.</p>
+<h2 data-number="6.3" id="the-permission-trap"><span
+class="header-section-number">6.3</span> The permission trap</h2>
+<p>This is the one that costs people an afternoon, so it gets its own
+section.</p>
+<p>A coding agent normally stops and asks before editing a file or
+running a command. That’s correct when you’re sitting in front of it. It
+is a disaster for a detached session, because there’s nobody to answer:
+the agent stops, and it stays stopped. You come back in three hours to
+an agent that has done nothing since minute four and is still politely
+waiting.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>A detached agent blocked on a permission prompt waits forever. It
+does not time out, does not assume yes, and does not fail. Any session
+you start and walk away from needs the permission question settled
+<em>before</em> you start it.</p>
+</div>
+<p>Two ways to settle it. Pre-approve in the project’s own agent
+settings, which is the durable answer for a repository you work in
+often. Or pass a permission mode at spawn time, which is the quick
+answer:</p>
+<pre class="shell"><code>hive run box-a my-task /home/you/proj -- --permission-mode acceptEdits</code></pre>
+<p>Both consoles will tell you when a session is blocked — the panel and
+the phone show a <em>waiting on a permission prompt</em> banner in the
+chat view. Answering requires attaching a terminal, since the prompt is
+a menu in the agent’s interface rather than a message in the
+conversation.</p>
+<h2 data-number="6.4" id="stop-restart-kill-resume"><span
+class="header-section-number">6.4</span> Stop, restart, kill,
+resume</h2>
+<p>Four verbs, and the difference between them is what happens to the
+record.</p>
+<p><strong>Stop</strong> ends the <code>tmux</code> session and keeps
+everything else. The agent is gone; the session’s metadata, its working
+directory, and its conversation all remain. It shows as
+<code>exited</code> and can be resumed.</p>
+<p><strong>Resume</strong> starts the agent again, in the same
+directory, continuing the same conversation — it doesn’t start over.
+This is why stop is safe: it’s a pause, not a discard.</p>
+<p><strong>Restart</strong> is stop followed by resume. Use it when an
+agent is wedged but you want the conversation.</p>
+<p><strong>Kill</strong> stops the session and deletes the record —
+metadata, star, everything hive knew about it.</p>
+<pre class="shell"><code>hive stop box-a my-task
+hive restart box-a my-task
+hive kill box-a my-task</code></pre>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p>Kill is not reversible. After it, hive cannot resume that session —
+the recorded directory and conversation link are gone. The agent’s own
+conversation file still exists on the box, but reconnecting to it by
+hand is work (<em>Chat and Transcripts</em>). When you mean “pause,” use
+stop.</p>
+</div>
+<h2 data-number="6.5" id="what-happens-on-the-box"><span
+class="header-section-number">6.5</span> What happens on the box</h2>
+<p>Worth knowing, because it explains what survives what.</p>
+<p>Starting a session writes a small file describing it and creates a
+<code>tmux</code> session running the agent. The agent runs as you, on
+that box, with your environment and your logins — hive starts it and
+then gets out of the way.</p>
+<p>When the agent exits on its own, the <code>tmux</code> session
+doesn’t disappear. It drops to a shell with a note saying the agent
+exited and the conversation was saved. This is deliberate: it means you
+can attach afterwards and look at what happened.</p>
+<p>Sessions do <em>not</em> survive a reboot. The <code>tmux</code>
+sessions are gone, the records remain, and everything shows as
+<code>exited</code>. Resuming them after the box comes back is a
+per-session decision — hive won’t do it for you.</p>
+<h2 data-number="6.6" id="stars"><span
+class="header-section-number">6.6</span> Stars</h2>
+<p>With a dozen sessions across four boxes, most of them finished, stars
+are how you keep the two you care about visible.</p>
+<pre class="shell"><code>hive label box-a my-task star
+hive label box-a my-task unstar</code></pre>
+<p>In the panel and on the phone it’s the star on the session, and both
+can filter to starred only. The star lives on the box alongside the
+session’s record, so it’s the same star from every console.</p>
+<h2 data-number="6.7" id="looking-around-a-box-before-you-start"><span
+class="header-section-number">6.7</span> Looking around a box before you
+start</h2>
+<p>To see what’s on a box without SSHing to it:</p>
+<pre class="shell"><code>hive fs box-a --path /home/you/lab</code></pre>
+<p>This is the same directory listing the spawn dialogs browse. It’s
+read-only and it’s for finding the path you want to point an agent
+at.</p>
+<h1 data-number="7" id="chat-and-transcripts"><span
+class="header-section-number">7</span> Chat and Transcripts</h1>
+<p>Reading what an agent said, and answering it, from a machine that
+isn’t the one it’s running on.</p>
+<p>This works well, and it works by a mechanism worth understanding,
+because the mechanism has one failure mode that looks like a bug and
+isn’t. The first half of this chapter is the part you’ll use daily. The
+second half is what to do when the conversation you’re reading stops
+being the conversation the agent is having.</p>
+<h2 data-number="7.1" id="saying-something"><span
+class="header-section-number">7.1</span> Saying something</h2>
+<pre class="shell"><code>hive say box-a my-task --text &quot;run the tests before committing&quot;</code></pre>
+<p>In the panel or on the phone, it’s the compose box at the bottom of
+the chat view.</p>
+<p>What happens on the box is exactly what it sounds like: your text is
+typed into the agent’s terminal and submitted, as though you’d attached
+and typed it. There’s no separate message channel — hive is driving the
+same interface you would drive by hand.</p>
+<p>That has consequences worth knowing. The session has to be running;
+you can’t queue a message for an agent that has exited. And because it’s
+a keyboard, hive clears whatever was half-typed at the prompt before
+sending, so a message doesn’t get glued onto an abandoned fragment.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>If you’re attached in a terminal and actively typing, a
+<code>say</code> from another console is refused rather than pasted into
+the middle of your input. The message says a human is attached. That
+human is you, in another window — detach, or finish typing, and send it
+again.</p>
+</div>
+<h2 data-number="7.2" id="reading-the-conversation"><span
+class="header-section-number">7.2</span> Reading the conversation</h2>
+<p>The panel and the phone show the conversation rendered — Markdown
+formatted, mathematics typeset, code in blocks — and keep it live as the
+agent works. From the terminal you can fetch it as data:</p>
+<pre class="shell"><code>hive transcript box-a my-task --tail 50</code></pre>
+<p>Underneath, none of this is scraped from the terminal. The agent
+writes its conversation to a file on the box as it goes, and hive reads
+that file. This is why the chat view can show you a properly formatted
+conversation with scrollback rather than a screenshot of a pane: it’s
+reading the real record, not the display.</p>
+<p>The consoles keep up by streaming. The box re-reads the file every
+couple of seconds and pushes anything new through the hub to whoever’s
+watching, which is why the panel updates on its own without you
+refreshing. Nothing is sent when nothing has changed.</p>
+<h2 data-number="7.3" id="when-the-conversation-goes-stale"><span
+class="header-section-number">7.3</span> When the conversation goes
+stale</h2>
+<p>Here’s the part that confuses people.</p>
+<p>A session’s record includes an identifier for the conversation file
+it should read — a <em>binding</em>. Normally hive sets this when it
+starts the agent and it stays correct for the life of the session.</p>
+<p>But the agent can change which conversation it’s in without telling
+anyone. The clearest case: you attach to the terminal and use the
+agent’s own resume command to jump to a different conversation. The
+agent obligingly switches. The session’s record still points at the old
+one.</p>
+<p>Nothing errors. The chat view keeps showing you a conversation, still
+correctly rendered, live-looking — and it’s the wrong one. Messages you
+send still go to the terminal and still reach the agent, so the agent
+responds to you, but you can’t see the response. That asymmetry is the
+symptom.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>The tell: the conversation you’re reading stopped changing, but the
+session is clearly running and replies to what you send. If the view has
+simply frozen with the agent frozen too, that’s a stuck agent, not a
+stale binding.</p>
+</div>
+<h3 data-number="7.3.1" id="fixing-it"><span
+class="header-section-number">7.3.1</span> Fixing it</h3>
+<p>Ask what’s available:</p>
+<pre class="shell"><code>$ hive bind box-a my-task
+box-a  my-task  bound=3f2a...  suggested=9c41...  pane=9c41...
+* 9c41...  my-task     2026-09-16T14:22:08Z  live suggested
+  3f2a...  my-task     2026-09-16T11:03:44Z  current not the session in the tmux pane</code></pre>
+<p>This lists every conversation that could plausibly belong to this
+session. The one marked <code>current</code> is what hive is reading
+now. The one marked <code>live</code> is what the agent is actually in —
+hive determines this by looking at the agent’s own terminal, which is
+why it can be confident rather than guessing. The starred line is what
+it suggests, and when a live one exists, that’s the suggestion.</p>
+<p>Point the session at it:</p>
+<pre class="shell"><code>hive bind box-a my-task --to 9c41...</code></pre>
+<p>In the panel and on the phone, the chat view has a
+<strong>Bind</strong> button showing the same list with the suggestion
+highlighted. Picking one updates the session’s record on the box, so
+every console sees the correction.</p>
+<div class="callout callout-note">
+<p><strong>Note</strong></p>
+<p>Rebinding changes only which conversation hive reads. It does not
+touch the agent, interrupt it, or alter any conversation. If you pick
+wrong, pick again.</p>
+</div>
+<h2 data-number="7.4" id="when-theres-nothing-to-read-yet"><span
+class="header-section-number">7.4</span> When there’s nothing to read
+yet</h2>
+<p>A brand-new session has no conversation file until the agent writes
+one, which it does when it first responds. A chat view that’s empty for
+the first few seconds of a session’s life is normal. If it’s still empty
+a minute later and the agent shows as running, attach and look — the
+usual cause is an agent sitting at a permission prompt — the trap in
+<em>Running Agents</em>.</p>
+<h1 data-number="8" id="keeping-it-running"><span
+class="header-section-number">8</span> Keeping It Running</h1>
+<p>A fleet is a thing you maintain. Machines reboot, versions drift, and
+something that worked in March stops working in June for a reason that
+turns out to be three months old.</p>
+<p>This chapter is the maintenance you’ll actually do and the failures
+you’ll actually see.</p>
+<h2 data-number="8.1" id="pushing-new-code"><span
+class="header-section-number">8.1</span> Pushing new code</h2>
+<p>When hive itself changes, the boxes need the new version. They fetch
+it themselves — so push first, then:</p>
+<pre class="shell"><code>hive-deploy box-a box-b
+hive-deploy --all</code></pre>
+<p>This pulls the pinned version on each box, rebuilds, and restarts the
+daemons if the binary changed. It’s a narrower operation than a full
+converge: no packages, no toolchain, no linger. Day-to-day, it’s the one
+you want.</p>
+<div class="callout callout-warn">
+<p><strong>Warning</strong></p>
+<p><code>hive-deploy</code> deploys what’s at your configured version
+<em>in the remote repository</em>. It does not deploy your working
+directory. Changes you haven’t pushed don’t exist as far as the boxes
+are concerned, and the symptom of forgetting is a deploy that reports
+success and changes nothing.</p>
+</div>
+<p>To preview without changing anything, add <code>-n</code>.</p>
+<h2 data-number="8.2" id="after-a-reboot"><span
+class="header-section-number">8.2</span> After a reboot</h2>
+<p>A box that reboots comes back with its daemon running — that’s what
+the service install is for — but with no agents. The <code>tmux</code>
+sessions are gone; the records survive. Everything shows as
+<code>exited</code>.</p>
+<p>Resuming is per-session and deliberate:</p>
+<pre class="shell"><code>hive restart box-a my-task</code></pre>
+<p>If a box comes back and the daemon <em>isn’t</em> running, linger is
+the first thing to check (<em>Standing Up the Fleet</em>).</p>
+<h2 data-number="8.3" id="the-failures-youll-see"><span
+class="header-section-number">8.3</span> The failures you’ll see</h2>
+<h3 data-number="8.3.1" id="a-host-says-unreachable"><span
+class="header-section-number">8.3.1</span> A host says
+(unreachable)</h3>
+<p>The hub couldn’t get an answer from that box. The error beside it is
+the real one — read it before guessing.</p>
+<p>Three causes, in the order they’re worth checking. The daemon isn’t
+running:</p>
+<pre class="shell"><code>ssh box-a &#39;systemctl --user status hive-host&#39;</code></pre>
+<p>Or it’s running but the hub is asking the wrong address. The hub’s
+fleet list holds a Tailscale address per box, recorded at converge time;
+if a box changed addresses, converge again to regenerate it. Or the
+tailnet path itself is broken, which you can test from the hub:</p>
+<pre class="shell"><code>ssh hub &#39;curl -s http://100.64.0.2:8788/v1/sessions&#39;</code></pre>
+<h3 data-number="8.3.2" id="a-host-flaps-in-and-out"><span
+class="header-section-number">8.3.2</span> A host flaps in and out</h3>
+<p>Reachable, then not, then reachable. This is almost always linger:
+the daemon is being stopped when your login session ends and started
+when you log back in. Enable it (<em>Standing Up the Fleet</em>) and
+restart the daemon.</p>
+<h3 data-number="8.3.3"
+id="hive-status-shows-something-impossible"><span
+class="header-section-number">8.3.3</span> hive status shows something
+impossible</h3>
+<p>Sessions that don’t exist, missing fields, a box reporting oddly.
+Usually an old binary — a box running a version of
+<code>hive-host</code> that predates a change in what it reports. Deploy
+to it.</p>
+<h3 data-number="8.3.4" id="an-agent-is-running-but-does-nothing"><span
+class="header-section-number">8.3.4</span> An agent is running but does
+nothing</h3>
+<p>Attach and look. The usual answer is a permission prompt (<em>Running
+Agents</em>). The second most usual is that the agent finished a while
+ago and is sitting at a shell, which the session’s last line will
+show.</p>
+<h3 data-number="8.3.5" id="the-chat-view-is-stale"><span
+class="header-section-number">8.3.5</span> The chat view is stale</h3>
+<p>The conversation stopped updating but the agent replies to what you
+send: that’s a stale binding, and <em>Chat and Transcripts</em> has the
+fix.</p>
+<h3 data-number="8.3.6" id="everything-is-unreachable-at-once"><span
+class="header-section-number">8.3.6</span> Everything is unreachable at
+once</h3>
+<p>The hub, not the boxes. Check it:</p>
+<pre class="shell"><code>ssh hub &#39;systemctl --user is-active hive-hub&#39;</code></pre>
+<p>The agents are unaffected — this is a blindness, not an outage. If
+you need one urgently, SSH to its box and attach directly.</p>
+<h2 data-number="8.4" id="health-at-a-glance"><span
+class="header-section-number">8.4</span> Health at a glance</h2>
+<p>Ask the hub what it sees:</p>
+<pre class="shell"><code>curl -s http://hub:8787/v1/fleet | jq .</code></pre>
+<p>This is exactly what every console renders, and it distinguishes a
+broken client from a broken fleet: if this is right and your panel is
+wrong, the problem is the panel.</p>
+<h2 data-number="8.5" id="housekeeping"><span
+class="header-section-number">8.5</span> Housekeeping</h2>
+<p>Finished sessions stay in the list until you remove them, and there’s
+no expiry. Once a week, kill what you’re done with — the record only,
+the agent is long gone:</p>
+<pre class="shell"><code>hive kill box-a old-task</code></pre>
+<p>Star the two or three that matter and filter to starred; a fleet list
+nobody prunes stops being read.</p>
+<h2 data-number="8.6" id="moving-the-hub"><span
+class="header-section-number">8.6</span> Moving the hub</h2>
+<p>Move the machine into the hub group in your inventory, converge, and
+the generated fleet lists follow. Your laptop’s <code>client.toml</code>
+does not — it’s seeded once and then yours, so point it at the new hub
+by hand.</p>
+<h2 data-number="8.7" id="what-isnt-automatic"><span
+class="header-section-number">8.7</span> What isn’t automatic</h2>
+<p>Worth saying plainly, because each of these has surprised
+someone:</p>
+<ul>
+<li><p>Crashed agents are not restarted.</p></li>
+<li><p>Sessions are not resumed after a reboot.</p></li>
+<li><p>Stuck sessions raise no alert — nothing watches for an agent that
+has been waiting since Tuesday.</p></li>
+<li><p>Old session records are not cleaned up.</p></li>
+<li><p>Coding agents are not installed, updated, or re-authenticated for
+you.</p></li>
+</ul>
+<p>hive shows you your fleet and lets you act on it. Deciding what
+should happen stays with you.</p>
+<h1 data-number="9" id="quick-reference"><span
+class="header-section-number">9</span> Quick Reference</h1>
+<p>Everything, tersely. The chapters explain; this lists.</p>
+<h2 data-number="9.1" id="fleet-and-sessions"><span
+class="header-section-number">9.1</span> Fleet and sessions</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hive status</code></td>
+<td style="text-align: left;">one line per session, all hosts</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive run HOST TASK DIR</code></td>
+<td style="text-align: left;">start an agent</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>hive say HOST TASK --text "..."</code></td>
+<td style="text-align: left;">send a message</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive stop HOST TASK</code></td>
+<td style="text-align: left;">end it, keep the record</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive restart HOST TASK</code></td>
+<td style="text-align: left;">stop, then resume</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive kill HOST TASK</code></td>
+<td style="text-align: left;">end it, delete the record</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive attach HOST TASK</code></td>
+<td style="text-align: left;">open its terminal over SSH</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>hive label HOST TASK star</code></td>
+<td style="text-align: left;">mark as one to watch</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>hive label HOST TASK unstar</code></td>
+<td style="text-align: left;">unmark</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>hive transcript HOST TASK</code></td>
+<td style="text-align: left;">conversation as JSON</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive bind HOST TASK</code></td>
+<td style="text-align: left;">list conversation candidates</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>hive bind HOST TASK --to ID</code></td>
+<td style="text-align: left;">repoint at a conversation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive fs HOST</code></td>
+<td style="text-align: left;">list a directory on a box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive panel</code></td>
+<td style="text-align: left;">launch the Mac panel</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 data-number="9.1.1" id="flags"><span
+class="header-section-number">9.1.1</span> Flags</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Flag</strong></th>
+<th style="text-align: left;"><strong>On</strong></th>
+<th style="text-align: left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--home PATH</code></td>
+<td style="text-align: left;">all</td>
+<td style="text-align: left;">use a different config root</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--provider NAME</code></td>
+<td style="text-align: left;"><code>run</code></td>
+<td style="text-align: left;"><code>claude</code> (default) or
+<code>codex</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--resume</code></td>
+<td style="text-align: left;"><code>run</code></td>
+<td style="text-align: left;">restart a stopped session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>-- ARGS</code></td>
+<td style="text-align: left;"><code>run</code></td>
+<td style="text-align: left;">pass the rest to the agent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--text TEXT</code></td>
+<td style="text-align: left;"><code>say</code></td>
+<td style="text-align: left;">the message (required)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--tail N</code></td>
+<td style="text-align: left;"><code>transcript</code></td>
+<td style="text-align: left;">last N blocks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--after CURSOR</code></td>
+<td style="text-align: left;"><code>transcript</code></td>
+<td style="text-align: left;">only what’s new</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--to ID</code></td>
+<td style="text-align: left;"><code>bind</code></td>
+<td style="text-align: left;">the conversation to bind</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--path PATH</code></td>
+<td style="text-align: left;"><code>fs</code></td>
+<td style="text-align: left;">directory to list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 data-number="9.1.2" id="session-states"><span
+class="header-section-number">9.1.2</span> Session states</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>State</strong></th>
+<th style="text-align: left;"><strong>Means</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>running</code></td>
+<td style="text-align: left;">the agent’s <code>tmux</code> session is
+alive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>exited</code></td>
+<td style="text-align: left;">record kept, agent gone; resumable</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(no sessions)</code></td>
+<td style="text-align: left;">the box is fine and has nothing
+running</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(unreachable)</code></td>
+<td style="text-align: left;">the hub got no answer from that box</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.2" id="daemons"><span
+class="header-section-number">9.2</span> Daemons</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hive host serve</code></td>
+<td style="text-align: left;">run <code>hive-host</code> in the
+foreground</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive host install</code></td>
+<td style="text-align: left;">install and start it as a service</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive hub serve</code></td>
+<td style="text-align: left;">run <code>hive-hub</code> in the
+foreground</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive hub install</code></td>
+<td style="text-align: left;">install and start it as a service</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both take <code>--bind ADDR</code>, <code>--port N</code>, and
+<code>--dev</code>. <code>install</code> also takes
+<code>--bin PATH</code>.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Bind address</strong></th>
+<th style="text-align: left;"><strong>Accepted</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A Tailscale address
+(<code>100.64.0.0/10</code>)</td>
+<td style="text-align: left;">always</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>127.0.0.1</code> or
+<code>localhost</code></td>
+<td style="text-align: left;">only with <code>--dev</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0.0.0.0</code>, <code>::</code>,
+<code>*</code></td>
+<td style="text-align: left;">never</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.3" id="ports"><span
+class="header-section-number">9.3</span> Ports</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Port</strong></th>
+<th style="text-align: left;"><strong>Where</strong></th>
+<th style="text-align: left;"><strong>What</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">8788</td>
+<td style="text-align: left;">every box</td>
+<td style="text-align: left;"><code>hive-host</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">8787</td>
+<td style="text-align: left;">the hub</td>
+<td style="text-align: left;"><code>hive-hub</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">the hub</td>
+<td style="text-align: left;">phone console at <code>/hive/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">8789</td>
+<td style="text-align: left;">anywhere</td>
+<td style="text-align: left;"><code>hive-web</code>, local development
+only</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.4" id="configuration-files"><span
+class="header-section-number">9.4</span> Configuration files</h2>
+<p>All under <code>HIVE_HOME</code>, which is <code>~/.hive</code>
+unless the <code>HIVE_HOME</code> environment variable or
+<code>--home</code> says otherwise.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>File</strong></th>
+<th style="text-align: left;"><strong>Machine</strong></th>
+<th style="text-align: left;"><strong>Holds</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>client.toml</code></td>
+<td style="text-align: left;">laptop</td>
+<td style="text-align: left;">which hub to talk to</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hosts</code></td>
+<td style="text-align: left;">laptop, hub</td>
+<td style="text-align: left;">the fleet list (generated)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>host.toml</code></td>
+<td style="text-align: left;">each box</td>
+<td style="text-align: left;">bind address, port</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub.toml</code></td>
+<td style="text-align: left;">hub</td>
+<td style="text-align: left;">bind, port, poll interval</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>web.toml</code></td>
+<td style="text-align: left;">hub</td>
+<td style="text-align: left;">phone console server</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sessions/TASK.meta</code></td>
+<td style="text-align: left;">each box</td>
+<td style="text-align: left;">one session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sessions/TASK.labels</code></td>
+<td style="text-align: left;">each box</td>
+<td style="text-align: left;">its star</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fleet/inventory.yml</code></td>
+<td style="text-align: left;">laptop</td>
+<td style="text-align: left;">your machines, for Ansible</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>fleet/group_vars/...</code></td>
+<td style="text-align: left;">laptop</td>
+<td style="text-align: left;">shared deploy settings</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 data-number="9.4.1" id="fields"><span
+class="header-section-number">9.4.1</span> Fields</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>File</strong></th>
+<th style="text-align: left;"><strong>Field</strong></th>
+<th style="text-align: left;"><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>client.toml</code></td>
+<td style="text-align: left;"><code>hub</code></td>
+<td style="text-align: left;">none; a name or full URL</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>client.toml</code></td>
+<td style="text-align: left;"><code>terminal</code></td>
+<td style="text-align: left;"><code>iterm2</code>,
+<code>terminal</code>, <code>ghostty</code>, or <code>warp</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>host.toml</code></td>
+<td style="text-align: left;"><code>bind</code></td>
+<td style="text-align: left;">its own Tailscale address</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>host.toml</code></td>
+<td style="text-align: left;"><code>port</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub.toml</code></td>
+<td style="text-align: left;"><code>bind</code></td>
+<td style="text-align: left;">its own Tailscale address</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub.toml</code></td>
+<td style="text-align: left;"><code>port</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub.toml</code></td>
+<td style="text-align: left;"><code>poll_secs</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub.toml</code></td>
+<td style="text-align: left;"><code>host_port</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 data-number="9.4.2" id="the-hosts-file"><span
+class="header-section-number">9.4.2</span> The hosts file</h3>
+<p>One machine per line: a name, optionally followed by where to reach
+it. <code>#</code> starts a comment.</p>
+<pre class="shell"><code>box-a http://100.64.0.2:8788
+box-b http://100.64.0.3:8788
+hub   http://100.64.0.1:8788</code></pre>
+<p>Generated from your inventory on every converge. Edit the inventory,
+not this.</p>
+<h3 data-number="9.4.3" id="a-session-record"><span
+class="header-section-number">9.4.3</span> A session record</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Key</strong></th>
+<th style="text-align: left;"><strong>Is</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>task</code></td>
+<td style="text-align: left;">the name you gave it</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dir</code></td>
+<td style="text-align: left;">working directory on the box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tmux</code></td>
+<td style="text-align: left;">its <code>tmux</code> session name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>started</code></td>
+<td style="text-align: left;">when, in UTC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cmd</code></td>
+<td style="text-align: left;">the command line that started the
+agent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>session_id</code></td>
+<td style="text-align: left;">which conversation to read</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>provider</code></td>
+<td style="text-align: left;"><code>claude</code> or
+<code>codex</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.5" id="environment-variables"><span
+class="header-section-number">9.5</span> Environment variables</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Variable</strong></th>
+<th style="text-align: left;"><strong>Does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>HIVE_HOME</code></td>
+<td style="text-align: left;">config root; default
+<code>~/.hive</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CLAUDE_BIN</code></td>
+<td style="text-align: left;">where <code>claude</code> is, if not on
+the usual paths</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CODEX_BIN</code></td>
+<td style="text-align: left;">the same for <code>codex</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>HIVE_PANEL</code></td>
+<td style="text-align: left;">which panel binary <code>hive panel</code>
+launches</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Without an override, agents are looked for under
+<code>~/.local/bin</code>, then any Node version directories, then the
+system paths.</p>
+<h2 data-number="9.6" id="http-api"><span
+class="header-section-number">9.6</span> HTTP API</h2>
+<p>Every client uses this; it is also what to reach for when
+diagnosing.</p>
+<h3 data-number="9.6.1" id="the-hub-on-8787"><span
+class="header-section-number">9.6.1</span> The hub, on 8787</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Endpoint</strong></th>
+<th style="text-align: left;"><strong>Returns</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GET /v1/health</code></td>
+<td style="text-align: left;">the collector is alive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET /v1/fleet</code></td>
+<td style="text-align: left;">every host and session, cached</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET /v1/events</code></td>
+<td style="text-align: left;">a stream: something changed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ANY /v1/hosts/NAME/...</code></td>
+<td style="text-align: left;">forwarded to that box</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Anything a box can do is reachable through the hub by prefixing its
+path with <code>/v1/hosts/NAME</code>. A client never contacts a box
+directly.</p>
+<h3 data-number="9.6.2" id="a-box-on-8788"><span
+class="header-section-number">9.6.2</span> A box, on 8788</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Endpoint</strong></th>
+<th style="text-align: left;"><strong>Does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GET /v1/health</code></td>
+<td style="text-align: left;">the daemon is alive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET /v1/sessions</code></td>
+<td style="text-align: left;">every session on this box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST /v1/sessions</code></td>
+<td style="text-align: left;">start one</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>GET /v1/sessions/TASK/transcript</code></td>
+<td style="text-align: left;">the conversation</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>GET .../transcript/stream</code></td>
+<td style="text-align: left;">the conversation, live</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../say</code></td>
+<td style="text-align: left;">send a message</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../stop</code></td>
+<td style="text-align: left;">end it, keep the record</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../restart</code></td>
+<td style="text-align: left;">stop, then resume</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../kill</code></td>
+<td style="text-align: left;">end it, delete the record</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../label</code></td>
+<td style="text-align: left;">star or unstar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET .../bindings</code></td>
+<td style="text-align: left;">conversation candidates</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>POST .../bind</code></td>
+<td style="text-align: left;">repoint at a conversation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET .../attach</code></td>
+<td style="text-align: left;">the SSH command to attach</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GET /v1/fs</code></td>
+<td style="text-align: left;">list a directory</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.7" id="provisioning"><span
+class="header-section-number">9.7</span> Provisioning</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Does</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>ansible-playbook site.yml -K</code></td>
+<td style="text-align: left;">converge the whole fleet</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>... --limit box-a,localhost</code></td>
+<td style="text-align: left;">one box, plus client files</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>... --check --diff</code></td>
+<td style="text-align: left;">show what would change</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>... --tags web --limit hive_hub</code></td>
+<td style="text-align: left;">deploy the phone console</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive-deploy box-a</code></td>
+<td style="text-align: left;">push code to one box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive-deploy --all</code></td>
+<td style="text-align: left;">push code to all of them</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive-deploy -n box-a</code></td>
+<td style="text-align: left;">preview that</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Run the playbook from the <code>ansible</code> directory of your
+clone.</p>
+<h3 data-number="9.7.1" id="tags"><span
+class="header-section-number">9.7.1</span> Tags</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Tag</strong></th>
+<th style="text-align: left;"><strong>Step</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>packages</code></td>
+<td style="text-align: left;">system packages</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>toolchain</code></td>
+<td style="text-align: left;">Rust</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>checkout</code></td>
+<td style="text-align: left;">clone at the pinned version</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>build</code></td>
+<td style="text-align: left;">compile on the box</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive</code></td>
+<td style="text-align: left;">install and start
+<code>hive-host</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hub</code></td>
+<td style="text-align: left;">install and start
+<code>hive-hub</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>web</code></td>
+<td style="text-align: left;">the phone console</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>linger</code></td>
+<td style="text-align: left;">let services survive logout (needs
+<code>-K</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clienthosts</code></td>
+<td style="text-align: left;">the laptop’s fleet list</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clientconfig</code></td>
+<td style="text-align: left;">the laptop’s <code>client.toml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>summary</code></td>
+<td style="text-align: left;">report the deployed version</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 data-number="9.7.2" id="deploy-settings"><span
+class="header-section-number">9.7.2</span> Deploy settings</h3>
+<p>In <code>fleet/group_vars/all/vars.yml</code>:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Setting</strong></th>
+<th style="text-align: left;"><strong>Is</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hive_repo_url</code></td>
+<td style="text-align: left;">where the boxes clone from</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_ref</code></td>
+<td style="text-align: left;">branch, tag, or commit to deploy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_checkout_dir</code></td>
+<td style="text-align: left;"><code>/srv/lab/hive</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_hub_host</code></td>
+<td style="text-align: left;">written into the laptop’s config</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_host_port</code></td>
+<td style="text-align: left;">8788</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_hub_port</code></td>
+<td style="text-align: left;">8787</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hive_web_base_path</code></td>
+<td style="text-align: left;"><code>hive</code>, the phone console’s URL
+path</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 data-number="9.8" id="building-from-source"><span
+class="header-section-number">9.8</span> Building from source</h2>
+<p>From the repository root:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Target</strong></th>
+<th style="text-align: left;"><strong>Builds</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>make build</code></td>
+<td style="text-align: left;">the three Rust binaries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make install</code></td>
+<td style="text-align: left;">them, into <code>bin/</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make install-panel</code></td>
+<td style="text-align: left;">the Mac panel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make install-ops</code></td>
+<td style="text-align: left;"><code>hive-deploy</code> onto your
+<code>PATH</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make test</code></td>
+<td style="text-align: left;">the test suite</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make stack-smoke</code></td>
+<td style="text-align: left;">a local hub and box, no tailnet</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>make deploy-web</code></td>
+<td style="text-align: left;">the phone console</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Or, for the laptop command alone:</p>
+<pre class="shell"><code>cargo install --path crates/hive-cli</code></pre>
+<h2 data-number="9.9" id="running-it-locally"><span
+class="header-section-number">9.9</span> Running it locally</h2>
+<p>A whole fleet on one machine, for trying things out:</p>
+<pre class="shell"><code>cargo run -p hive-host -- serve --dev --bind 127.0.0.1
+cargo run -p hive-hub  -- serve --dev --bind 127.0.0.1
+printf &#39;hub = &quot;http://127.0.0.1:8787&quot;\n&#39; &gt; ~/.hive/client.toml
+hive status</code></pre>
+<p><code>--dev</code> is what permits a loopback bind. Without it, both
+daemons refuse to start.</p>
+<h2 data-number="9.10" id="when-something-is-wrong"><span
+class="header-section-number">9.10</span> When something is wrong</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Symptom</strong></th>
+<th style="text-align: left;"><strong>Start with</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">One host <code>(unreachable)</code></td>
+<td style="text-align: left;">is its daemon running?</td>
+</tr>
+<tr>
+<td style="text-align: left;">A host flaps in and out</td>
+<td style="text-align: left;">linger</td>
+</tr>
+<tr>
+<td style="text-align: left;">Every host unreachable</td>
+<td style="text-align: left;">the hub’s daemon</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stale or impossible sessions</td>
+<td style="text-align: left;">deploy to that box</td>
+</tr>
+<tr>
+<td style="text-align: left;">Agent runs but does nothing</td>
+<td style="text-align: left;">attach; likely a permission prompt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chat frozen, agent replies</td>
+<td style="text-align: left;">a stale binding; rebind</td>
+</tr>
+<tr>
+<td style="text-align: left;">Converge hangs on the password</td>
+<td style="text-align: left;">classic <code>sudo</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Session won’t start</td>
+<td style="text-align: left;">is the agent installed on that box?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main>
+
+</div>
+</body>
+</html>
