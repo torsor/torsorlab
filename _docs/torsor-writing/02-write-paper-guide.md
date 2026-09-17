@@ -9,7 +9,7 @@ summary: a skill to take one mathematical paper, and write a reading guide to it
 howto_lead: >-
   new to this? open a folder holding the paper's LaTeX source or PDF in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a reading guide for the paper in this folder
+  use the repository at https://github.com/torsor/claude-plugins and write a paper guide for the manuscript in this folder
 notes:
   - title: calibration is the whole trick
     text: >-

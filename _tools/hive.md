@@ -5,7 +5,7 @@ tagline: a fleet console for Claude Code and Codex sessions running in tmux on a
 status: released
 repo: https://github.com/torsor/hive
 howto_lead: >-
-  new to this? open Claude Code or Codex on any machine — your laptop is fine — and say:
+  new to this? open Claude Code or Codex on one of your computers, and say:
 howto_say: >-
   use the repository at https://github.com/torsor/hive and help me set up and coordinate my agents
 order: 4
@@ -45,10 +45,6 @@ cd ansible && ansible-playbook site.yml -K
 cargo install --path crates/hive-cli
 hive status
 ```
-
-you run this from wherever you like — the control node is just the machine you
-run Ansible from, and a laptop that sleeps is fine. it is the boxes that need
-to stay up, not the machine you set them up from.
 
 `ansible/README.md` in the repo carries the copy step, the converge order, and
 the operational detail.

@@ -8,7 +8,7 @@ summary: a skill to take the potential issues a critical guide found, and write 
 howto_lead: >-
   new to this? open a folder holding the paper and the critical guide already made for it in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write the suggested changes for the paper in this folder, using the critical guide that is already there
+  use the repository at https://github.com/torsor/claude-plugins and write paper repairs for the manuscript in this folder, using the critical guide already there
 notes:
   - title: it needs a critical guide first
     text: >-

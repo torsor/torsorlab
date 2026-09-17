@@ -9,7 +9,7 @@ summary: a skill to take one mathematical paper, find potential issues, and mark
 howto_lead: >-
   new to this? open a folder holding the paper's LaTeX source in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and review the paper in this folder and mark up the suggested changes
+  use the repository at https://github.com/torsor/claude-plugins and write a review and repair guide for the paper in this folder
 notes:
   - title: written is not accepted
     text: >-

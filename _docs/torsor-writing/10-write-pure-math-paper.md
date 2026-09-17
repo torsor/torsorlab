@@ -8,7 +8,7 @@ summary: a skill to take theorem statements, proofs and notes, and write them in
 howto_lead: >-
   new to this? open a folder holding your notes, theorem statements and proofs in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a paper from the material in this folder
+  use the repository at https://github.com/torsor/claude-plugins and write a pure math paper from the material in this folder
 notes:
   - title: the audit is a truth gate
     text: >-

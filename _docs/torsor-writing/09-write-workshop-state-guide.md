@@ -8,7 +8,7 @@ summary: a skill to take a live workshop's working record, and write up where th
 howto_lead: >-
   new to this? open the workshop folder in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a state guide for the work in this folder
+  use the repository at https://github.com/torsor/claude-plugins and write a workshop state guide for the work in this folder
 notes:
   - title: labels are carried verbatim
     text: >-

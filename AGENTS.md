@@ -46,6 +46,13 @@ then the literal sentence to type at the agent. write the `say` line as
 something a person can paste without editing, and use `<angle brackets>` only
 where they genuinely have to substitute their own topic.
 
+**the `say` line must name the skill it means.** an agent pointed at the
+repository picks from eleven skills by matching what you asked for against their
+descriptions, so the phrase has to contain the skill's own name: "write a review
+and repair guide", not "review the paper and mark up the changes"; "write a pure
+math paper", not "write a paper". the generic version reads better and selects
+the wrong skill.
+
 ## the rest
 
 `README.md` has the structure: where to edit what, the collection front matter,
