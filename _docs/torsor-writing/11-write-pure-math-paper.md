@@ -3,7 +3,7 @@ title: write-pure-math-paper
 tool: torsor-writing
 slug: write-pure-math-paper
 permalink: /tools/torsor-writing/write-pure-math-paper/
-order: 10
+order: 11
 summary: a skill to take theorem statements, proofs and notes, and write them into a finished mathematics paper.
 howto_lead: >-
   new to this? open a folder holding your notes, theorem statements and proofs in Claude Code or Codex, and say:

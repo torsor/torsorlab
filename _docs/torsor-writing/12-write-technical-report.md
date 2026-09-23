@@ -3,7 +3,7 @@ title: write-technical-report
 tool: torsor-writing
 slug: write-technical-report
 permalink: /tools/torsor-writing/write-technical-report/
-order: 11
+order: 12
 summary: a skill to take an experiment's logs, outputs and artifacts, and write them into a technical report.
 howto_lead: >-
   new to this? open a folder holding the experiment's logs, outputs and artifacts in Claude Code or Codex, and say:

@@ -3,7 +3,7 @@ title: write-topic-guide
 tool: torsor-writing
 slug: write-topic-guide
 permalink: /tools/torsor-writing/write-topic-guide/
-order: 6
+order: 7
 summary: a skill to take several papers or books on one topic, and write a single guide explaining it.
 howto_lead: >-
   new to this? open a folder holding the sources you want synthesized in Claude Code or Codex, and say:

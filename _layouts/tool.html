@@ -57,7 +57,7 @@ layout: base
       {%- for doc in skills -%}
       <li>
         <a href="{{ doc.url | relative_url }}">
-          <span class="doc-list__name">{{ doc.title }}</span>
+          <span class="doc-list__name">{{ doc.title }}{% if doc.draft %} <span class="chip chip--draft">draft</span>{% endif %}</span>
           <span class="doc-list__summary">{{ doc.summary }}</span>
         </a>
       </li>

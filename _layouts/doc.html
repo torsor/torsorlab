@@ -32,6 +32,12 @@ layout: base
   <main class="doc__body">
     <h1>{{ page.title }}</h1>
     {%- if page.summary %}<p class="doc__sub">{{ page.summary }}</p>{% endif -%}
+    {%- if page.draft -%}
+    <p class="draft-note">
+      <strong>provisional draft.</strong> this skill is new and still being worked
+      on. expect it to change, and treat what it produces as a first pass.
+    </p>
+    {%- endif -%}
     {%- if page.howto_say -%}
       {% include howto.html lead=page.howto_lead say=page.howto_say %}
     {%- endif -%}

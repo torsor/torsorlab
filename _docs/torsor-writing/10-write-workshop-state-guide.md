@@ -3,7 +3,7 @@ title: write-workshop-state-guide
 tool: torsor-writing
 slug: write-workshop-state-guide
 permalink: /tools/torsor-writing/write-workshop-state-guide/
-order: 9
+order: 10
 summary: a skill to take a live workshop's working record, and write up where the work stands.
 howto_lead: >-
   new to this? open the workshop folder in Claude Code or Codex, and say:

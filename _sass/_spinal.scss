@@ -229,3 +229,18 @@
     a:hover { text-decoration: underline; }
   }
 }
+
+// shown on a doc page for a skill that is still provisional
+.draft-note {
+  border: 1px solid var(--coral);
+  border-radius: var(--radius);
+  background: rgba(223, 133, 103, 0.08);
+  padding: 13px 16px;
+  margin: 0 0 24px;
+  font-family: var(--font-doc);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--prose);
+
+  strong { color: var(--ink); }
+}

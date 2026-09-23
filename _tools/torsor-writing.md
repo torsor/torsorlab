@@ -1,7 +1,7 @@
 ---
 title: torsor-writing
 slug: torsor-writing
-tagline: eleven writing skills for Claude Code to create reading guides, critical reviews, repairs, papers and reports, from your source material, each built as a self-contained manuscript.
+tagline: twelve writing skills for Claude Code to create reading guides, critical reviews, repairs, papers and reports, from your source material, each built as a self-contained manuscript.
 status: released
 repo: https://github.com/torsor/claude-plugins
 howto_lead: >-
@@ -27,7 +27,7 @@ claude plugin install torsor-writing@torsor-plugins
 claude plugin list
 ```
 
-all eleven `/write-…` skills are then available on that machine.
+all twelve `/write-…` skills are then available on that machine.
 
 the skills used to read the prose library, reference templates, a style preamble,
 and `tex2torsor` by absolute path on one machine. here those are vendored into the

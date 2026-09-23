@@ -3,7 +3,7 @@ title: write-body-of-work-summary
 tool: torsor-writing
 slug: write-body-of-work-summary
 permalink: /tools/torsor-writing/write-body-of-work-summary/
-order: 8
+order: 9
 summary: a skill to take one mathematician's papers, and write an overview of their research program.
 howto_lead: >-
   new to this? open a folder holding the papers in Claude Code or Codex, and say:

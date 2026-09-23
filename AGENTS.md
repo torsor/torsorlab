@@ -47,7 +47,7 @@ something a person can paste without editing, and use `<angle brackets>` only
 where they genuinely have to substitute their own topic.
 
 **the `say` line must name the skill it means.** an agent pointed at the
-repository picks from eleven skills by matching what you asked for against their
+repository picks from twelve skills by matching what you asked for against their
 descriptions, so the phrase has to contain the skill's own name: "write a review
 and repair guide", not "review the paper and mark up the changes"; "write a pure
 math paper", not "write a paper". the generic version reads better and selects
@@ -63,7 +63,9 @@ two things worth knowing before you write:
 
 - run `make check` before committing. it asserts the collections are wired
   correctly.
-- three doc pages are manual-backed and verbose; the other eight are drawn from
+- a skill that is still provisional carries `draft: true`, which puts a warning
+  on its page and a "draft" chip beside it in the skills list.
+- three doc pages are manual-backed and verbose; the others are drawn from
   the plugin's `SKILL.md` files and are shorter on purpose. when a fourth manual
   is written, add it to `MANUALS` in `bin/sync-manuals.py` and set
   `manual: true` on its doc page.

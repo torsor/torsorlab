@@ -3,7 +3,7 @@ title: write-study-guide
 tool: torsor-writing
 slug: write-study-guide
 permalink: /tools/torsor-writing/write-study-guide/
-order: 7
+order: 8
 summary: a skill to take a target result in the Stacks project or Kerodon, and write a reading route to it.
 howto_lead: >-
   new to this? open any folder you want the guide written into in Claude Code or Codex, and say:

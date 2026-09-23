@@ -4,7 +4,7 @@ tool: torsor-writing
 slug: overview
 permalink: /tools/torsor-writing/overview/
 order: 0
-summary: a map of the eleven skills — what each one takes in, and what it writes.
+summary: a map of the twelve skills — what each one takes in, and what it writes.
 notes:
   - title: one format
     text: >-
@@ -23,7 +23,7 @@ notes:
       you pre-answer.
 ---
 
-eleven Claude Code skills. each one takes source material of some kind and writes
+twelve Claude Code skills. each one takes source material of some kind and writes
 companion material for it — documentation, guides, manuals, summaries, reports.
 
 what usefully distinguishes them is not what they are about, but **what they are
@@ -34,7 +34,8 @@ yet written.
 
 [`write-paper-guide`](../write-paper-guide/) explains it, to one named reader.
 [`write-critical-guide`](../write-critical-guide/) assesses it, and reaches no
-verdict. [`write-paper-repairs`](../write-paper-repairs/) works out what would fix
+verdict. [`write-correspondence-guide`](../write-correspondence-guide/) places
+it in the literature around it, and is a provisional draft. [`write-paper-repairs`](../write-paper-repairs/) works out what would fix
 what the assessment found. [`write-review-and-repair`](../write-review-and-repair/)
 runs the last two end to end.
 
