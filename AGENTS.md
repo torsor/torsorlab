@@ -63,6 +63,9 @@ two things worth knowing before you write:
 
 - run `make check` before committing. it asserts the collections are wired
   correctly.
+- `docs_layout: tiles` gives a tool a headerless grid of its docs — right when
+  they are a menu of peers, like the twelve skills. the default headed list
+  suits a short sequence meant to be read in order, like research-room's.
 - a skill that is still provisional carries `draft: true`, which puts a warning
   on its page and a "draft" chip beside it in the skills list.
 - three doc pages are manual-backed and verbose; the others are drawn from

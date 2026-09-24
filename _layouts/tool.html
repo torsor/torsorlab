@@ -43,34 +43,47 @@ layout: base
   </section>
   {%- endif -%}
 
-  {%- comment -%} the skills are the point, so they come first {%- endcomment -%}
-  {%- if skills.size > 0 -%}
-  <section class="band">
-    <div class="band__head">
-      <p class="eyebrow">{{ page.docs_eyebrow | default: 'documentation' }}</p>
-      <h2>{{ page.docs_heading | default: 'the pages' }}</h2>
-      {%- if overview -%}
-        <p class="band__note">new here? <a href="{{ overview.url | relative_url }}">{{ overview.summary }}</a></p>
-      {%- endif -%}
-    </div>
-    <ul class="doc-list">
-      {%- for doc in skills -%}
-      <li>
-        <a href="{{ doc.url | relative_url }}">
-          <span class="doc-list__name">{{ doc.title }}{% if doc.draft %} <span class="chip chip--draft">draft</span>{% endif %}</span>
-          <span class="doc-list__summary">{{ doc.summary }}</span>
+  {%- comment -%}
+    The docs are the point of the page, so they come first.
+    `docs_layout: tiles` gives a headerless grid — right for a menu of many
+    peers. The default list keeps its heading, which suits a short sequence
+    that is meant to be read in order.
+  {%- endcomment -%}
+  {%- if docs.size > 0 -%}
+    {%- if page.docs_layout == 'tiles' -%}
+    <section class="band">
+      <div class="tiles">
+        {%- for doc in docs -%}
+        <a class="tile" href="{{ doc.url | relative_url }}">
+          <span class="tile__name">{{ doc.title }}</span>
+          {%- if doc.order == 0 %}<span class="chip chip--start">start here</span>{% endif -%}
+          {%- if doc.draft %}<span class="chip chip--draft">draft</span>{% endif -%}
+          <span class="tile__summary">{{ doc.summary }}</span>
         </a>
-      </li>
-      {%- endfor -%}
-    </ul>
-  </section>
-  {%- endif -%}
-
-  {%- if page.docs_pending -%}
-  <section class="band measure">
-    <p class="pending">documentation for this one is being written. the repository
-    is the place to look in the meantime.</p>
-  </section>
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- else -%}
+    <section class="band">
+      <div class="band__head">
+        <p class="eyebrow">{{ page.docs_eyebrow | default: 'documentation' }}</p>
+        <h2>{{ page.docs_heading | default: 'the pages' }}</h2>
+        {%- if overview -%}
+          <p class="band__note">new here? <a href="{{ overview.url | relative_url }}">{{ overview.summary }}</a></p>
+        {%- endif -%}
+      </div>
+      <ul class="doc-list">
+        {%- for doc in skills -%}
+        <li>
+          <a href="{{ doc.url | relative_url }}">
+            <span class="doc-list__name">{{ doc.title }}{% if doc.draft %} <span class="chip chip--draft">draft</span>{% endif %}</span>
+            <span class="doc-list__summary">{{ doc.summary }}</span>
+          </a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+    {%- endif -%}
   {%- endif -%}
 
   <section class="band measure">{{ content }}</section>

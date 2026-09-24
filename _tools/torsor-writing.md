@@ -9,8 +9,7 @@ howto_lead: >-
 howto_say: >-
   use the repository at https://github.com/torsor/claude-plugins and write a critical guide for the paper in this folder
 order: 1
-docs_eyebrow: the skills
-docs_heading: what each one does
+docs_layout: tiles
 ---
 
 ## getting it

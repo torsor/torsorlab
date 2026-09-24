@@ -225,3 +225,50 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
   vertical-align: middle;
   margin-left: 8px;
 }
+
+// --- tiles ------------------------------------------------------------------
+// A headerless grid, for a page whose docs are a menu of peers rather than a
+// sequence. Used by torsor-writing's twelve skills.
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 14px;
+}
+
+.tile {
+  display: block;
+  background: var(--cream-panel);
+  border: 1px solid var(--rule-cream);
+  border-radius: 4px;
+  padding: 20px 20px 22px;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+
+  &:hover {
+    border-color: var(--violet);
+    transform: translateY(-2px);
+
+    .tile__name { color: var(--violet); }
+  }
+
+  &__name {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: var(--ink);
+  }
+
+  &__summary {
+    display: block;
+    margin-top: 9px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .chip { margin-left: 8px; vertical-align: 2px; }
+}
+
+.chip--start { color: var(--teal); }
