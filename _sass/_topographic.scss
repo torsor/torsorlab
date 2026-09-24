@@ -272,3 +272,41 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
 }
 
 .chip--start { color: var(--teal); }
+
+// --- tool page header -------------------------------------------------------
+// One line: the name, and where the code is. Everything else about the tool is
+// either on the card the reader arrived from or in the docs below.
+
+.tool-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--rule-cream);
+
+  &__name {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: -0.8px;
+  }
+
+  &__repo {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--violet);
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  @media (max-width: $narrow) {
+    gap: 8px;
+
+    &__name { font-size: 28px; }
+    &__repo { margin-left: 0; flex-basis: 100%; }
+  }
+}

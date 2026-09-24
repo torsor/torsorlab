@@ -10,23 +10,20 @@ layout: base
 {%- assign overview = docs | where: 'order', 0 | first -%}
 {%- assign skills = docs | where_exp: 'd', 'd.order > 0' -%}
 <main class="frame page">
-  <section class="hero">
-    <img class="hero__art" src="{{ '/assets/img/contour-hero.svg' | relative_url }}" alt="">
-    <div class="hero__body">
-      <p class="eyebrow">
-        tool
-        {%- if page.status != 'released' %} · <span style="color:var(--coral)">{{ page.status }}</span>{% endif -%}
-      </p>
-      <h1>{{ page.title }}</h1>
-      <p class="lede">{{ page.tagline }}</p>
-      {%- if page.howto_say -%}
-        {% include howto.html lead=page.howto_lead say=page.howto_say %}
-      {%- endif -%}
-      {%- if page.repo -%}
-        <p class="hero__repo"><a href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a></p>
-      {%- endif -%}
-    </div>
-  </section>
+  {%- comment -%}
+    One line, then straight into the docs. The tagline is on the card the
+    reader clicked from and the "new to this?" instruction is on every skill
+    page, so repeating either here only pushes the content down.
+  {%- endcomment -%}
+  <header class="tool-head">
+    <h1 class="tool-head__name">{{ page.title }}</h1>
+    {%- if page.status != 'released' -%}
+      <span class="chip chip--coming">{{ page.status }}</span>
+    {%- endif -%}
+    {%- if page.repo -%}
+      <a class="tool-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
+    {%- endif -%}
+  </header>
 
   {%- if page.manual -%}
   <section class="band measure">
