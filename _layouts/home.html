@@ -6,21 +6,17 @@ layout: base
   generated from _tools, so adding a tool never means editing this file.
 {%- endcomment -%}
 <main class="frame page">
-  <section class="hero">
-    <img class="hero__art" src="{{ '/assets/img/contour-hero.svg' | relative_url }}" alt="">
-    <div class="hero__body">
-      <p class="eyebrow">{{ page.eyebrow }}</p>
-      <h1>{{ page.headline }}</h1>
-      <p class="lede">{{ page.lede }}</p>
-      {%- if page.pull -%}
-        <svg class="hero__rule" width="34" height="14" viewBox="0 0 34 14" aria-hidden="true">
-          <path d="M2 12 Q9 1 17 7 Q25 13 32 2" fill="none" stroke="var(--teal)"
-                stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <p class="pull">{{ page.pull }}</p>
-      {%- endif -%}
-    </div>
-  </section>
+  {%- comment -%}
+    One line, then the tools. The wordmark and its tagline are already in the
+    site header two lines up; repeating them in a full-width panel only pushed
+    the tools down.
+  {%- endcomment -%}
+  <header class="page-head">
+    <h1 class="page-head__name">{{ page.headline }}</h1>
+  </header>
+  {%- if page.lede -%}
+    <p class="lede measure page-head__lede">{{ page.lede }}</p>
+  {%- endif -%}
 
   <section class="band">
     <div class="band__head">

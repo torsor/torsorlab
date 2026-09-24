@@ -273,11 +273,11 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
 
 .chip--start { color: var(--teal); }
 
-// --- tool page header -------------------------------------------------------
+// --- page header -------------------------------------------------------
 // One line: the name, and where the code is. Everything else about the tool is
 // either on the card the reader arrived from or in the docs below.
 
-.tool-head {
+.page-head {
   display: flex;
   align-items: baseline;
   gap: 16px;
@@ -309,4 +309,9 @@ a.card:hover { border-color: var(--violet); transform: translateY(-2px); }
     &__name { font-size: 28px; }
     &__repo { margin-left: 0; flex-basis: 100%; }
   }
+}
+
+// the one paragraph that follows the page header on the landing page
+.page-head__lede {
+  margin: 0 0 44px;
 }

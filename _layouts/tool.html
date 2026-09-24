@@ -15,13 +15,13 @@ layout: base
     reader clicked from and the "new to this?" instruction is on every skill
     page, so repeating either here only pushes the content down.
   {%- endcomment -%}
-  <header class="tool-head">
-    <h1 class="tool-head__name">{{ page.title }}</h1>
+  <header class="page-head">
+    <h1 class="page-head__name">{{ page.title }}</h1>
     {%- if page.status != 'released' -%}
       <span class="chip chip--coming">{{ page.status }}</span>
     {%- endif -%}
     {%- if page.repo -%}
-      <a class="tool-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
+      <a class="page-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
     {%- endif -%}
   </header>
 
