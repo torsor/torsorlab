@@ -13,10 +13,10 @@ layout: base
   {%- endcomment -%}
   <header class="page-head">
     <h1 class="page-head__name">{{ page.headline }}</h1>
+    {%- if page.repo -%}
+      <a class="page-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
+    {%- endif -%}
   </header>
-  {%- if page.lede -%}
-    <p class="lede measure page-head__lede">{{ page.lede }}</p>
-  {%- endif -%}
 
   <section class="band">
     <div class="band__head">
