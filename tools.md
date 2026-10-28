@@ -3,7 +3,7 @@ layout: page
 permalink: /tools/
 title: tools
 eyebrow: the lab
-lede: three tools. one is public; two are on the way.
+lede: three tools are available now; one is in development. choose a task on the home page if you are new here.
 ---
 
 <div class="cards">

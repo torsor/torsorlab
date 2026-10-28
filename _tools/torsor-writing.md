@@ -5,9 +5,9 @@ tagline: twelve writing skills for Claude Code to create reading guides, critica
 status: released
 repo: https://github.com/torsor/claude-plugins
 howto_lead: >-
-  new to this? open a folder holding your manuscript's LaTeX source in Claude Code or Codex, and say:
+  open the folder with your paper or notes in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a critical guide for the paper in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then help me choose and run the right skill for the material in this folder
 order: 1
 docs_layout: tiles
 ---
@@ -17,6 +17,9 @@ docs_layout: tiles
 a Claude Code plugin. each skill writes a document in the torsor house format —
 LaTeX source, with PDF, HTML, EPUB, and Markdown output — in the torsor design
 and prose style.
+
+your agent can follow the instruction above to set it up. the commands below
+are for installing it yourself.
 
 ### install
 

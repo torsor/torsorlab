@@ -20,10 +20,17 @@ layout: base
     {%- if page.status != 'released' -%}
       <span class="chip chip--coming">{{ page.status }}</span>
     {%- endif -%}
-    {%- if page.repo -%}
-      <a class="page-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
-    {%- endif -%}
   </header>
+
+  <p class="page-head__lede measure">{{ page.tagline }}</p>
+
+  {%- if page.howto_say -%}
+  <section class="band measure first-use">
+    <p class="eyebrow">first use</p>
+    <h2>ask your agent to get started</h2>
+    {% include howto.html lead=page.howto_lead say=page.howto_say %}
+  </section>
+  {%- endif -%}
 
   {%- if page.manual -%}
   <section class="band measure">
@@ -49,6 +56,12 @@ layout: base
   {%- if docs.size > 0 -%}
     {%- if page.docs_layout == 'tiles' -%}
     <section class="band">
+      <div class="band__head">
+        <h2>choose what you want to make</h2>
+        {%- if overview -%}
+          <p class="band__note">unsure which skill fits? <a href="{{ overview.url | relative_url }}">compare the twelve skills</a>.</p>
+        {%- endif -%}
+      </div>
       <div class="tiles">
         {%- for doc in docs -%}
         <a class="tile" href="{{ doc.url | relative_url }}">
@@ -83,5 +96,10 @@ layout: base
     {%- endif -%}
   {%- endif -%}
 
-  <section class="band measure">{{ content }}</section>
+  <section class="band measure">
+    {{ content }}
+    {%- if page.repo -%}
+      <p class="source-link"><a href="{{ page.repo }}">source code and technical setup →</a></p>
+    {%- endif -%}
+  </section>
 </main>

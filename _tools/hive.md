@@ -5,9 +5,9 @@ tagline: a fleet console for Claude Code and Codex sessions running in tmux on a
 status: released
 repo: https://github.com/torsor/hive
 howto_lead: >-
-  new to this? open Claude Code or Codex on one of your computers, and say:
+  open Claude Code or Codex on one of the computers you want to connect, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/hive and help me set up and coordinate my agents
+  get hive from https://github.com/torsor/hive, help me install it on my computers, and show me how to see and reach my agent sessions
 order: 4
 manual: true
 manual_blurb: a full user's manual — the fleet, the consoles, running agents, and keeping it up.

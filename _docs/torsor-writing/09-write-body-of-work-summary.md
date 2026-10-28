@@ -8,7 +8,7 @@ summary: a skill to take one mathematician's papers, and write an overview of th
 howto_lead: >-
   new to this? open a folder holding the papers in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a body of work summary from the papers in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then use write-body-of-work-summary to write a body of work summary from the papers in this folder
 notes:
   - title: purpose sets the person
     text: >-

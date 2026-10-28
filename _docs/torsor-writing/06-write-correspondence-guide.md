@@ -9,7 +9,7 @@ summary: a skill to take one mathematical paper, and write a correspondence guid
 howto_lead: >-
   new to this? open a folder holding the paper's LaTeX source or PDF in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a correspondence guide for the paper in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then use write-correspondence-guide to write a correspondence guide for the paper in this folder
 notes:
   - title: correspondence, never provenance
     text: >-

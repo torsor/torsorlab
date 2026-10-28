@@ -8,7 +8,7 @@ summary: a skill to take an experiment's logs, outputs and artifacts, and write 
 howto_lead: >-
   new to this? open a folder holding the experiment's logs, outputs and artifacts in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a technical report from the material in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then use write-technical-report to write a technical report from the material in this folder
 notes:
   - title: the evidence ledger is a gate
     text: >-

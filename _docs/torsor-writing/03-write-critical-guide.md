@@ -9,7 +9,7 @@ summary: a skill to take one mathematical paper, and catalog the potential issue
 howto_lead: >-
   new to this? open a folder holding the paper's LaTeX source or PDF in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a critical guide for the paper in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then use write-critical-guide to write a critical guide for the paper in this folder
 notes:
   - title: findings, never a disposition
     text: >-

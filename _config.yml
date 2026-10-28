@@ -37,6 +37,7 @@ sass:
   style: compressed
 
 exclude:
+  - "*.bak"
   - Gemfile
   - Gemfile.lock
   - Makefile

@@ -8,7 +8,7 @@ summary: a skill to take several papers or books on one topic, and write a singl
 howto_lead: >-
   new to this? open a folder holding the sources you want synthesized in Claude Code or Codex, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/claude-plugins and write a topic guide on <your topic> from the sources in this folder
+  install the torsor-writing skills from https://github.com/torsor/claude-plugins, then use write-topic-guide to write a topic guide on <your topic> from the sources in this folder
 notes:
   - title: scanned sources are read, not OCR'd
     text: >-

@@ -6,21 +6,16 @@ layout: base
   generated from _tools, so adding a tool never means editing this file.
 {%- endcomment -%}
 <main class="frame page">
-  {%- comment -%}
-    One line, then the tools. The wordmark and its tagline are already in the
-    site header two lines up; repeating them in a full-width panel only pushed
-    the tools down.
-  {%- endcomment -%}
   <header class="page-head">
     <h1 class="page-head__name">{{ page.headline }}</h1>
-    {%- if page.repo -%}
-      <a class="page-head__repo" href="{{ page.repo }}">{{ page.repo | remove: 'https://' }} &rarr;</a>
-    {%- endif -%}
   </header>
+
+  {{ content }}
 
   <section class="band">
     <div class="band__head">
-      <h2>the tools</h2>
+      <h2>browse the tools</h2>
+      <p class="band__note">the project pages and source code are here when you want the details.</p>
     </div>
     <div class="cards">
       {%- assign tools = site.tools | sort: 'order' -%}
@@ -30,7 +25,4 @@ layout: base
     </div>
   </section>
 
-  <section class="band measure">
-    {{ content }}
-  </section>
 </main>

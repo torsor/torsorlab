@@ -5,9 +5,9 @@ tagline: a folder template for doing sustained mathematical research with an age
 status: released
 repo: https://github.com/torsor/research-room
 howto_lead: >-
-  new to this? open Claude Code or Codex in an empty folder where you want the room, and say:
+  open Claude Code or Codex in an empty folder where you want the room, and say:
 howto_say: >-
-  use the repository at https://github.com/torsor/research-room and set this folder up as a research room for my project
+  get the research-room template from https://github.com/torsor/research-room and set this folder up as a research room for my project; guide me through the choices I need to make
 order: 2
 manual: true
 manual_blurb: a full user's manual, written for someone about to work in a room.
@@ -19,6 +19,9 @@ docs_heading: how it is put together
 
 a template repository. copy it, replace the placeholders, and start working in
 it. there is nothing to install and nothing to run.
+
+your agent can make the copy and walk you through the setup using the instruction
+above. the commands below are for making the copy yourself.
 
 ```sh
 git clone https://github.com/torsor/research-room.git my-project
