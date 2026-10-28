@@ -1,4 +1,6 @@
 # Top navigation. Add or reorder freely — the header renders whatever is here.
+- title: start
+  url: /start/
 - title: all tools
   url: /tools/
 - title: about

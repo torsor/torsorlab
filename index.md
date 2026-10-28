@@ -1,55 +1,26 @@
 ---
 layout: home
-headline: tools for mathematical work with AI agents
+headline: mathematics with people and AI agents
+lede: we explore how AI can help people develop, test, and share mathematical understanding. our work spans research, writing, and tools for working together.
 ---
 
-<p class="home-intro">we share tools for reading and writing mathematics with an AI agent, keeping a research project organized, and coordinating agent sessions across computers. each tool has a page explaining what it does and how to start using it.</p>
-
-<section class="band home-value measure">
-  <h2>work you can inspect and return to</h2>
-  <p>a reading guide you can revisit, an annotated copy you can assess, or a folder that keeps your questions and evidence between sessions: the tools leave you with files you can read and use in your own work. you decide what to accept and where to go next.</p>
-</section>
-
-<section class="band first-use home-start measure">
-  <p class="eyebrow">getting started</p>
-  <h2>use them with your own agent</h2>
-  <ol>
-    <li>choose the kind of work you want to do below.</li>
-    <li>open your paper, notes, or project folder in Claude Code or Codex.</li>
-    <li>paste the instruction from the tool's page into your agent. it can get the tool ready and run it with your material.</li>
-  </ol>
-  <p>you can follow this path without a GitHub account or terminal commands.</p>
-</section>
-
-<section class="band" aria-labelledby="tasks-heading">
-  <div class="band__head">
-    <p class="eyebrow">find a starting point</p>
-    <h2 id="tasks-heading">what would you like to do?</h2>
-  </div>
-  <div class="task-grid">
-    <article class="task-card">
-      <h3>work with a paper</h3>
-      <p>make a reading guide, catalog potential issues, or see suggested changes in a copy of the manuscript.</p>
-      <ul>
-        <li><a href="/tools/torsor-writing/write-paper-guide/">help me understand a paper →</a></li>
-        <li><a href="/tools/torsor-writing/write-critical-guide/">help me assess a paper →</a></li>
-        <li><a href="/tools/torsor-writing/write-review-and-repair/">show me a marked-up copy →</a></li>
-      </ul>
-    </article>
-    <article class="task-card">
-      <h3>write from my material</h3>
-      <p>turn notes, sources, or project files into a paper, guide, report, or manual.</p>
-      <a class="task-card__link" href="/tools/torsor-writing/overview/">find the right writing skill →</a>
-    </article>
-    <article class="task-card">
-      <h3>start a research project</h3>
-      <p>give your work with an agent a folder for questions, evidence, and a running record.</p>
-      <a class="task-card__link" href="/tools/research-room/">set up a research room →</a>
-    </article>
-    <article class="task-card">
-      <h3>coordinate agents on several computers</h3>
-      <p>see sessions across your machines and reach them from one place.</p>
-      <a class="task-card__link" href="/tools/hive/">explore hive →</a>
-    </article>
-  </div>
-</section>
+<nav class="home-paths" aria-label="explore torsorlab">
+  <a class="home-path" href="/about/">
+    <svg class="home-path__icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="23"/><path d="M32 9v46M9 32h46M23 41l18-18"/><circle class="home-path__dot" cx="41" cy="23" r="4"/></svg>
+    <h2>our approach</h2>
+    <p>human direction, evidence, and continuity in mathematical work.</p>
+    <span>read more →</span>
+  </a>
+  <a class="home-path" href="/tools/">
+    <svg class="home-path__icon" viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="12" width="18" height="18" rx="2"/><rect x="34" y="12" width="18" height="18" rx="2"/><rect x="12" y="34" width="18" height="18" rx="2"/><rect x="34" y="34" width="18" height="18" rx="2"/></svg>
+    <h2>the tools</h2>
+    <p>ways to read, write, and keep track of work with an agent.</p>
+    <span>explore tools →</span>
+  </a>
+  <a class="home-path" href="/start/">
+    <svg class="home-path__icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="23"/><path d="M18 32h27M36 23l9 9-9 9"/></svg>
+    <h2>get started</h2>
+    <p>choose a task and ask your own agent to set up and run a tool.</p>
+    <span>choose a task →</span>
+  </a>
+</nav>

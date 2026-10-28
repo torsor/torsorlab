@@ -3,8 +3,10 @@ layout: page
 permalink: /tools/
 title: tools
 eyebrow: the lab
-lede: three tools are available now; one is in development. choose a task on the home page if you are new here.
+lede: three tools are available now; one is in development. if you are new here, start with a task.
 ---
+
+<p><a href="/start/">choose a task →</a></p>
 
 <div class="cards">
   {%- assign tools = site.tools | sort: 'order' -%}

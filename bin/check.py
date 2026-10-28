@@ -42,7 +42,7 @@ def check_front_matter(errors):
     Layouts are not required here: they come from the `defaults` in _config.yml.
     """
     pages = (
-        [ROOT / n for n in ("index.md", "about.md", "tools.md", "404.md")]
+        [ROOT / n for n in ("index.md", "start.md", "about.md", "tools.md", "404.md")]
         + sorted((ROOT / "_tools").glob("*.md"))
         + sorted((ROOT / "_docs").rglob("*.md"))
     )

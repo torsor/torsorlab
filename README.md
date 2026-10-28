@@ -18,7 +18,8 @@ Voice and tone rules live in `AGENTS.md` — read that before writing site prose
 |---|---|
 | Colors, fonts, spacing | `_sass/_tokens.scss` — the only file with hex values |
 | Nav links | `_data/nav.yml` |
-| Home page task choices and introduction | `index.md` |
+| Home page introduction and three paths | `index.md` |
+| The agent-led task chooser | `start.md` |
 | A tool's blurb or status | `_tools/<tool>.md` |
 | The benefit shown before a tool's setup instruction | `value` front matter in `_tools/<tool>.md` |
 | How a tool lists its docs | `docs_layout: tiles` for a headerless grid, or omit for a headed list |
