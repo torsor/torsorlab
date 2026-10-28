@@ -6,8 +6,8 @@ status: coming
 order: 3
 ---
 
-agents work a research problem in a persistent room; we attach, steer, and hand
-off. the kit covers provisioning, the fleet of working agents, the session
+agents work a research problem in a persistent room; people attach, steer, and
+hand off. the kit covers provisioning, the fleet of working agents, the session
 template, and the documentation a room needs to be legible to someone who was
 not there.
 

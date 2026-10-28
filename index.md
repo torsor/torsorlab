@@ -1,13 +1,13 @@
 ---
 layout: home
-headline: mathematics with people and AI agents
-lede: we explore how AI can help people develop, test, and share mathematical understanding. our work spans research, writing, and tools for working together.
+headline: mathematics and AI
+lede: research, writing, and tools for mathematical work with AI agents.
 ---
 
 <nav class="home-paths" aria-label="explore torsorlab">
   <a class="home-path" href="/about/">
     <svg class="home-path__icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="23"/><path d="M32 9v46M9 32h46M23 41l18-18"/><circle class="home-path__dot" cx="41" cy="23" r="4"/></svg>
-    <h2>our approach</h2>
+    <h2>approach</h2>
     <p>human direction, evidence, and continuity in mathematical work.</p>
     <span>read more →</span>
   </a>

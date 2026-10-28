@@ -58,21 +58,13 @@
 }
 
 .home-hero {
-  padding-block: 66px 70px;
+  padding-block: 56px 58px;
   margin-bottom: 28px;
 
   &__lede {
     max-width: 540px;
     font-size: 19px;
     line-height: 1.55;
-    margin-bottom: 18px;
-  }
-
-  &__aim {
-    color: var(--violet);
-    font-family: var(--font-head);
-    font-size: 17px;
-    font-weight: 600;
     margin-bottom: 0;
   }
 

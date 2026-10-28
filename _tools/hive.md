@@ -14,7 +14,7 @@ manual: true
 manual_blurb: a full user's manual — the fleet, the consoles, running agents, and keeping it up.
 ---
 
-your laptop sleeps. the boxes do not. `hive` is how we see every agent session
+your laptop sleeps. the boxes do not. `hive` shows every agent session
 across the fleet, reach one, and move work between machines.
 
 ## the shape of it

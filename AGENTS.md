@@ -10,15 +10,14 @@ LaTeX, Rust, Danny Krashen), and so do acronyms (AI, PDF, EPUB, HTML). the
 uppercase mono labels in the design — eyebrows, status chips, table headers, the
 wordmark — are typography, not prose; leave those alone.
 
-**we, not the lab.** the work is collaborative and the writing should say so.
-"we are exploring", "we have been developing", "our work". avoid third-person
-descriptions of torsorlab as an entity that acts on its own ("the lab builds…",
-"torsorlab is the name under which…").
+**avoid collective pronouns.** this is Danny Krashen working with AI agents;
+"we" and "our" can suggest a group of human collaborators that does not yet
+exist. name the work, the tool, or the person instead. do not describe torsorlab
+as an entity that acts on its own ("the lab builds…").
 
 **"credit" appears at most once on the whole site.** it is a heavy word and it
-frames the work as a ledger. the one use lives on the about page. everywhere
-else, say what we are doing and who is doing it, and let attribution follow from
-that. "collaboration", "together", "with" do most of the work.
+frames the work as a ledger. if used, put it on the about page. elsewhere,
+describe the work and who is doing it, and let attribution follow from that.
 
 **never advertise judgements about anyone's work.** the review skills find
 *potential issues*; they do not find what is wrong with a paper. write "catalog
@@ -42,9 +41,8 @@ that is the claim.
 
 **assume the reader has never opened Claude Code.** every skill carries
 `howto_lead` and `howto_say` in its front matter: what folder to open,
-then the literal sentence to type at the agent. tool pages do not
-show it — the tool header is one line, and repeating the instruction there only
-pushes the docs down. write the `say` line as something a person can paste
+then the literal sentence to type at the agent. tool pages also show an
+agent-led setup instruction before their docs. write the `say` line as something a person can paste
 without editing, and use `<angle brackets>` only
 where they genuinely have to substitute their own topic.
 
