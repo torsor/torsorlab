@@ -1,6 +1,6 @@
 ---
 layout: home
-headline: mathematics and AI
+headline: mathematics in collaboration with AI
 lede: research, writing, and tools for mathematical work with AI agents.
 ---
 
