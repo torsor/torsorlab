@@ -24,6 +24,10 @@ layout: base
 
   <p class="page-head__lede measure">{{ page.tagline }}</p>
 
+  {%- if page.value -%}
+    <p class="tool-value measure">{{ page.value }}</p>
+  {%- endif -%}
+
   {%- if page.howto_say -%}
   <section class="band measure first-use">
     <p class="eyebrow">first use</p>

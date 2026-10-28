@@ -2,6 +2,7 @@
 title: research-room
 slug: research-room
 tagline: a folder template for doing sustained mathematical research with an agent — one that accumulates understanding while you keep hold of the questions.
+value: your questions, evidence, and changes of direction stay in files you can return to when a session ends or a new one begins.
 status: released
 repo: https://github.com/torsor/research-room
 howto_lead: >-

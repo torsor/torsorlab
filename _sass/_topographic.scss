@@ -59,10 +59,15 @@
 
 .home-intro {
   max-width: 720px;
-  margin: 0 0 52px;
+  margin: 0 0 48px;
   font-size: 21px;
   line-height: 1.55;
   color: var(--prose);
+}
+
+.home-value {
+  h2 { margin: 0 0 14px; }
+  p { margin-bottom: 0; }
 }
 
 .task-grid {
@@ -106,6 +111,12 @@
 }
 
 .source-link { margin-top: 30px; font-size: 15px; }
+
+.tool-value {
+  margin: -28px 0 42px;
+  font-size: 18px;
+  line-height: 1.6;
+}
 
 // --- tool cards -------------------------------------------------------------
 

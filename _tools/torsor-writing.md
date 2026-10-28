@@ -2,6 +2,7 @@
 title: torsor-writing
 slug: torsor-writing
 tagline: twelve writing skills for Claude Code to create reading guides, critical reviews, repairs, papers and reports, from your source material, each built as a self-contained manuscript.
+value: the result is a set of files you can read, revise, share, and build again, with the source material and the agent's work kept together.
 status: released
 repo: https://github.com/torsor/claude-plugins
 howto_lead: >-

@@ -20,6 +20,7 @@ Voice and tone rules live in `AGENTS.md` — read that before writing site prose
 | Nav links | `_data/nav.yml` |
 | Home page task choices and introduction | `index.md` |
 | A tool's blurb or status | `_tools/<tool>.md` |
+| The benefit shown before a tool's setup instruction | `value` front matter in `_tools/<tool>.md` |
 | How a tool lists its docs | `docs_layout: tiles` for a headerless grid, or omit for a headed list |
 | The agent setup instruction | `howto_lead` + `howto_say` front matter, on a tool or a doc page |
 | A tool that is public before its docs exist | `docs_pending: true` in its `_tools` entry |

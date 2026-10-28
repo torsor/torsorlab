@@ -2,6 +2,7 @@
 title: hive
 slug: hive
 tagline: a fleet console for Claude Code and Codex sessions running in tmux on always-on boxes.
+value: see where your agents are working, reach a session, and move work between machines from one console.
 status: released
 repo: https://github.com/torsor/hive
 howto_lead: >-

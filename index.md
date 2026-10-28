@@ -1,14 +1,30 @@
 ---
 layout: home
-headline: what would you like to do?
+headline: tools for mathematical work with AI agents
 ---
 
-<p class="home-intro">we make tools for mathematical writing and research with an AI agent. choose the work you want to do, then give your agent the instruction on that page. your agent can help set up the tool and run it with your material.</p>
+<p class="home-intro">we share tools for reading and writing mathematics with an AI agent, keeping a research project organized, and coordinating agent sessions across computers. each tool has a page explaining what it does and how to start using it.</p>
+
+<section class="band home-value measure">
+  <h2>work you can inspect and return to</h2>
+  <p>a reading guide you can revisit, an annotated copy you can assess, or a folder that keeps your questions and evidence between sessions: the tools leave you with files you can read and use in your own work. you decide what to accept and where to go next.</p>
+</section>
+
+<section class="band first-use home-start measure">
+  <p class="eyebrow">getting started</p>
+  <h2>use them with your own agent</h2>
+  <ol>
+    <li>choose the kind of work you want to do below.</li>
+    <li>open your paper, notes, or project folder in Claude Code or Codex.</li>
+    <li>paste the instruction from the tool's page into your agent. it can get the tool ready and run it with your material.</li>
+  </ol>
+  <p>you can follow this path without a GitHub account or terminal commands.</p>
+</section>
 
 <section class="band" aria-labelledby="tasks-heading">
   <div class="band__head">
-    <p class="eyebrow">start here</p>
-    <h2 id="tasks-heading">choose your task</h2>
+    <p class="eyebrow">find a starting point</p>
+    <h2 id="tasks-heading">what would you like to do?</h2>
   </div>
   <div class="task-grid">
     <article class="task-card">
@@ -36,15 +52,4 @@ headline: what would you like to do?
       <a class="task-card__link" href="/tools/hive/">explore hive →</a>
     </article>
   </div>
-</section>
-
-<section class="band first-use home-start measure">
-  <p class="eyebrow">how to begin</p>
-  <h2>let your agent handle setup</h2>
-  <ol>
-    <li>open your paper, notes, or project folder in Claude Code or Codex.</li>
-    <li>choose a task above and paste the instruction from its page into your agent.</li>
-    <li>your agent gets the tool ready and works with the material in that folder. review what it makes before sharing or using it.</li>
-  </ol>
-  <p>you can use these instructions without a GitHub account or terminal commands.</p>
 </section>
