@@ -7,7 +7,7 @@
 #     deployed until you enable .github/workflows/pages.yml.
 
 title: torsorlab
-tagline: an AI lab for mathematical work
+tagline: mathematics in collaboration with AI
 description: >-
   research, writing, and tools for mathematical work with AI agents.
 url: "https://lab.torsor.org"

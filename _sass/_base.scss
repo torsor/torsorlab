@@ -139,17 +139,6 @@ table {
     text-decoration: none;
   }
 
-  &__tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--faint);
-    padding-left: 12px;
-    border-left: 1px solid var(--rule-cream);
-
-    @media (max-width: $narrow) { display: none; }
-  }
-
   &__nav {
     display: flex;
     gap: 22px;
