@@ -20,7 +20,7 @@ you can follow the instructions here without a GitHub account or terminal comman
     </ul>
   </article>
   <article class="task-card">
-    <h2>write from my material</h2>
+    <h2>write from your material</h2>
     <p>turn notes, sources, or project files into a paper, guide, report, or manual.</p>
     <a class="task-card__link" href="/tools/torsor-writing/overview/">find the right writing skill →</a>
   </article>
