@@ -161,6 +161,9 @@
   gap: 20px;
 }
 
+.cards--single { grid-template-columns: minmax(0, 380px); margin: 32px 0; }
+.card__foot a { color: inherit; }
+
 .card {
   position: relative;
   display: flex;
