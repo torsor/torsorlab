@@ -27,3 +27,11 @@ learning, and collaboration are developing alongside them.
 this work is maintained by <a href="https://dkrashen.org">Danny Krashen</a>
 with AI agents.
 
+
+## the longer version
+
+*torsorlab: a mathematical ecosystem* sets out this approach in full: the
+culture, rooms, memory, writing lenses and infrastructure, and how they fit
+together.
+[essay (pdf)](/essays/torsorlab-ecosystem.pdf) ·
+[slides (pdf)](/essays/torsorlab-ecosystem-slides.pdf)
