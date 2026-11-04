@@ -17,4 +17,4 @@ the aim of keeping the work understandable to the people doing it.
   </div>
 </div>
 
-maintained by <a href="https://dkrashen.org">Danny Krashen</a> with AI agents.
+maintained by <a href="https://torsor.org">Danny Krashen</a> with AI agents.
