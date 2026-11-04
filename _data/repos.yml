@@ -1,0 +1,26 @@
+# Public repositories shown on /code/. Curated by hand; course repos live on
+# the teaching page of dkrashen.org instead. `line` is 3–5 words.
+- group: lab tools
+  repos:
+    - {name: claude-plugins, owner: torsor, line: torsor-writing skills for Claude Code}
+    - {name: research-room, owner: torsor, line: agentic research folder template}
+    - {name: hive, owner: torsor, line: console for agent sessions}
+    - {name: torsorlab, owner: torsor, line: this site's source}
+- group: LaTeX
+  repos:
+    - {name: latexd, owner: dkrashen, line: modular latexmk wrapper}
+    - {name: headerthm, owner: dkrashen, line: "restated theorems, consistent numbering"}
+    - {name: macromakermaker, owner: dkrashen, line: macros that make macros}
+    - {name: TransTex, owner: dkrashen, line: jinja2 templates for LaTeX}
+    - {name: deptletter, owner: dkrashen, line: departmental letterhead class}
+- group: mathematical computation
+  repos:
+    - {name: RelBrauer, owner: dkrashen, line: "relative Brauer groups, genus 1"}
+    - {name: conformal-blocks-rational-locus-restrictor, owner: dkrashen, line: ranks of conformal blocks}
+    - {name: fcones, owner: dkrashen, line: "extremal rays, Deligne–Mumford"}
+    - {name: NefWiz, owner: dkrashen, line: nef cones of M_g}
+    - {name: compmath, owner: dkrashen, line: computers helping mathematics}
+- group: teaching demos
+  repos:
+    - {name: orthogonal-diagonalization, owner: dkrashen, line: "symmetric 3×3 matrices, interactively"}
+    - {name: matrix-iterator, owner: dkrashen, line: iterating a matrix}

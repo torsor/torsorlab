@@ -6,7 +6,7 @@ eyebrow: the lab
 lede: three tools are available now; one is in development. if you are new here, start with a task.
 ---
 
-<p><a href="/start/">choose a task →</a></p>
+<p><a href="/start/">choose a task →</a> &nbsp; <a href="/code/">all public code →</a></p>
 
 <div class="cards">
   {%- assign tools = site.tools | sort: 'order' -%}

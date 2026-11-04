@@ -3,5 +3,9 @@
   url: /start/
 - title: all tools
   url: /tools/
+- title: code
+  url: /code/
 - title: about
   url: /about/
+- title: github ↗
+  url: https://github.com/torsor
