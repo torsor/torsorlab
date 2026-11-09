@@ -73,7 +73,7 @@
 
 .home-paths {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 
   @media (max-width: $narrow) { grid-template-columns: 1fr; }
@@ -162,8 +162,6 @@
 }
 
 .cards--single { grid-template-columns: minmax(0, 380px); margin: 32px 0; }
-.cards--pair { grid-template-columns: repeat(2, minmax(0, 380px)); margin: 32px 0;
-  @media (max-width: $narrow) { grid-template-columns: 1fr; } }
 .card__foot a { color: inherit; }
 
 .card {
