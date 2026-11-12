@@ -42,6 +42,7 @@ exclude:
   - Makefile
   - README.md
   - AGENTS.md
+  - CITATION.cff
   - docs/
   - bin/
   - vendor/

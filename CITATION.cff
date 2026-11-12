@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If torsorlab helped with your work, please cite it as below. See https://lab.torsor.org/about/ for a suggested acknowledgment."
+type: software
+title: "torsorlab: tools for mathematics with AI agents"
+authors:
+  - family-names: Krashen
+    given-names: Daniel
+    website: "https://torsor.org"
+url: "https://lab.torsor.org"
+repository-code: "https://github.com/torsor/torsorlab"
+license: CC-BY-4.0
+abstract: "Tools for doing mathematics with AI agents, made with the aim of keeping the work understandable to the people doing it: torsor-writing, research-room, hive and others."
+keywords:
+  - mathematics
+  - AI agents
+  - mathematical writing
