@@ -7,6 +7,7 @@ authors:
     given-names: Daniel
     website: "https://torsor.org"
 url: "https://lab.torsor.org"
+doi: 10.5281/zenodo.24173125
 repository-code: "https://github.com/torsor/torsorlab"
 license: CC-BY-4.0
 abstract: "Tools for doing mathematics with AI agents, made with the aim of keeping the work understandable to the people doing it: torsor-writing, research-room, hive and others."

@@ -27,7 +27,8 @@ to cite it as well:
   author       = {Krashen, Daniel},
   title        = {torsorlab: tools for mathematics with {AI} agents},
   howpublished = {\url{https://lab.torsor.org}},
-  year         = {2026}
+  year         = {2026},
+  doi          = {10.5281/zenodo.24173125}
 }
 ```
 
